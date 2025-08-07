@@ -1,39 +1,42 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import Link from "next/link"
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function BusinessPage() {
-  const [language] = useState("UZ")
+  const [language] = useState("UZ");
 
   const content = {
     UZ: {
       title: "Xizmatlarimiz",
-      subtitle: "Ko'chmas mulk va investitsiya sohasida keng qamrovli professional yechimlar",
+      subtitle:
+        "Ko'chmas mulk va investitsiya sohasida keng qamrovli professional yechimlar",
       learnMore: "Batafsil ma'lumot",
       contactUs: "Biz bilan bog'laning",
     },
     RU: {
       title: "Наши Услуги",
-      subtitle: "Комплексные профессиональные решения в сфере недвижимости и инвестиций",
+      subtitle:
+        "Комплексные профессиональные решения в сфере недвижимости и инвестиций",
       learnMore: "Подробнее",
       contactUs: "Связаться с нами",
     },
     EN: {
       title: "Our Services",
-      subtitle: "Comprehensive professional solutions in real estate and investment",
+      subtitle:
+        "Comprehensive professional solutions in real estate and investment",
       learnMore: "Learn More",
       contactUs: "Contact Us",
     },
-  }
+  };
 
   const services = [
     {
       id: "redevelopment",
-      icon: "🏗️",
+      iconImage: "/svg/mulkBoshqaruvi.svg",
       titleUZ: "Qayta Qurish",
       titleRU: "Реконструкция",
       titleEN: "Redevelopment",
@@ -47,7 +50,7 @@ export default function BusinessPage() {
     },
     {
       id: "renovation",
-      icon: "🧱",
+      iconImage: "/svg/mulkBoshqaruvi.svg",
       titleUZ: "Renovatsiya",
       titleRU: "Реновация",
       titleEN: "Renovation Business",
@@ -61,7 +64,7 @@ export default function BusinessPage() {
     },
     {
       id: "holding",
-      icon: "🏘️",
+      iconImage: "/svg/binoBoshqaruvi",
       titleUZ: "Uzoq Muddatli Egalik",
       titleRU: "Долгосрочное Владение",
       titleEN: "Holding Business",
@@ -75,7 +78,7 @@ export default function BusinessPage() {
     },
     {
       id: "renewable",
-      icon: "☀️",
+      iconImage: "/svg/tijoratObyectlari.svg",
       titleUZ: "Yashil Energiya",
       titleRU: "Зеленая Энергия",
       titleEN: "Renewable Energy",
@@ -89,7 +92,7 @@ export default function BusinessPage() {
     },
     {
       id: "overseas",
-      icon: "🌍",
+      iconImage: "/svg/quyoshEnergiyasi.svg",
       titleUZ: "Xalqaro Biznes",
       titleRU: "Международный Бизнес",
       titleEN: "Overseas Business",
@@ -103,7 +106,7 @@ export default function BusinessPage() {
     },
     {
       id: "consulting",
-      icon: "📊",
+      iconImage: "/svg/Landshaft.svg",
       titleUZ: "Aktivlar Bo'yicha Konsalting",
       titleRU: "Консалтинг по Активам",
       titleEN: "Asset Consulting",
@@ -111,12 +114,13 @@ export default function BusinessPage() {
         "Kompaniyalar, meros va soliqqa oid strategiyalar bo'yicha professional maslahat xizmatlarini taqdim etamiz.",
       descriptionRU:
         "Мы предоставляем профессиональные консультационные услуги по стратегиям для компаний, наследства и налогов.",
-      descriptionEN: "We provide professional consulting services on strategies for companies, inheritance and taxes.",
+      descriptionEN:
+        "We provide professional consulting services on strategies for companies, inheritance and taxes.",
       image: "/placeholder.svg?height=300&width=400",
     },
     {
       id: "investment",
-      icon: "💼",
+      iconImage: "/svg/kompaniya.svg",
       titleUZ: "Investitsiyalarni Boshqarish",
       titleRU: "Управление Инвестициями",
       titleEN: "Investment Arrangement",
@@ -130,7 +134,7 @@ export default function BusinessPage() {
     },
     {
       id: "property-management",
-      icon: "🏢",
+      iconImage: "/svg/binoBoshqaruvi.svg",
       titleUZ: "Mulk Boshqaruvi",
       titleRU: "Управление Недвижимостью",
       titleEN: "Property Management",
@@ -140,44 +144,44 @@ export default function BusinessPage() {
         "Через наши профессиональные услуги управления недвижимостью мы контролируем отношения с арендаторами и сохраняем стоимость недвижимости.",
       descriptionEN:
         "Through our professional property management services, we control tenant relationships and preserve property value.",
-      image: "/placeholder.svg?height=300&width=400",
     },
     {
       id: "development",
-      icon: "🏗️",
+      iconImage: "/svg/Investitsiya.svg",
       titleUZ: "Rivojlantirish Loyihalari",
       titleRU: "Проекты Развития",
       titleEN: "Development Projects",
       descriptionUZ:
         "Yangi qurilish loyihalarini rejalashtirish va amalga oshirish orqali zamonaviy yashash va ish muhitlarini yaratamiz.",
-      descriptionRU: "Планируя и реализуя новые строительные проекты, мы создаем современную среду для жизни и работы.",
+      descriptionRU:
+        "Планируя и реализуя новые строительные проекты, мы создаем современную среду для жизни и работы.",
       descriptionEN:
         "By planning and implementing new construction projects, we create modern living and working environments.",
       image: "/placeholder.svg?height=300&width=400",
     },
-  ]
+  ];
 
   const getTitle = (service: any) => {
     switch (language) {
       case "RU":
-        return service.titleRU
+        return service.titleRU;
       case "EN":
-        return service.titleEN
+        return service.titleEN;
       default:
-        return service.titleUZ
+        return service.titleUZ;
     }
-  }
+  };
 
   const getDescription = (service: any) => {
     switch (language) {
       case "RU":
-        return service.descriptionRU
+        return service.descriptionRU;
       case "EN":
-        return service.descriptionEN
+        return service.descriptionEN;
       default:
-        return service.descriptionUZ
+        return service.descriptionUZ;
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -193,7 +197,10 @@ export default function BusinessPage() {
             </h1>
             <p
               className="text-xl text-gray-600 leading-relaxed"
-              style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif', fontSize: "20px" }}
+              style={{
+                fontFamily: '"Helvetica Neue", Arial, sans-serif',
+                fontSize: "20px",
+              }}
             >
               {content[language as keyof typeof content].subtitle}
             </p>
@@ -221,13 +228,19 @@ export default function BusinessPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute top-4 left-4">
                     <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-xl">{service.icon}</span>
+                      <img
+                        src={service.iconImage}
+                        alt="icon"
+                        className="w-6 h-6"
+                      />
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3
                       className="text-lg font-bold text-white mb-1"
-                      style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}
+                      style={{
+                        fontFamily: '"Helvetica Neue", Arial, sans-serif',
+                      }}
                     >
                       {getTitle(service)}
                     </h3>
@@ -239,7 +252,9 @@ export default function BusinessPage() {
                   <div className="space-y-4 mb-6">
                     <p
                       className="text-gray-700 leading-relaxed text-sm"
-                      style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}
+                      style={{
+                        fontFamily: '"Helvetica Neue", Arial, sans-serif',
+                      }}
                     >
                       {getDescription(service)}
                     </p>
@@ -248,7 +263,9 @@ export default function BusinessPage() {
                   <div className="flex gap-2">
                     <Button
                       className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 flex-1 text-sm"
-                      style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}
+                      style={{
+                        fontFamily: '"Helvetica Neue", Arial, sans-serif',
+                      }}
                     >
                       {content[language as keyof typeof content].learnMore}
                     </Button>
@@ -256,9 +273,13 @@ export default function BusinessPage() {
                       asChild
                       variant="outline"
                       className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 text-sm"
-                      style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}
+                      style={{
+                        fontFamily: '"Helvetica Neue", Arial, sans-serif',
+                      }}
                     >
-                      <Link href="/contact">{content[language as keyof typeof content].contactUs}</Link>
+                      <Link href="/contact">
+                        {content[language as keyof typeof content].contactUs}
+                      </Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -276,16 +297,21 @@ export default function BusinessPage() {
               className="text-4xl font-bold text-white mb-6"
               style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}
             >
-              {language === "UZ" && "Loyihangizni muhokama qilishga tayyormisiz?"}
+              {language === "UZ" &&
+                "Loyihangizni muhokama qilishga tayyormisiz?"}
               {language === "RU" && "Готовы обсудить ваш проект?"}
               {language === "EN" && "Ready to discuss your project?"}
             </h2>
-            <p className="text-xl text-blue-100 mb-8" style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}>
+            <p
+              className="text-xl text-blue-100 mb-8"
+              style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}
+            >
               {language === "UZ" &&
                 "Bizning ekspert jamoamiz sizning ehtiyojlaringizga mos yechimlar taklif etishga tayyor"}
               {language === "RU" &&
                 "Наша команда экспертов готова предложить решения, соответствующие вашим потребностям"}
-              {language === "EN" && "Our expert team is ready to offer solutions that meet your needs"}
+              {language === "EN" &&
+                "Our expert team is ready to offer solutions that meet your needs"}
             </p>
             <Button
               asChild
@@ -293,11 +319,13 @@ export default function BusinessPage() {
               className="bg-white text-blue-600 hover:bg-gray-100 px-12 py-4 text-lg"
               style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}
             >
-              <Link href="/contact">{content[language as keyof typeof content].contactUs}</Link>
+              <Link href="/contact">
+                {content[language as keyof typeof content].contactUs}
+              </Link>
             </Button>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
