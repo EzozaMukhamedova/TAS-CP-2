@@ -85,7 +85,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <img
-              src="/svg/logoTokio.svg"
+              src="/svg/TASlogo.svg"
               alt="Tokio logo"
               width={347}
               height={58}
@@ -98,13 +98,40 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  pathname === item.href ? "text-blue-600" : "text-gray-700"
+                className={`text-[16px] font-medium transition-colors hover:text-[#1C3990] ${
+                  pathname === item.href ? "text-[#1C3990]" : "text-gray-700"
                 }`}
               >
                 {getLabel(item)}
               </Link>
             ))}
+          </div>
+          {/* Social Media */}
+          <div className="flex items-center space-x-3 gap-[30px]">
+            <Link href="/">
+              <img
+                src="/svg/telegram.svg"
+                alt="Instagram"
+                width={27}
+                height={27}
+              />
+            </Link>
+            <Link href="/">
+              <img
+                src="/svg/instagramm.svg"
+                alt="Telegram"
+                width={27}
+                height={27}
+              />
+            </Link>
+            <Link href="/">
+              <img
+                src="/svg/facebook.svg"
+                alt="Facebook"
+                width={27}
+                height={27}
+              />
+            </Link>
           </div>
 
           {/* Language Toggle & Mobile Menu */}
@@ -165,8 +192,8 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`font-medium transition-colors hover:text-blue-600 ${
-                    pathname === item.href ? "text-blue-600" : "text-gray-700"
+                  className={`font-medium transition-colors hover:text-[#1C3990] ${
+                    pathname === item.href ? "text-[#1C3990]" : "text-gray-700"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

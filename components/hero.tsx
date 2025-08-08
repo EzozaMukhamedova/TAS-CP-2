@@ -40,7 +40,7 @@ export default function Hero() {
       </section>
 
       {/* Kompaniya haqida */}
-      <section className="relative  flex items-center justify-center bg-center border-red-400 border-2">
+      <section className="relative  flex items-center justify-center bg-center ">
         <div>
           <h2 className="text-4xl md:text-5xl font-bold text-[#0A2C52]  mt-[82px] mb-[82px] text-center">
             {" "}
@@ -48,7 +48,7 @@ export default function Hero() {
           </h2>
 
           <div className="flex gap-[154px]">
-            <div className="border-2 border-blue-400 rounded-[3%] overflow-hidden">
+            <div className=" rounded-[3%] overflow-hidden">
               <img src="/svg/herorasm.svg" alt="Hero Image" />
             </div>
 

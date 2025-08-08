@@ -36,128 +36,115 @@ export default function BusinessPage() {
   const services = [
     {
       id: "redevelopment",
-      iconImage: "/svg/mulkBoshqaruvi.svg",
-      titleUZ: "Qayta Qurish",
+
+      titleUZ: "Qayta qurish va tiklash",
       titleRU: "Реконструкция",
       titleEN: "Redevelopment",
       descriptionUZ:
-        "Eski va eskirgan binolarni buzib, zamonaviy arxitektura asosida qayta qurish xizmatimiz orqali shahar manzarasini yangilashda yordam beramiz.",
+        "Eski binolarni zamonaviy arxitektura asosida qayta qurish va shahar manzarasini yangilash",
       descriptionRU:
         "Через наш сервис сноса старых и устаревших зданий и их реконструкции на основе современной архитектуры мы помогаем обновить городской пейзаж.",
       descriptionEN:
         "Through our service of demolishing old and outdated buildings and reconstructing them based on modern architecture, we help renew the urban landscape.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/svg/qaytaqurish.svg?height=300&width=400",
     },
     {
       id: "renovation",
-      iconImage: "/svg/mulkBoshqaruvi.svg",
-      titleUZ: "Renovatsiya",
+
+      titleUZ: "Ko'chmas mulk va rivojlantirish",
       titleRU: "Реновация",
       titleEN: "Renovation Business",
       descriptionUZ:
-        "Mavjud binolarning ichki dizaynini va inshoot mustahkamligini zamonaviy standartlarga moslash orqali ularning qiymatini oshiramiz.",
+        "Yangi qurilish loyihalari va mavjud binolarni qayta qurish xizmatlari",
       descriptionRU:
         "Мы повышаем стоимость существующих зданий, адаптируя их внутренний дизайн и структурную прочность к современным стандартам.",
       descriptionEN:
         "We increase the value of existing buildings by adapting their interior design and structural strength to modern standards.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/svg/kochmasmulk.svg",
     },
     {
       id: "holding",
-      iconImage: "/svg/binoBoshqaruvi",
-      titleUZ: "Uzoq Muddatli Egalik",
+
+      titleUZ: "Logistika inshootlari",
       titleRU: "Долгосрочное Владение",
       titleEN: "Holding Business",
       descriptionUZ:
-        "Daromad keltiruvchi ko'chmas mulkni uzoq muddat saqlab, ijaraga berish modeli orqali barqaror daromad ta'minlaymiz.",
+        "Zamonaviy logistika markazlari va omborxonalar qurish va boshqarish",
       descriptionRU:
         "Мы обеспечиваем стабильный доход через модель долгосрочного владения доходной недвижимостью и сдачи ее в аренду.",
       descriptionEN:
         "We provide stable income through a model of long-term ownership of income-generating real estate and renting it out.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/svg/logistika.svg",
     },
-    {
-      id: "renewable",
-      iconImage: "/svg/tijoratObyectlari.svg",
-      titleUZ: "Yashil Energiya",
-      titleRU: "Зеленая Энергия",
-      titleEN: "Renewable Energy",
-      descriptionUZ:
-        "Tokka ulangan quyosh stansiyalarini rivojlantirish orqali barqaror energiya ta'minotiga hissa qo'shamiz.",
-      descriptionRU:
-        "Мы вносим вклад в устойчивое энергоснабжение через развитие подключенных к сети солнечных станций.",
-      descriptionEN:
-        "We contribute to sustainable energy supply through the development of grid-connected solar stations.",
-      image: "/placeholder.svg?height=300&width=400",
-    },
+
     {
       id: "overseas",
-      iconImage: "/svg/quyoshEnergiyasi.svg",
-      titleUZ: "Xalqaro Biznes",
+
+      titleUZ: "M&A Biznes",
       titleRU: "Международный Бизнес",
       titleEN: "Overseas Business",
       descriptionUZ:
-        "Filippin va Kambodjadagi strategik loyihalar orqali dollar asosida barqaror daromad olish imkoniyatini taqdim etamiz.",
+        "Kompaniyalarni birlashtirish va sotib olish bo'yicha maslahat xizmatlari",
       descriptionRU:
         "Мы предоставляем возможность получения стабильного дохода в долларах через стратегические проекты на Филиппинах и в Камбодже.",
       descriptionEN:
         "We provide opportunities for stable dollar-based income through strategic projects in the Philippines and Cambodia.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/svg/bisness.svg",
     },
     {
       id: "consulting",
-      iconImage: "/svg/Landshaft.svg",
-      titleUZ: "Aktivlar Bo'yicha Konsalting",
+
+      titleUZ: "Fondlarni boshqarish loyihalari",
       titleRU: "Консалтинг по Активам",
       titleEN: "Asset Consulting",
       descriptionUZ:
-        "Kompaniyalar, meros va soliqqa oid strategiyalar bo'yicha professional maslahat xizmatlarini taqdim etamiz.",
+        "Investitsiya fondlarini professional boshqarish va strategik rejalashtirish.",
       descriptionRU:
         "Мы предоставляем профессиональные консультационные услуги по стратегиям для компаний, наследства и налогов.",
       descriptionEN:
         "We provide professional consulting services on strategies for companies, inheritance and taxes.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/svg/fond.svg",
     },
     {
       id: "investment",
-      iconImage: "/svg/kompaniya.svg",
-      titleUZ: "Investitsiyalarni Boshqarish",
+
+      titleUZ: "Professional mulk boshqaruvi loyihalari",
       titleRU: "Управление Инвестициями",
       titleEN: "Investment Arrangement",
       descriptionUZ:
-        "Investorlar va perspektivali loyihalar orasida bog'lovchi model orqali muvaffaqiyatli hamkorlik yaratamiz.",
+        "Ko'chmas mulk obyektlarini to'liq boshqarish va texnik xizmat ko'rsatish",
       descriptionRU:
         "Мы создаем успешное сотрудничество через модель-посредник между инвесторами и перспективными проектами.",
       descriptionEN:
         "We create successful cooperation through a connecting model between investors and promising projects.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/svg/professional.svg",
     },
     {
       id: "property-management",
-      iconImage: "/svg/binoBoshqaruvi.svg",
-      titleUZ: "Mulk Boshqaruvi",
+
+      titleUZ: "Xalqaro loyihalar",
       titleRU: "Управление Недвижимостью",
       titleEN: "Property Management",
-      descriptionUZ:
-        "Professional mulk boshqaruvi xizmatlarimiz orqali ijarachilar bilan munosabatlarni nazorat qilamiz va mulkning qiymatini saqlab qolamiz.",
+      descriptionUZ: "Xalqaro bozorlarida investitsiya loyihalari va hamkorlik",
       descriptionRU:
         "Через наши профессиональные услуги управления недвижимостью мы контролируем отношения с арендаторами и сохраняем стоимость недвижимости.",
       descriptionEN:
         "Through our professional property management services, we control tenant relationships and preserve property value.",
+      image: "/svg/xalqaroloyihalar.svg",
     },
     {
       id: "development",
-      iconImage: "/svg/Investitsiya.svg",
-      titleUZ: "Rivojlantirish Loyihalari",
+
+      titleUZ: "Qayta Tiklanadigan Energiya",
       titleRU: "Проекты Развития",
       titleEN: "Development Projects",
       descriptionUZ:
-        "Yangi qurilish loyihalarini rejalashtirish va amalga oshirish orqali zamonaviy yashash va ish muhitlarini yaratamiz.",
+        "Quyosh va shamol energiyasi loyihalari, ekologik toza yechimlar",
       descriptionRU:
         "Планируя и реализуя новые строительные проекты, мы создаем современную среду для жизни и работы.",
       descriptionEN:
         "By planning and implementing new construction projects, we create modern living and working environments.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/svg/qaytatiklanish.svg",
     },
   ];
 
@@ -190,7 +177,7 @@ export default function BusinessPage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1
-              className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+              className="text-5xl md:text-[60px] font-bold text-[#1C3990] mb-6 mt-[86px]"
               style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}
             >
               {content[language as keyof typeof content].title}
@@ -219,32 +206,24 @@ export default function BusinessPage() {
               >
                 {/* Image Section */}
                 <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={service.image || "/placeholder.svg"}
-                    alt={getTitle(service)}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute top-4 left-4">
-                    <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
-                      <img
-                        src={service.iconImage}
-                        alt="icon"
-                        className="w-6 h-6"
-                      />
-                    </div>
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image
+                      src={service.image.replace(/\?.*$/, "")} 
+                      alt={getTitle(service)}
+                      width={400}
+                      height={192}
+                      className="w-full h-full object-contain" 
+                      unoptimized
+                    />
                   </div>
+
+                  {/* 
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3
-                      className="text-lg font-bold text-white mb-1"
-                      style={{
-                        fontFamily: '"Helvetica Neue", Arial, sans-serif',
-                      }}
-                    >
+                    <h3 className="text-lg font-bold text-white mb-1">
                       {getTitle(service)}
                     </h3>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Content Section */}
@@ -262,7 +241,7 @@ export default function BusinessPage() {
 
                   <div className="flex gap-2">
                     <Button
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 flex-1 text-sm"
+                      className="bg-[#1C3990] hover:bg-[#162c6d] text-white px-4 py-2 flex-1 text-sm"
                       style={{
                         fontFamily: '"Helvetica Neue", Arial, sans-serif',
                       }}
@@ -272,7 +251,7 @@ export default function BusinessPage() {
                     <Button
                       asChild
                       variant="outline"
-                      className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 text-sm"
+                      className="border-[#1C3990] text-[#162c6d] hover:bg-[#1C3990]  hover:text-white px-4 py-2 text-sm"
                       style={{
                         fontFamily: '"Helvetica Neue", Arial, sans-serif',
                       }}
@@ -290,7 +269,7 @@ export default function BusinessPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-blue-600">
+      <section className="py-20 bg-[#3C5DAE]">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2
@@ -316,10 +295,17 @@ export default function BusinessPage() {
             <Button
               asChild
               size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100 px-12 py-4 text-lg"
+              className="bg-white text-[#3C5DAE] hover:bg-gray-100 px-12 py-4 text-lg"
               style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}
             >
-              <Link href="/contact">
+              <Link href="/contact" className="flex items-center gap-6">
+                <Image
+                  src="/svg/tel.svg"
+                  alt="Telefon"
+                  width={24}
+                  height={24}
+                  className="text-[#3C5DAE]"
+                />
                 {content[language as keyof typeof content].contactUs}
               </Link>
             </Button>

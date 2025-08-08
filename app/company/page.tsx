@@ -1,21 +1,27 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import Link from "next/link"
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function CompanyPage() {
-  const [language] = useState("UZ")
+  const [language] = useState("UZ");
 
   const content = {
     UZ: {
-      title: "Kompaniya haqida",
-      companyOverview: "Kompaniya haqida qisqacha",
-      presidentMessage: "Prezident xabari",
+      title: "Kompaniya haqida qisqacha",
+
+      presidentMessage: "Bosh Direktor",
       presidentName: "Nobuaki Terashiki",
-      presidentTitle: "Prezident va Bosh direktor",
+      presidentTitle: "Bosh direktor",
       sections: "Kompaniya bo'limlari",
       viewDetails: "Batafsil ko'rish",
     },
@@ -37,7 +43,7 @@ export default function CompanyPage() {
       sections: "Company Sections",
       viewDetails: "View Details",
     },
-  }
+  };
 
   const companySections = [
     {
@@ -45,10 +51,13 @@ export default function CompanyPage() {
       titleUZ: "Boshqaruv Ko'rinishi",
       titleRU: "Видение Управления",
       titleEN: "Management Vision",
-      descriptionUZ: "Kompaniya missiyasi, boshqaruv falsafasi va odob-axloq tamoyillari",
-      descriptionRU: "Миссия компании, философия управления и этические принципы",
-      descriptionEN: "Company mission, management philosophy and ethical principles",
-      image: "/placeholder.svg?height=200&width=300",
+      descriptionUZ:
+        "Kompaniya missiyasi, boshqaruv falsafasi",
+      descriptionRU:
+        "Миссия компании, философия управления и этические принципы",
+      descriptionEN:
+        "Company mission, management philosophy and ethical principles",
+      image: "/svg/boshqaruvko'rinishi.svg?height=200&width=300",
     },
     {
       id: "company-history",
@@ -58,7 +67,7 @@ export default function CompanyPage() {
       descriptionUZ: "2009 yildan bugungi kungacha bo'lgan rivojlanish yo'li",
       descriptionRU: "Путь развития с 2009 года до сегодняшнего дня",
       descriptionEN: "Development path from 2009 to the present day",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/svg/kompaniyatarixi.svg?height=200&width=300",
     },
     {
       id: "organizational-structure",
@@ -68,7 +77,7 @@ export default function CompanyPage() {
       descriptionUZ: "Kompaniya bo'limlari va boshqaruv ierarxiyasi",
       descriptionRU: "Отделы компании и управленческая иерархия",
       descriptionEN: "Company departments and management hierarchy",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/svg/tashkiliytuzilma.svg?height=200&width=300",
     },
     {
       id: "partners-banks",
@@ -78,7 +87,7 @@ export default function CompanyPage() {
       descriptionUZ: "Moliyaviy hamkorlar va strategik ittifoqchilar",
       descriptionRU: "Финансовые партнеры и стратегические союзники",
       descriptionEN: "Financial partners and strategic allies",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/svg/asosiyhamkor.svg?height=200&width=300",
     },
     {
       id: "general-info",
@@ -88,51 +97,53 @@ export default function CompanyPage() {
       descriptionUZ: "Kompaniya profili va joylashuv xaritasi",
       descriptionRU: "Профиль компании и карта расположения",
       descriptionEN: "Company profile and location map",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/svg/kompaniyahaqida.svg?height=200&width=300",
     },
-  ]
+  ];
 
   const getTitle = (section: any) => {
     switch (language) {
       case "RU":
-        return section.titleRU
+        return section.titleRU;
       case "EN":
-        return section.titleEN
+        return section.titleEN;
       default:
-        return section.titleUZ
+        return section.titleUZ;
     }
-  }
+  };
 
   const getDescription = (section: any) => {
     switch (language) {
       case "RU":
-        return section.descriptionRU
+        return section.descriptionRU;
       case "EN":
-        return section.descriptionEN
+        return section.descriptionEN;
       default:
-        return section.descriptionUZ
+        return section.descriptionUZ;
     }
-  }
+  };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 border-2">
       {/* Page Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-[#1C3990] mb-4">{content[language as keyof typeof content].title}</h1>
+        <h1 className="font-bold text-[#1C3990] text-[60px] mb-[132px] mt-[86px]">
+          {content[language as keyof typeof content].title}
+        </h1>
       </div>
 
       {/* Company Overview */}
-      <section className="mb-16">
-        <Card className="shadow-lg border-0">
+      <section className="mb-[121px]">
+        <Card className=" border-0">
           <CardHeader>
             <CardTitle className="text-2xl text-[#1C3990]">
               {content[language as keyof typeof content].companyOverview}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <p className="text-gray-700 leading-relaxed mb-4">
+            <div className="grid md:grid-cols-2 gap-[231px] ">
+              <div className=" w-[516px] items-center justify-center ">
+                <p className="text-gray-700 leading-relaxed mb-[60px] mt-[70px]">
                   {language === "UZ" &&
                     "Tokyo Asset Solution 2009 yilda tashkil etilgan ko'chmas mulk va investitsiya sohasida faoliyat yurituvchi kompaniya hisoblanadi. Biz qayta qurish, renovatsiya, uzoq muddatli egalik va yashil energiya loyihalarida ixtisoslashganmiz."}
                   {language === "RU" &&
@@ -149,12 +160,13 @@ export default function CompanyPage() {
                     "Our goal is to create innovative solutions based on sustainable development principles and create long-term value for our clients."}
                 </p>
               </div>
-              <div className="flex justify-center">
+
+              <div className="flex ">
                 <Image
-                  src="/placeholder.svg?height=250&width=400"
+                  src="/svg/kompaniyaPageImg.svg?height=400&width=400"
                   alt="Company Building"
-                  width={400}
-                  height={250}
+                  width={450}
+                  height={450}
                   className="rounded-lg object-cover"
                 />
               </div>
@@ -166,28 +178,33 @@ export default function CompanyPage() {
       {/* President's Message */}
       <section className="mb-16">
         <Card className="shadow-lg border-0">
-          <CardHeader>
-            <CardTitle className="text-2xl text-[#1C3990]">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-2xl text-[#0A2C52] ml-[140px]">
               {content[language as keyof typeof content].presidentMessage}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-3 gap-8 items-start">
-              <div className="md:col-span-1">
+            <div className="grid md:grid-cols-3 gap-10 items-start">
+              {/* Chap taraf – rasm va ism */}
+              <div className="md:col-span-1 flex flex-col items-center">
                 <Image
-                  src="/placeholder.svg?height=300&width=250"
+                  src="/svg/direktor.svg"
                   alt={content[language as keyof typeof content].presidentName}
-                  width={250}
-                  height={300}
-                  className="rounded-lg object-cover w-full"
+                  width={345}
+                  height={345}
+                  className="rounded-lg object-cover"
                 />
                 <p className="text-center mt-4 font-semibold">
                   {content[language as keyof typeof content].presidentName}
                 </p>
-                <p className="text-center text-gray-600">{content[language as keyof typeof content].presidentTitle}</p>
+                <p className="text-center text-gray-600">
+                  {content[language as keyof typeof content].presidentTitle}
+                </p>
               </div>
+
+              {/* O‘ng taraf – matn */}
               <div className="md:col-span-2">
-                <div className="text-base text-gray-700 leading-relaxed space-y-4">
+                <div className="text-base text-gray-700 leading-relaxed space-y-5 max-w-[720px]">
                   <p>
                     {language === "UZ" &&
                       "Hurmatli hamkorlar va mijozlar! Tokyo Asset Solution kompaniyasining prezidenti sifatida sizlarni tabriklayman. Bizning kompaniyamiz 2009 yildan beri ko'chmas mulk sohasida innovatsion yechimlar yaratib kelmoqda."}
@@ -221,16 +238,19 @@ export default function CompanyPage() {
 
       {/* Company Sections */}
       <section>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-[#1C3990] mb-4">
+        <div className="text-center mb-12 ">
+          <h2 className="text-[30px] font-bold text-[#0A2C52] mb-4">
             {content[language as keyof typeof content].sections}
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 ">
           {companySections.map((section) => (
-            <Card key={section.id} className="hover:shadow-lg transition-shadow cursor-pointer group overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
+            <Card
+              key={section.id}
+              className="hover:shadow-lg transition-shadow cursor-pointer group overflow-hidden "
+            >
+              <div className="relative h-48 overflow-hidden ">
                 <Image
                   src={section.image || "/placeholder.svg"}
                   alt={getTitle(section)}
@@ -238,14 +258,23 @@ export default function CompanyPage() {
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-lg font-bold text-white">{getTitle(section)}</h3>
-                </div>
+ 
               </div>
-              <CardContent className="p-6">
-                <CardDescription className="text-center mb-4">{getDescription(section)}</CardDescription>
-                <Button asChild className="w-full bg-[#1C3990] hover:bg-[#2d4a9b]">
-                  <Link href={`/company/${section.id}`}>{content[language as keyof typeof content].viewDetails}</Link>
+              <CardContent className="p-8">
+                <h3 className="text-[18px] font-bold text-[#0A2C52]">
+                  {getTitle(section)}
+                </h3>
+
+                <CardDescription className="text-[14px] mt-[10px] mb-[10px] h-[30px]">
+                  {getDescription(section)}
+                </CardDescription>
+                <Button
+                  asChild
+                  className="w-full bg-[#1C3990] hover:bg-[#2d4a9b]"
+                >
+                  <Link href={`/company/${section.id}`}>
+                    {content[language as keyof typeof content].viewDetails}
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -253,5 +282,5 @@ export default function CompanyPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
