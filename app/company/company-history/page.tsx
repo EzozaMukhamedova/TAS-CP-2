@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export default function CompanyHistoryPage() {
-  const [language] = useState("UZ")
+  const [language] = useState("UZ");
 
   const content = {
     UZ: {
@@ -32,7 +32,7 @@ export default function CompanyHistoryPage() {
       timeline: "Historical Events",
       otherSections: "Other Sections",
     },
-  }
+  };
 
   const historyEvents = [
     {
@@ -72,7 +72,8 @@ export default function CompanyHistoryPage() {
     {
       year: "2018",
       month: "12",
-      eventUZ: "Birinchi yangi qurilgan ijara kvartirasining qurilishi tugallandi",
+      eventUZ:
+        "Birinchi yangi qurilgan ijara kvartirasining qurilishi tugallandi",
       eventRU: "Завершено строительство первой новой арендной квартиры",
       eventEN: "Completion of construction of the first new rental apartment",
     },
@@ -89,7 +90,8 @@ export default function CompanyHistoryPage() {
     {
       year: "2022",
       month: "12",
-      eventUZ: "Xokkaydo shamol energiyasini ishlab chiqarish loyihasi boshlanadi",
+      eventUZ:
+        "Xokkaydo shamol energiyasini ishlab chiqarish loyihasi boshlanadi",
       eventRU: "Начинается проект по производству ветровой энергии в Хоккайдо",
       eventEN: "Hokkaido wind energy production project begins",
     },
@@ -106,8 +108,10 @@ export default function CompanyHistoryPage() {
     {
       year: "2023",
       month: "11",
-      eventUZ: "100% qayta tiklanadigan energiyani e'lon qiladi va RE Actionda ishtirok etadi",
-      eventRU: "Объявляет о 100% возобновляемой энергии и участвует в RE Action",
+      eventUZ:
+        "100% qayta tiklanadigan energiyani e'lon qiladi va RE Actionda ishtirok etadi",
+      eventRU:
+        "Объявляет о 100% возобновляемой энергии и участвует в RE Action",
       eventEN: "Announces 100% renewable energy and participates in RE Action",
     },
     {
@@ -124,7 +128,7 @@ export default function CompanyHistoryPage() {
       eventRU: "Шинтаро Танахара назначен председателем правления",
       eventEN: "Shintaro Tanahara appointed as Chairman",
     },
-  ]
+  ];
 
   const otherSections = [
     {
@@ -145,22 +149,27 @@ export default function CompanyHistoryPage() {
       titleRU: "Партнерские Организации",
       titleEN: "Partner Organizations",
     },
-    { id: "general-info", titleUZ: "Umumiy Ma'lumot", titleRU: "Общая Информация", titleEN: "General Information" },
-  ]
+    {
+      id: "general-info",
+      titleUZ: "Umumiy Ma'lumot",
+      titleRU: "Общая Информация",
+      titleEN: "General Information",
+    },
+  ];
 
   const getEvent = (event: any) => {
     switch (language) {
       case "RU":
-        return event.eventRU
+        return event.eventRU;
       case "EN":
-        return event.eventEN
+        return event.eventEN;
       default:
-        return event.eventUZ
+        return event.eventUZ;
     }
-  }
+  };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 ">
       {/* Back Button */}
       <div className="mb-8">
         <Button asChild variant="outline" className="flex items-center gap-2">
@@ -175,7 +184,9 @@ export default function CompanyHistoryPage() {
       <div className="grid lg:grid-cols-2 gap-8 mb-12">
         <div className="lg:col-span-1">
           <Image
-            src="/placeholder.svg?height=400&width=500"
+            src="/svg/kompaniyatarixi.svg?height=200&width=300"
+          
+   
             alt="Company History"
             width={500}
             height={400}
@@ -183,7 +194,9 @@ export default function CompanyHistoryPage() {
           />
         </div>
         <div className="lg:col-span-1 flex flex-col justify-center">
-          <h1 className="text-4xl font-bold text-[#1C3990] mb-6">{content[language as keyof typeof content].title}</h1>
+          <h1 className="text-4xl font-bold text-[#1C3990] mb-6">
+            {content[language as keyof typeof content].title}
+          </h1>
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>
               {language === "UZ" &&
@@ -235,7 +248,9 @@ export default function CompanyHistoryPage() {
                     <div className="flex-1 bg-gray-50 p-6 rounded-lg">
                       <div className="flex items-start gap-4">
                         <div className="flex-1">
-                          <p className="text-gray-700 leading-relaxed">{getEvent(event)}</p>
+                          <p className="text-gray-700 leading-relaxed">
+                            {getEvent(event)}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -265,7 +280,11 @@ export default function CompanyHistoryPage() {
                   className="h-auto p-4 justify-start border-[#1C3990] text-[#1C3990] hover:bg-[#1C3990] hover:text-white"
                 >
                   <Link href={`/company/${section.id}`}>
-                    {language === "RU" ? section.titleRU : language === "EN" ? section.titleEN : section.titleUZ}
+                    {language === "RU"
+                      ? section.titleRU
+                      : language === "EN"
+                      ? section.titleEN
+                      : section.titleUZ}
                   </Link>
                 </Button>
               ))}
@@ -274,5 +293,5 @@ export default function CompanyHistoryPage() {
         </Card>
       </section>
     </div>
-  )
+  );
 }

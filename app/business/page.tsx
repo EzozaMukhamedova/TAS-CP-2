@@ -35,7 +35,7 @@ export default function BusinessPage() {
 
   const services = [
     {
-      id: "redevelopment",
+      id: "qayta-qurish",
 
       titleUZ: "Qayta qurish va tiklash",
       titleRU: "Реконструкция",
@@ -46,10 +46,10 @@ export default function BusinessPage() {
         "Через наш сервис сноса старых и устаревших зданий и их реконструкции на основе современной архитектуры мы помогаем обновить городской пейзаж.",
       descriptionEN:
         "Through our service of demolishing old and outdated buildings and reconstructing them based on modern architecture, we help renew the urban landscape.",
-      image: "/svg/qaytaqurish.svg?height=300&width=400",
+      image: "/svg/qaytaQurishTiklanish.svg",
     },
     {
-      id: "renovation",
+      id: "kochmas-mulk",
 
       titleUZ: "Ko'chmas mulk va rivojlantirish",
       titleRU: "Реновация",
@@ -60,10 +60,10 @@ export default function BusinessPage() {
         "Мы повышаем стоимость существующих зданий, адаптируя их внутренний дизайн и структурную прочность к современным стандартам.",
       descriptionEN:
         "We increase the value of existing buildings by adapting their interior design and structural strength to modern standards.",
-      image: "/svg/kochmasmulk.svg",
+      image: "/svg/kochmasMulk1.svg",
     },
     {
-      id: "holding",
+      id: "logistika-inshootlari",
 
       titleUZ: "Logistika inshootlari",
       titleRU: "Долгосрочное Владение",
@@ -78,7 +78,7 @@ export default function BusinessPage() {
     },
 
     {
-      id: "overseas",
+      id: "bizness",
 
       titleUZ: "M&A Biznes",
       titleRU: "Международный Бизнес",
@@ -89,10 +89,10 @@ export default function BusinessPage() {
         "Мы предоставляем возможность получения стабильного дохода в долларах через стратегические проекты на Филиппинах и в Камбодже.",
       descriptionEN:
         "We provide opportunities for stable dollar-based income through strategic projects in the Philippines and Cambodia.",
-      image: "/svg/bisness.svg",
+      image: "/svg/bizness.svg",
     },
     {
-      id: "consulting",
+      id: "fond-boshqaruvi",
 
       titleUZ: "Fondlarni boshqarish loyihalari",
       titleRU: "Консалтинг по Активам",
@@ -106,7 +106,7 @@ export default function BusinessPage() {
       image: "/svg/fond.svg",
     },
     {
-      id: "investment",
+      id: "professional-mulk",
 
       titleUZ: "Professional mulk boshqaruvi loyihalari",
       titleRU: "Управление Инвестициями",
@@ -120,20 +120,20 @@ export default function BusinessPage() {
       image: "/svg/professional.svg",
     },
     {
-      id: "property-management",
+      id: "xalqaro-loyihalar",
 
       titleUZ: "Xalqaro loyihalar",
       titleRU: "Управление Недвижимостью",
       titleEN: "Property Management",
-      descriptionUZ: "Xalqaro bozorlarida investitsiya loyihalari va hamkorlik",
+      descriptionUZ: "Xalqaro bozorlarida investitsiya loyihalari va hamkorlik qilish",
       descriptionRU:
         "Через наши профессиональные услуги управления недвижимостью мы контролируем отношения с арендаторами и сохраняем стоимость недвижимости.",
       descriptionEN:
         "Through our professional property management services, we control tenant relationships and preserve property value.",
-      image: "/svg/xalqaroloyihalar.svg",
+      image: "/svg/xalqaroLoyihlar.svg",
     },
     {
-      id: "development",
+      id: "qayta-energiya",
 
       titleUZ: "Qayta Tiklanadigan Energiya",
       titleRU: "Проекты Развития",
@@ -144,7 +144,7 @@ export default function BusinessPage() {
         "Планируя и реализуя новые строительные проекты, мы создаем современную среду для жизни и работы.",
       descriptionEN:
         "By planning and implementing new construction projects, we create modern living and working environments.",
-      image: "/svg/qaytatiklanish.svg",
+      image: "/svg/qaytaqurish.svg",
     },
   ];
 
@@ -177,7 +177,7 @@ export default function BusinessPage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1
-              className="text-5xl md:text-[60px] font-bold text-[#1C3990] mb-6 mt-[86px]"
+              className="text-5xl md:text-[60px] font-bold text-[#1C3990] mb-6 mt-[66px]"
               style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}
             >
               {content[language as keyof typeof content].title}
@@ -196,7 +196,7 @@ export default function BusinessPage() {
       </section>
 
       {/* Modern Services Layout - 3x3 Grid */}
-      <section className="py-20">
+      <section className="pt-[30px] pb-[100px]">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
@@ -204,17 +204,31 @@ export default function BusinessPage() {
                 key={service.id}
                 className="group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-0 bg-white"
               >
-                {/* Image Section */}
+                {/* Image Section (DROP-IN REPLACEMENT) */}
                 <div className="relative h-48 overflow-hidden">
-                  <div className="relative h-48 w-full overflow-hidden">
-                    <Image
-                      src={service.image.replace(/\?.*$/, "")} 
-                      alt={getTitle(service)}
-                      width={400}
-                      height={192}
-                      className="w-full h-full object-contain" 
-                      unoptimized
-                    />
+                  {/* Rasm */}
+                  <img
+                    src={service.image.replace(/\?.*$/, "")}
+                    alt={getTitle(service)}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 cursor-pointer"
+                    loading="lazy"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src =
+                        "/svg/placeholder.svg";
+                    }}
+                  />
+
+                  {/* Gradient overlay */}
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent
+                  transition-opacity duration-300 group-hover:from-black/80 group-hover:via-black/30"
+                  />
+
+                  {/* Sarlavha (nom) */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-white text-lg font-semibold leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                      {getTitle(service)}
+                    </h3>
                   </div>
 
                   {/* 
@@ -238,20 +252,30 @@ export default function BusinessPage() {
                       {getDescription(service)}
                     </p>
                   </div>
-
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                     <Button
-                      className="bg-[#1C3990] hover:bg-[#162c6d] text-white px-4 py-2 flex-1 text-sm"
+                      fluid
+                      size="default"
+                      className="bg-[#1C3990] hover:bg-[#162c6d] text-white"
                       style={{
                         fontFamily: '"Helvetica Neue", Arial, sans-serif',
                       }}
                     >
-                      {content[language as keyof typeof content].learnMore}
+                      {/* <Link href={`/company/ ${section.id}`}>
+                        {content[language as keyof typeof content].learnMore}
+                      </Link> */}
+
+                      <Link href={`/business/${service.id}`}>
+                        {content[language as "UZ" | "RU" | "EN"].learnMore}
+                      </Link>
                     </Button>
+
                     <Button
                       asChild
                       variant="outline"
-                      className="border-[#1C3990] text-[#162c6d] hover:bg-[#1C3990]  hover:text-white px-4 py-2 text-sm"
+                      fluid
+                      size="default"
+                      className="border-[#1C3990] text-[#162c6d] hover:bg-[#1C3990] hover:text-white"
                       style={{
                         fontFamily: '"Helvetica Neue", Arial, sans-serif',
                       }}
@@ -261,6 +285,34 @@ export default function BusinessPage() {
                       </Link>
                     </Button>
                   </div>
+
+                  {/* <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                    <Button
+                      fluid
+                      size="default"
+                      className="bg-[#1C3990] hover:bg-[#162c6d] text-white"
+                      style={{
+                        fontFamily: '"Helvetica Neue", Arial, sans-serif',
+                      }}
+                    >
+                      {content[language as keyof typeof content].learnMore}
+                    </Button>
+
+                    <Button
+                      asChild
+                      variant="outline"
+                      fluid
+                      size="default"
+                      className="border-[#1C3990] text-[#162c6d] hover:bg-[#1C3990] hover:text-white"
+                      style={{
+                        fontFamily: '"Helvetica Neue", Arial, sans-serif',
+                      }}
+                    >
+                      <Link href="/contact">
+                        {content[language as keyof typeof content].contactUs}
+                      </Link>
+                    </Button>
+                  </div> */}
                 </CardContent>
               </Card>
             ))}

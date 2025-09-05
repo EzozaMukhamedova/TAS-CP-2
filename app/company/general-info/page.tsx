@@ -1,13 +1,22 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { ArrowLeft, MapPin, Phone, VoicemailIcon as Fax, Calendar, Users, Building } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  ArrowLeft,
+  MapPin,
+  Phone,
+  VoicemailIcon as Fax,
+  Calendar,
+  Users,
+  Building,
+} from "lucide-react";
 
 export default function GeneralInfoPage() {
-  const [language] = useState("UZ")
+  const [language] = useState("UZ");
 
   const content = {
     UZ: {
@@ -34,12 +43,13 @@ export default function GeneralInfoPage() {
       access: "Access",
       otherSections: "Other Sections",
     },
-  }
+  };
 
   const companyData = {
     UZ: {
       companyName: "Tokyo Asset Solution Co., Ltd.",
-      location: "2-qavat, Urban Toranomon binosi, 1-16-4 Toranomon, Minato-ku, Tokio 105-0001",
+      location:
+        "2-qavat, Urban Toranomon binosi, 1-16-4 Toranomon, Minato-ku, Tokio 105-0001",
       phone: "03-5510-8300 (Vakil)",
       fax: "03-5510-8305",
       establishedDate: "2009 yil 30 yanvar",
@@ -70,13 +80,17 @@ export default function GeneralInfoPage() {
       ],
       qualifiedPersons: [
         { title: "Ko'chmas mulk agenti", count: "31 kishi" },
-        { title: "Ijara mulkini boshqarish bo'yicha maslahatchi", count: "3 kishi" },
+        {
+          title: "Ijara mulkini boshqarish bo'yicha maslahatchi",
+          count: "3 kishi",
+        },
         { title: "Birinchi darajali arxitektor", count: "6 kishi" },
       ],
     },
     RU: {
       companyName: "Tokyo Asset Solution Co., Ltd.",
-      location: "2-й этаж, здание Urban Toranomon, 1-16-4 Toranomon, Minato-ku, Tokyo 105-0001",
+      location:
+        "2-й этаж, здание Urban Toranomon, 1-16-4 Toranomon, Minato-ku, Tokyo 105-0001",
       phone: "03-5510-8300 (Представитель)",
       fax: "03-5510-8305",
       establishedDate: "30 января 2009 года",
@@ -94,7 +108,10 @@ export default function GeneralInfoPage() {
         "Бизнес возобновляемой энергии",
       ],
       shareholders: "TAS HOLDINGS Co., Ltd.",
-      subsidiaries: ["TAS Property Partners Inc. (100% владение)", "Kansai Asset Solution Co., Ltd. (100% владение)"],
+      subsidiaries: [
+        "TAS Property Partners Inc. (100% владение)",
+        "Kansai Asset Solution Co., Ltd. (100% владение)",
+      ],
       fiscalYearEnd: "декабрь",
       licenses: [
         "Бизнес сделок с недвижимостью губернатор Токио (4) № 90385",
@@ -104,13 +121,17 @@ export default function GeneralInfoPage() {
       ],
       qualifiedPersons: [
         { title: "Агент по недвижимости", count: "31 человек" },
-        { title: "Консультант по управлению арендной недвижимостью", count: "3 человека" },
+        {
+          title: "Консультант по управлению арендной недвижимостью",
+          count: "3 человека",
+        },
         { title: "Архитектор первого класса", count: "6 человек" },
       ],
     },
     EN: {
       companyName: "Tokyo Asset Solution Co., Ltd.",
-      location: "2nd floor, Urban Toranomon Building, 1-16-4 Toranomon, Minato-ku, Tokyo 105-0001",
+      location:
+        "2nd floor, Urban Toranomon Building, 1-16-4 Toranomon, Minato-ku, Tokyo 105-0001",
       phone: "03-5510-8300 (Representative)",
       fax: "03-5510-8305",
       establishedDate: "January 30, 2009",
@@ -128,7 +149,10 @@ export default function GeneralInfoPage() {
         "Renewable energy business",
       ],
       shareholders: "TAS HOLDINGS Co., Ltd.",
-      subsidiaries: ["TAS Property Partners Inc. (100% ownership)", "Kansai Asset Solution Co., Ltd. (100% ownership)"],
+      subsidiaries: [
+        "TAS Property Partners Inc. (100% ownership)",
+        "Kansai Asset Solution Co., Ltd. (100% ownership)",
+      ],
       fiscalYearEnd: "December",
       licenses: [
         "Real estate transaction business Tokyo Governor (4) No. 90385",
@@ -142,26 +166,58 @@ export default function GeneralInfoPage() {
         { title: "First-class architect", count: "6 people" },
       ],
     },
-  }
+  };
 
   const executives = {
     UZ: [
       { position: "Prezident va bosh direktor", name: "Nobuaki Terashiki" },
       { position: "Boshqaruv raisi", name: "Shintaro Tanahara" },
-      { position: "Ko'chmas mulk biznesi bo'limi direktori va ijrochi direktori, bosh menejeri", name: "Yuji Sakamu" },
-      { position: "Ijrochi direktor, investitsiyalarni rejalashtirish bo'limi boshlig'i", name: "Takashi Numata" },
-      { position: "Ijrochi direktor, rejalashtirish va boshqarish bo'limi boshlig'i", name: "Norio Yamada" },
-      { position: "Korporativ rejalashtirish departamenti ijrochi direktori, bosh menejeri", name: "Tomoaki Xoriba" },
+      {
+        position:
+          "Ko'chmas mulk biznesi bo'limi direktori va ijrochi direktori, bosh menejeri",
+        name: "Yuji Sakamu",
+      },
+      {
+        position:
+          "Ijrochi direktor, investitsiyalarni rejalashtirish bo'limi boshlig'i",
+        name: "Takashi Numata",
+      },
+      {
+        position:
+          "Ijrochi direktor, rejalashtirish va boshqarish bo'limi boshlig'i",
+        name: "Norio Yamada",
+      },
+      {
+        position:
+          "Korporativ rejalashtirish departamenti ijrochi direktori, bosh menejeri",
+        name: "Tomoaki Xoriba",
+      },
       { position: "Audit va Kuzatuv kengashi a'zosi", name: "Hideyuki Ogiya" },
     ],
     RU: [
-      { position: "Президент и генеральный директор", name: "Нобуаки Терашики" },
-      { position: "Председатель правления", name: "Шинтаро Танахара" },
-      { position: "Директор отдела недвижимости и исполнительный директор, генеральный менеджер", name: "Юдзи Сакаму" },
-      { position: "Исполнительный директор, руководитель отдела планирования инвестиций", name: "Такаши Нумата" },
-      { position: "Исполнительный директор, руководитель отдела планирования и управления", name: "Норио Ямада" },
       {
-        position: "Исполнительный директор отдела корпоративного планирования, генеральный менеджер",
+        position: "Президент и генеральный директор",
+        name: "Нобуаки Терашики",
+      },
+      { position: "Председатель правления", name: "Шинтаро Танахара" },
+      {
+        position:
+          "Директор отдела недвижимости и исполнительный директор, генеральный менеджер",
+        name: "Юдзи Сакаму",
+      },
+      {
+        position:
+          "Исполнительный директор, руководитель отдела планирования инвестиций",
+        name: "Такаши Нумата",
+      },
+      {
+        position:
+          "Исполнительный директор, руководитель отдела планирования и управления",
+        name: "Норио Ямада",
+      },
+      {
+        position:
+          "Исполнительный директор отдела корпоративного планирования, генеральный менеджер",
         name: "Томоаки Хориба",
       },
       { position: "Член совета по аудиту и надзору", name: "Хидеюки Огия" },
@@ -170,15 +226,30 @@ export default function GeneralInfoPage() {
       { position: "President and CEO", name: "Nobuaki Terashiki" },
       { position: "Chairman", name: "Shintaro Tanahara" },
       {
-        position: "Real Estate Business Division Director and Executive Director, General Manager",
+        position:
+          "Real Estate Business Division Director and Executive Director, General Manager",
         name: "Yuji Sakamu",
       },
-      { position: "Executive Director, Investment Planning Department Manager", name: "Takashi Numata" },
-      { position: "Executive Director, Planning and Management Department Manager", name: "Norio Yamada" },
-      { position: "Corporate Planning Department Executive Director, General Manager", name: "Tomoaki Horiba" },
-      { position: "Audit and Supervisory Board Member", name: "Hideyuki Ogiya" },
+      {
+        position: "Executive Director, Investment Planning Department Manager",
+        name: "Takashi Numata",
+      },
+      {
+        position:
+          "Executive Director, Planning and Management Department Manager",
+        name: "Norio Yamada",
+      },
+      {
+        position:
+          "Corporate Planning Department Executive Director, General Manager",
+        name: "Tomoaki Horiba",
+      },
+      {
+        position: "Audit and Supervisory Board Member",
+        name: "Hideyuki Ogiya",
+      },
     ],
-  }
+  };
 
   const otherSections = [
     {
@@ -187,7 +258,12 @@ export default function GeneralInfoPage() {
       titleRU: "Видение Управления",
       titleEN: "Management Vision",
     },
-    { id: "company-history", titleUZ: "Kompaniya Tarixi", titleRU: "История Компании", titleEN: "Company History" },
+    {
+      id: "company-history",
+      titleUZ: "Kompaniya Tarixi",
+      titleRU: "История Компании",
+      titleEN: "Company History",
+    },
     {
       id: "organizational-structure",
       titleUZ: "Tashkiliy Tuzilma",
@@ -200,32 +276,32 @@ export default function GeneralInfoPage() {
       titleRU: "Партнерские Организации",
       titleEN: "Partner Organizations",
     },
-  ]
+  ];
 
   const getCurrentData = () => {
     switch (language) {
       case "RU":
-        return companyData.RU
+        return companyData.RU;
       case "EN":
-        return companyData.EN
+        return companyData.EN;
       default:
-        return companyData.UZ
+        return companyData.UZ;
     }
-  }
+  };
 
   const getCurrentExecutives = () => {
     switch (language) {
       case "RU":
-        return executives.RU
+        return executives.RU;
       case "EN":
-        return executives.EN
+        return executives.EN;
       default:
-        return executives.UZ
+        return executives.UZ;
     }
-  }
+  };
 
-  const data = getCurrentData()
-  const executiveData = getCurrentExecutives()
+  const data = getCurrentData();
+  const executiveData = getCurrentExecutives();
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -241,7 +317,9 @@ export default function GeneralInfoPage() {
 
       {/* Page Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-[#1C3990] mb-6">{content[language as keyof typeof content].title}</h1>
+        <h1 className="text-4xl font-bold text-[#1C3990] mb-6">
+          {content[language as keyof typeof content].title}
+        </h1>
       </div>
 
       {/* Company Profile */}
@@ -330,9 +408,13 @@ export default function GeneralInfoPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 bg-[#1C3990] text-white rounded-full flex items-center justify-center text-sm mt-1">
-                    ¥
-                  </div>
+                  <Image
+                    src="/svg/dollar.svg"
+                    alt="Dollar"
+                    width={24}
+                    height={24}
+                    className="mt-1"
+                  />
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">
                       {language === "UZ" && "Kapital"}
@@ -373,7 +455,10 @@ export default function GeneralInfoPage() {
           <CardContent>
             <div className="grid md:grid-cols-2 gap-4">
               {data.businessContent.map((content, index) => (
-                <div key={index} className="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
+                <div
+                  key={index}
+                  className="flex items-start gap-3 p-4 bg-blue-50 rounded-lg"
+                >
                   <div className="w-6 h-6 bg-[#1C3990] text-white rounded-full flex items-center justify-center text-sm font-bold">
                     {index + 1}
                   </div>
@@ -401,13 +486,20 @@ export default function GeneralInfoPage() {
           <CardContent>
             <div className="space-y-4">
               {executiveData.map((executive, index) => (
-                <div key={index} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                <div
+                  key={index}
+                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg"
+                >
                   <div className="w-12 h-12 bg-[#1C3990] text-white rounded-full flex items-center justify-center font-bold">
                     {executive.name.charAt(0)}
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900">{executive.name}</h3>
-                    <p className="text-gray-600 text-sm">{executive.position}</p>
+                    <h3 className="font-semibold text-gray-900">
+                      {executive.name}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {executive.position}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -429,7 +521,9 @@ export default function GeneralInfoPage() {
               <div className="flex items-start gap-4 mb-4">
                 <MapPin className="h-6 w-6 text-[#1C3990] mt-1" />
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{data.location}</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    {data.location}
+                  </h3>
                   <p className="text-gray-700">
                     {language === "UZ" &&
                       "Tokio Metro Ginza liniyasidagi Toranomon stantsiyasidan 3 daqiqalik piyoda, Tokio Metro Hibiya liniyasidagi Toranomon Hills stantsiyasidan 4 daqiqalik piyoda."}
@@ -463,7 +557,11 @@ export default function GeneralInfoPage() {
                   className="h-auto p-4 justify-start border-[#1C3990] text-[#1C3990] hover:bg-[#1C3990] hover:text-white"
                 >
                   <Link href={`/company/${section.id}`}>
-                    {language === "RU" ? section.titleRU : language === "EN" ? section.titleEN : section.titleUZ}
+                    {language === "RU"
+                      ? section.titleRU
+                      : language === "EN"
+                      ? section.titleEN
+                      : section.titleUZ}
                   </Link>
                 </Button>
               ))}
@@ -472,5 +570,5 @@ export default function GeneralInfoPage() {
         </Card>
       </section>
     </div>
-  )
+  );
 }

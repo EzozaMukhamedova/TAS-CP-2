@@ -29,7 +29,7 @@ export default function ServicesOverview() {
 
   const services = [
     {
-      iconImage: "/svg/mulkBoshqaruvi.svg",
+      iconImage: "/svg/mulkBoshqaruviicon.svg",
       titleUZ: "Mulk Boshqaruvi",
       titleRU: "Управление Недвижимостью",
       titleEN: "Property Management",
@@ -112,7 +112,7 @@ export default function ServicesOverview() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0A2C52] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#173758] mb-6">
             {content[language as keyof typeof content].title}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">

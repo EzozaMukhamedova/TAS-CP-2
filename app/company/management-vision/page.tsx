@@ -124,7 +124,8 @@ export default function ManagementVisionPage() {
       <div className="grid lg:grid-cols-2 gap-8 mb-12">
         <div className="lg:col-span-1">
           <Image
-            src="/placeholder.svg?height=400&width=500"
+            src="/svg/boshqaruvKorinishi1.png?height=400&width=500"
+            // src="/svg/boshqaruvko'rinishi.svg?height=200&width=300"
             alt="Management Vision"
             width={500}
             height={400}

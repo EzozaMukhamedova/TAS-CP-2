@@ -19,9 +19,9 @@ export default function CompanyPage() {
     UZ: {
       title: "Kompaniya haqida qisqacha",
 
-      presidentMessage: "Bosh Direktor",
-      presidentName: "Nobuaki Terashiki",
-      presidentTitle: "Bosh direktor",
+      presidentMessage: "Kompaniya Vakillari",
+      presidentName: "O'ng tarafdagi: Azizbek va chap tarafdagi: Takashima",
+      // presidentTitle: "Bosh direktor",
       sections: "Kompaniya bo'limlari",
       viewDetails: "Batafsil ko'rish",
     },
@@ -51,13 +51,12 @@ export default function CompanyPage() {
       titleUZ: "Boshqaruv Ko'rinishi",
       titleRU: "Видение Управления",
       titleEN: "Management Vision",
-      descriptionUZ:
-        "Kompaniya missiyasi, boshqaruv falsafasi",
+      descriptionUZ: "Kompaniya missiyasi, boshqaruv falsafasi",
       descriptionRU:
         "Миссия компании, философия управления и этические принципы",
       descriptionEN:
         "Company mission, management philosophy and ethical principles",
-      image: "/svg/boshqaruvko'rinishi.svg?height=200&width=300",
+      image: "/svg/boshqaruvKorinishi1.png?height=200&width=300",
     },
     {
       id: "company-history",
@@ -124,7 +123,7 @@ export default function CompanyPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 border-2">
+    <div className="container mx-auto px-4 py-8">
       {/* Page Header */}
       <div className="text-center mb-12">
         <h1 className="font-bold text-[#1C3990] text-[60px] mb-[132px] mt-[86px]">
@@ -179,7 +178,7 @@ export default function CompanyPage() {
       <section className="mb-16">
         <Card className="shadow-lg border-0">
           <CardHeader className="pb-4">
-            <CardTitle className="text-2xl text-[#0A2C52] ml-[140px]">
+            <CardTitle className="text-2xl text-[#0A2C52] ml-[80px]">
               {content[language as keyof typeof content].presidentMessage}
             </CardTitle>
           </CardHeader>
@@ -188,13 +187,13 @@ export default function CompanyPage() {
               {/* Chap taraf – rasm va ism */}
               <div className="md:col-span-1 flex flex-col items-center">
                 <Image
-                  src="/svg/direktor.svg"
+                  src="/svg/boshdirektor2.png"
                   alt={content[language as keyof typeof content].presidentName}
                   width={345}
                   height={345}
                   className="rounded-lg object-cover"
                 />
-                <p className="text-center mt-4 font-semibold">
+                <p className="text-center mt-4 font-semibold w-[300px]">
                   {content[language as keyof typeof content].presidentName}
                 </p>
                 <p className="text-center text-gray-600">
@@ -258,7 +257,6 @@ export default function CompanyPage() {
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
- 
               </div>
               <CardContent className="p-8">
                 <h3 className="text-[18px] font-bold text-[#0A2C52]">
