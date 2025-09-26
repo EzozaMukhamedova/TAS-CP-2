@@ -12,16 +12,18 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
+type Lang = "UZ" | "RU" | "EN";
+
 export default function CompanyPage() {
-  const [language] = useState("UZ");
+  const [language] = useState<Lang>("UZ");
 
   const content = {
     UZ: {
       title: "Kompaniya haqida qisqacha",
-
+      // companyOverview: "Kompaniya haqida",
       presidentMessage: "Kompaniya Vakillari",
       presidentName: "O'ng tarafdagi: Azizbek va chap tarafdagi: Takashima",
-      // presidentTitle: "Bosh direktor",
+      presidentTitle: "—",
       sections: "Kompaniya bo'limlari",
       viewDetails: "Batafsil ko'rish",
     },
@@ -43,7 +45,7 @@ export default function CompanyPage() {
       sections: "Company Sections",
       viewDetails: "View Details",
     },
-  };
+  } satisfies Record<Lang, any>;
 
   const companySections = [
     {
@@ -56,7 +58,7 @@ export default function CompanyPage() {
         "Миссия компании, философия управления и этические принципы",
       descriptionEN:
         "Company mission, management philosophy and ethical principles",
-      image: "/svg/boshqaruvKorinishi1.png?height=200&width=300",
+      image: "/svg/boshqaruvKorinishi1.png",
     },
     {
       id: "company-history",
@@ -66,7 +68,7 @@ export default function CompanyPage() {
       descriptionUZ: "2009 yildan bugungi kungacha bo'lgan rivojlanish yo'li",
       descriptionRU: "Путь развития с 2009 года до сегодняшнего дня",
       descriptionEN: "Development path from 2009 to the present day",
-      image: "/svg/kompaniyatarixi.svg?height=200&width=300",
+      image: "/svg/kompaniyatarixi.svg",
     },
     {
       id: "organizational-structure",
@@ -76,7 +78,7 @@ export default function CompanyPage() {
       descriptionUZ: "Kompaniya bo'limlari va boshqaruv ierarxiyasi",
       descriptionRU: "Отделы компании и управленческая иерархия",
       descriptionEN: "Company departments and management hierarchy",
-      image: "/svg/tashkiliytuzilma.svg?height=200&width=300",
+      image: "/svg/tashkiliytuzilma.svg",
     },
     {
       id: "partners-banks",
@@ -86,7 +88,7 @@ export default function CompanyPage() {
       descriptionUZ: "Moliyaviy hamkorlar va strategik ittifoqchilar",
       descriptionRU: "Финансовые партнеры и стратегические союзники",
       descriptionEN: "Financial partners and strategic allies",
-      image: "/svg/asosiyhamkor.svg?height=200&width=300",
+      image: "/svg/asosiyhamkor.svg",
     },
     {
       id: "general-info",
@@ -96,7 +98,7 @@ export default function CompanyPage() {
       descriptionUZ: "Kompaniya profili va joylashuv xaritasi",
       descriptionRU: "Профиль компании и карта расположения",
       descriptionEN: "Company profile and location map",
-      image: "/svg/kompaniyahaqida.svg?height=200&width=300",
+      image: "/svg/kompaniyahaqida.svg",
     },
   ];
 
@@ -123,26 +125,26 @@ export default function CompanyPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
       {/* Page Header */}
-      <div className="text-center mb-12">
-        <h1 className="font-bold text-[#1C3990] text-[60px] mb-[132px] mt-[86px]">
-          {content[language as keyof typeof content].title}
+      <div className="text-center mb-10 md:mb-16 mt-[86px]">
+        <h1 className="font-bold text-[#1C3990] text-4xl sm:text-5xl md:text-5xl lg:text-6xl leading-tight">
+          {content[language].title}
         </h1>
       </div>
 
       {/* Company Overview */}
-      <section className="mb-[121px]">
-        <Card className=" border-0">
-          <CardHeader>
-            <CardTitle className="text-2xl text-[#1C3990]">
-              {content[language as keyof typeof content].companyOverview}
+      <section className="mb-12 md:mb-20">
+        <Card className="border-0">
+          <CardHeader className="pb-2 sm:pb-4">
+            <CardTitle className="text-xl sm:text-2xl text-[#1C3990]">
+              {content[language].companyOverview}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-2 gap-[231px] ">
-              <div className=" w-[516px] items-center justify-center ">
-                <p className="text-gray-700 leading-relaxed mb-[60px] mt-[70px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-center">
+              <div className="max-w-prose">
+                <p className="text-gray-700 leading-relaxed mb-6 sm:mb-8">
                   {language === "UZ" &&
                     "Tokyo Asset Solution 2009 yilda tashkil etilgan ko'chmas mulk va investitsiya sohasida faoliyat yurituvchi kompaniya hisoblanadi. Biz qayta qurish, renovatsiya, uzoq muddatli egalik va yashil energiya loyihalarida ixtisoslashganmiz."}
                   {language === "RU" &&
@@ -160,14 +162,17 @@ export default function CompanyPage() {
                 </p>
               </div>
 
-              <div className="flex ">
-                <Image
-                  src="/svg/kompaniyaPageImg.svg?height=400&width=400"
-                  alt="Company Building"
-                  width={450}
-                  height={450}
-                  className="rounded-lg object-cover"
-                />
+              <div className="relative w-full max-w-md md:max-w-none mx-auto">
+                <div className="relative aspect-square sm:aspect-[4/3] lg:aspect-[1/1]">
+                  <Image
+                    src="/svg/kompaniyaPageImg.svg"
+                    alt="Company Building"
+                    fill
+                    className="rounded-lg object-contain"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </CardContent>
@@ -175,35 +180,40 @@ export default function CompanyPage() {
       </section>
 
       {/* President's Message */}
-      <section className="mb-16">
+      <section className="mb-12 md:mb-16">
         <Card className="shadow-lg border-0">
-          <CardHeader className="pb-4">
-            <CardTitle className="text-2xl text-[#0A2C52] ml-[80px]">
-              {content[language as keyof typeof content].presidentMessage}
+          <CardHeader className="flex items-center justify-center gap-4">
+            <CardTitle className="text-xl sm:text-2xl text-[#0A2C52] text-center">
+              {content[language].presidentMessage}
             </CardTitle>
           </CardHeader>
+
           <CardContent>
-            <div className="grid md:grid-cols-3 gap-10 items-start">
-              {/* Chap taraf – rasm va ism */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
+              {/* Left – image & name */}
               <div className="md:col-span-1 flex flex-col items-center">
-                <Image
-                  src="/svg/boshdirektor2.png"
-                  alt={content[language as keyof typeof content].presidentName}
-                  width={345}
-                  height={345}
-                  className="rounded-lg object-cover"
-                />
-                <p className="text-center mt-4 font-semibold w-[300px]">
-                  {content[language as keyof typeof content].presidentName}
+                <div className="relative w-56 sm:w-64 md:w-full max-w-[345px] aspect-square">
+                  <Image
+                    src="/svg/boshdirektor2.png"
+                    alt={content[language].presidentName}
+                    fill
+                    className="rounded-lg object-cover"
+                    sizes="(max-width: 768px) 60vw, 345px"
+                  />
+                </div>
+                <p className="text-center mt-4 font-semibold px-4">
+                  {content[language].presidentName}
                 </p>
-                <p className="text-center text-gray-600">
-                  {content[language as keyof typeof content].presidentTitle}
-                </p>
+                {content[language].presidentTitle && (
+                  <p className="text-center text-gray-600">
+                    {content[language].presidentTitle}
+                  </p>
+                )}
               </div>
 
-              {/* O‘ng taraf – matn */}
+              {/* Right – text */}
               <div className="md:col-span-2">
-                <div className="text-base text-gray-700 leading-relaxed space-y-5 max-w-[720px]">
+                <div className="text-base sm:text-[17px] text-gray-700 leading-relaxed space-y-4 sm:space-y-5 max-w-none">
                   <p>
                     {language === "UZ" &&
                       "Hurmatli hamkorlar va mijozlar! Tokyo Asset Solution kompaniyasining prezidenti sifatida sizlarni tabriklayman. Bizning kompaniyamiz 2009 yildan beri ko'chmas mulk sohasida innovatsion yechimlar yaratib kelmoqda."}
@@ -237,41 +247,45 @@ export default function CompanyPage() {
 
       {/* Company Sections */}
       <section>
-        <div className="text-center mb-12 ">
-          <h2 className="text-[30px] font-bold text-[#0A2C52] mb-4">
-            {content[language as keyof typeof content].sections}
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#0A2C52]">
+            {content[language].sections}
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {companySections.map((section) => (
             <Card
               key={section.id}
-              className="hover:shadow-lg transition-shadow cursor-pointer group overflow-hidden "
+              className="hover:shadow-lg transition-shadow cursor-pointer group overflow-hidden"
             >
-              <div className="relative h-48 overflow-hidden ">
+              <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
                 <Image
                   src={section.image || "/placeholder.svg"}
                   alt={getTitle(section)}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
-              <CardContent className="p-8">
-                <h3 className="text-[18px] font-bold text-[#0A2C52]">
+
+              <CardContent className="p-5 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-[#0A2C52]">
                   {getTitle(section)}
                 </h3>
 
-                <CardDescription className="text-[14px] mt-[10px] mb-[10px] h-[30px]">
+                <CardDescription className="mt-2 mb-3 min-h-[1.5rem]">
                   {getDescription(section)}
                 </CardDescription>
+
                 <Button
                   asChild
                   className="w-full bg-[#1C3990] hover:bg-[#2d4a9b]"
+                  variant="default"
                 >
                   <Link href={`/company/${section.id}`}>
-                    {content[language as keyof typeof content].viewDetails}
+                    {content[language].viewDetails}
                   </Link>
                 </Button>
               </CardContent>

@@ -2,7 +2,8 @@
 
 import type React from "react";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   Card,
   CardContent,
@@ -17,6 +18,7 @@ import { Label } from "@/components/ui/label";
 import Image from "next/image";
 
 export default function ContactPage() {
+  const searchParams = useSearchParams();
   const [language] = useState("UZ");
   const [formData, setFormData] = useState({
     inquiryType: "",
@@ -26,6 +28,9 @@ export default function ContactPage() {
     email: "",
     message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
+  const [notice, setNotice] = useState<string | null>(null);
 
   const content = {
     UZ: {
@@ -123,18 +128,138 @@ export default function ContactPage() {
     },
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setFormData({
-      inquiryType: "",
-      companyName: "",
-      name: "",
-      phone: "",
-      email: "",
-      message: "",
-    });
+    if (submitting || cooldown > 0) return;
+    setSubmitting(true);
+    setNotice(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const retryAfter = Number(res.headers.get("Retry-After") || 0);
+      if (retryAfter > 0) setCooldown(retryAfter);
+
+      const body = await res.json().catch(() => ({}));
+      if (res.status === 201) {
+        setNotice(
+          language === "UZ"
+            ? "Yuborildi. Rahmat!"
+            : language === "RU"
+            ? "Отправлено. Спасибо!"
+            : "Sent. Thank you!"
+        );
+        setFormData({
+          inquiryType: "",
+          companyName: "",
+          name: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+      } else if (res.status === 429) {
+        setNotice(
+          body?.error ||
+            (language === "UZ"
+              ? "Iltimos, qayta yuborishdan oldin kuting."
+              : language === "RU"
+              ? "Пожалуйста, подождите перед повторной отправкой."
+              : "Please wait before resubmitting.")
+        );
+      } else if (res.status === 501) {
+        setNotice(
+          language === "UZ"
+            ? "Xatolik: pochta xizmati sozlanmagan."
+            : language === "RU"
+            ? "Ошибка: почтовый сервис не настроен."
+            : "Error: email service not configured."
+        );
+      } else {
+        setNotice(
+          language === "UZ"
+            ? "Yuborishda xatolik yuz berdi."
+            : language === "RU"
+            ? "Произошла ошибка при отправке."
+            : "Failed to send."
+        );
+      }
+    } catch (err) {
+      setNotice(
+        language === "UZ"
+          ? "Yuborishda xatolik yuz berdi."
+          : language === "RU"
+          ? "Произошла ошибка при отправке."
+          : "Failed to send."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
+
+  useEffect(() => {
+    // Handle server-side redirect outcomes for non-JS form submissions
+    const sent = searchParams.get("sent");
+    const err = searchParams.get("error");
+    const wait = Number(searchParams.get("wait") || "0");
+    const cd = Number(searchParams.get("cooldown") || "0");
+    if (cd > 0) setCooldown(cd);
+    if (sent === "1") {
+      setNotice(
+        language === "UZ"
+          ? "Yuborildi. Rahmat!"
+          : language === "RU"
+          ? "Отправлено. Спасибо!"
+          : "Sent. Thank you!"
+      );
+      // Clean the URL so refresh doesn't keep the flag
+      if (typeof window !== "undefined") {
+        const u = new URL(window.location.href);
+        u.search = "";
+        window.history.replaceState({}, "", u.toString());
+      }
+    } else if (err) {
+      const msg =
+        err === "rate"
+          ? language === "UZ"
+            ? `Iltimos, ${wait || "bir necha"} soniyadan so'ng qayta yuboring.`
+            : language === "RU"
+            ? `Пожалуйста, подождите ${wait || "несколько"} секунд перед повторной отправкой.`
+            : `Please wait ${wait || "a few"} seconds before resubmitting.`
+          : err === "config"
+          ? language === "UZ"
+            ? "Xatolik: pochta xizmati sozlanmagan."
+            : language === "RU"
+            ? "Ошибка: почтовый сервис не настроен."
+            : "Error: email service not configured."
+          : err === "validation"
+          ? language === "UZ"
+            ? "Majburiy maydonlarni to'ldiring."
+            : language === "RU"
+            ? "Заполните обязательные поля."
+            : "Fill in the required fields."
+          : language === "UZ"
+          ? "Yuborishda xatolik yuz berdi."
+          : language === "RU"
+          ? "Произошла ошибка при отправке."
+          : "Failed to send.";
+      setNotice(msg);
+      if (typeof window !== "undefined") {
+        const u = new URL(window.location.href);
+        u.search = "";
+        window.history.replaceState({}, "", u.toString());
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const id = setInterval(() => setCooldown((s) => (s > 0 ? s - 1 : 0)), 1000);
+    return () => clearInterval(id);
+  }, [cooldown]);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -174,7 +299,13 @@ export default function ContactPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                action="/api/contact"
+                method="post"
+                acceptCharset="UTF-8"
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
                 <div className="space-y-2">
                   <Label htmlFor="inquiryType">
                     {content[language as keyof typeof content].inquiryContent} *
@@ -307,11 +438,18 @@ export default function ContactPage() {
                   </label>
                 </div>
 
+                {notice && (
+                  <p className="text-sm text-gray-700">{notice}</p>
+                )}
+
                 <Button
                   type="submit"
-                  className="w-full bg-[#1C3990] hover:bg-[#2d4a9b] h-12 text-base font-semibold"
+                  disabled={submitting || cooldown > 0}
+                  className="w-full bg-[#1C3990] hover:bg-[#2d4a9b] h-12 text-base font-semibold disabled:opacity-60"
                 >
-                  {content[language as keyof typeof content].submit}
+                  {cooldown > 0
+                    ? `${content[language as keyof typeof content].submit} (${cooldown}s)`
+                    : content[language as keyof typeof content].submit}
                 </Button>
               </form>
             </CardContent>
