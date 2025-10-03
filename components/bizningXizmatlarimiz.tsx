@@ -1,122 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
+
+type ServiceItem = {
+  iconImage: string;
+  title: string;
+  description: string;
+};
 
 export default function ServicesOverview() {
-  const [language] = useState("UZ");
+  const { t } = useTranslation();
 
-  const content = {
-    UZ: {
-      title: "Bizning Xizmatlarimiz",
-      subtitle: "Ko'chmas mulk sohasida keng ko'lamli professional yechimlar",
-      viewAll: "Barcha xizmatlarni ko'rish",
-    },
-    RU: {
-      title: "Наши Услуги",
-      subtitle: "Широкий спектр профессиональных решений в сфере недвижимости",
-      viewAll: "Посмотреть все услуги",
-    },
-    EN: {
-      title: "Our Services",
-      subtitle: "Comprehensive professional solutions in real estate",
-      viewAll: "View All Services",
-    },
-  };
+  const title = t("Services.title");
+  const subtitle = t("Services.subtitle");
+  const viewAll = t("Services.viewAll");
 
-  const services = [
-    {
-      iconImage: "/svg/mulkBoshqaruviicon.svg",
-      titleUZ: "Mulk Boshqaruvi",
-      titleRU: "Управление Недвижимостью",
-      titleEN: "Property Management",
-      descriptionUZ: "Professional mulk boshqaruvi va operatsion xizmatlar",
-      descriptionRU:
-        "Профессиональное управление недвижимостью и операционные услуги",
-      descriptionEN:
-        "Professional property management and operational services",
-    },
-    {
-      iconImage: "/svg/binoBoshqaruvi.svg",
-      titleUZ: "Bino Boshqaruvi",
-      titleRU: "Управление Зданиями",
-      titleEN: "Building Management",
-      descriptionUZ: "To'liq bino boshqaruvi va texnik xizmat",
-      descriptionRU: "Полное управление зданиями и техническое обслуживание",
-      descriptionEN: "Complete building management and technical services",
-    },
-    {
-      iconImage: "/svg/tijoratObyectlari.svg",
-      titleUZ: "Tijorat Ob'ektlari",
-      titleRU: "Коммерческие Объекты",
-      titleEN: "Commercial Properties",
-      descriptionUZ: "Do'kon va omborxonalar uchun professional xizmat",
-      descriptionRU: "Профессиональные услуги для магазинов и складов",
-      descriptionEN: "Professional services for shops and warehouses",
-    },
-    {
-      iconImage: "/svg/quyoshEnergiyasi.svg",
-      titleUZ: "Quyosh Energiyasi",
-      titleRU: "Солнечная Энергия",
-      titleEN: "Solar Energy",
-      descriptionUZ: "Quyosh elektr stansiyalari texnik xizmati",
-      descriptionRU: "Техническое обслуживание солнечных электростанций",
-      descriptionEN: "Solar power station technical services",
-    },
-    {
-      iconImage: "/svg/landshaft.svg",
-      titleUZ: "Landshaft Dizayni",
-      titleRU: "Ландшафтный Дизайн",
-      titleEN: "Landscape Design",
-      descriptionUZ: "Professional landshaft parvarishi va dizayni",
-      descriptionRU: "Профессиональный уход за ландшафтом и дизайн",
-      descriptionEN: "Professional landscape care and design",
-    },
-    {
-      iconImage: "/svg/investtitsiya.svg",
-      titleUZ: "Investitsiya Konsaltingi",
-      titleRU: "Инвестиционный Консалтинг",
-      titleEN: "Investment Consulting",
-      descriptionUZ: "Ko'chmas mulk investitsiyalari bo'yicha maslahat",
-      descriptionRU: "Консультации по инвестициям в недвижимость",
-      descriptionEN: "Real estate investment consulting",
-    },
-  ];
-
-  const getTitle = (service: any) => {
-    switch (language) {
-      case "RU":
-        return service.titleRU;
-      case "EN":
-        return service.titleEN;
-      default:
-        return service.titleUZ;
-    }
-  };
-
-  const getDescription = (service: any) => {
-    switch (language) {
-      case "RU":
-        return service.descriptionRU;
-      case "EN":
-        return service.descriptionEN;
-      default:
-        return service.descriptionUZ;
-    }
-  };
+  // JSON'dan massivni to'g'ridan-to'g'ri olamiz
+  const services = t("Services.items", {
+    returnObjects: true,
+  }) as ServiceItem[];
 
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#173758] mb-6">
-            {content[language as keyof typeof content].title}
+            {title}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {content[language as keyof typeof content].subtitle}
+            {subtitle}
           </p>
         </div>
 
@@ -135,13 +50,13 @@ export default function ServicesOverview() {
                   />
                 </div>
                 <CardTitle className="text-xl text-gray-900 font-bold mb-2">
-                  {getTitle(service)}
+                  {service.title}
                 </CardTitle>
               </CardHeader>
 
               <CardContent>
                 <p className="text-base text-gray-600 leading-relaxed text-center">
-                  {getDescription(service)}
+                  {service.description}
                 </p>
               </CardContent>
             </Card>
@@ -154,11 +69,9 @@ export default function ServicesOverview() {
             size="lg"
             className="bg-[#31519F] hover:bg-[#233c7a] text-white font-semibold shadow-md cursor-pointer
               hover:shadow-lg transition-all duration-300 ease-in-out 
-              transform  hover:scale-[1.02] rounded-md w-[246px]"
+              transform hover:scale-[1.02] rounded-md w-[246px]"
           >
-            <Link href="/business">
-              {content[language as keyof typeof content].viewAll}
-            </Link>
+            <Link href="/business">{viewAll}</Link>
           </Button>
         </div>
       </div>

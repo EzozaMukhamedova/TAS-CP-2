@@ -1,0 +1,137 @@
+{
+  "Nav": {
+    "company": "Company",
+    "business": "Business",
+    "jobs": "Jobs",
+    "contact": "Contact",
+    "phone": "+998 71 777 50 66"
+  },
+  "Hero": {
+    "slides": [
+      {
+        "title": "From People to Cities, Society and the Future",
+        "subtitle": "Professional solutions in property management and technical services"
+      },
+      {
+        "title": "Smart infrastructure for sustainable cities",
+        "subtitle": "Solutions that raise asset value and lower costs"
+      },
+      {
+        "title": "Investment, management & maintenance — all-in-one",
+        "subtitle": "Trusted management with efficient operations"
+      }
+    ],
+    "aboutTitle": "About the company",
+    "aboutBody": "Tokyo Asset Solution is a company established in 2009 operating in real estate and investments. We specialize in reconstruction, renovation, long-term ownership and green energy projects.<0/><0/><1>Our goal is to create innovative solutions based on sustainability principles and deliver long-term value for our clients.</1>",
+    "more": "Learn more"
+  },
+  "Services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive professional solutions in real estate",
+    "viewAll": "View All Services",
+    "items": [
+      {
+        "iconImage": "/svg/mulkBoshqaruviicon.svg",
+        "title": "Property Management",
+        "description": "Professional property management and operational services"
+      },
+      {
+        "iconImage": "/svg/binoBoshqaruvi.svg",
+        "title": "Building Management",
+        "description": "Complete building management and technical services"
+      },
+      {
+        "iconImage": "/svg/tijoratObyectlari.svg",
+        "title": "Commercial Properties",
+        "description": "Professional services for shops and warehouses"
+      },
+      {
+        "iconImage": "/svg/quyoshEnergiyasi.svg",
+        "title": "Solar Energy",
+        "description": "Solar power station technical services"
+      },
+      {
+        "iconImage": "/svg/landshaft.svg",
+        "title": "Landscape Design",
+        "description": "Professional landscape care and design"
+      },
+      {
+        "iconImage": "/svg/investtitsiya.svg",
+        "title": "Investment Consulting",
+        "description": "Real estate investment consulting"
+      }
+    ]
+  },
+  "News": {
+    "title": "Vacancies",
+    "subtitle": "Join our team",
+    "readMore": "Read More",
+    "viewAll": "View All News",
+    "addressLabel": "Address:",
+    "yearLabel": "Year:",
+    "items": [
+      {
+        "id": 1,
+        "category": "Vacancy",
+        "title": "Hiring Internal Auditor",
+        "excerpt": "Tashkent, Modera Towers 4F",
+        "image": "/svg/boshish1.svg",
+        "year": 2025
+      },
+      {
+        "id": 2,
+        "category": "Vacancy",
+        "title": "Hiring Property Manager",
+        "excerpt": "Tashkent, Modera Towers 4F",
+        "image": "/svg/boshish2.svg",
+        "year": 2025
+      },
+      {
+        "id": 3,
+        "category": "Vacancy",
+        "title": "Chitose Solar Plant",
+        "excerpt": "Tashkent, Modera Towers 4F",
+        "image": "/svg/boshish3.svg",
+        "year": 2025
+      }
+    ]
+  },
+  "Contact": {
+    "title": "Inquiry",
+    "subtitle": "For questions, contact us by phone or through our contact form.",
+    "phoneInquiries": "Phone Inquiries",
+    "realEstateInfo": "Real estate sales information",
+    "businessHours": "Business hours: 9:00-17:30",
+    "holidayNote": "*Except weekends, holidays and New Year holidays",
+    "contactForm": "Contact us through form",
+    "contactFormNote": "Contact us through the online form and get a quick response",
+    "inquiry": "Inquiry",
+    "phone": "03-5510-8301"
+  },
+  "Footer": {
+    "company": {
+      "postalLabel": "ZIP:",
+      "addressLabel": "Address:",
+      "phoneLabel": "Phone:",
+      "emailLabel": "Email:"
+    },
+    "services": "Services",
+    "sitemap": "Sitemap",
+    "socials": "Social networks",
+    "rights": "All rights reserved.",
+    "nav": {
+      "company": "Company",
+      "business": "Business",
+      "recruitment": "Jobs"
+    },
+    "servicesList": [
+      "Redevelopment",
+      "Renovation",
+      "Long-term Ownership",
+      "Green Energy",
+      "International Business",
+      "Asset Consulting",
+      "Investment Management"
+    ]
+  }
+}

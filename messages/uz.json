@@ -1,0 +1,137 @@
+{
+  "Nav": {
+    "company": "Kompaniya",
+    "business": "Biznes",
+    "jobs": "Ish",
+    "contact": "Aloqa",
+    "phone": "+998 71 777 50 66"
+  },
+  "Hero": {
+    "slides": [
+      {
+        "title": "Odamlardan shaharlarga, jamiyatga va kelajakga",
+        "subtitle": "Ko'chmas mulk boshqaruvi va texnik xizmat sohasida professional yechimlar"
+      },
+      {
+        "title": "Barqaror shaharlar uchun aqlli infratuzilma",
+        "subtitle": "Mulk qiymatini oshiradigan va xarajatlarni kamaytiradigan yechimlar"
+      },
+      {
+        "title": "Investitsiya, boshqaruv va texnik xizmat — barchasi bir joyda",
+        "subtitle": "Ishonchli boshqaruv va samarali operatsiyalar"
+      }
+    ],
+    "aboutTitle": "Kompaniya haqida qisqacha",
+    "aboutBody": "Tokyo Asset Solution 2009 yilda tashkil etilgan ko'chmas mulk va investitsiya sohasida faoliyat yurituvchi kompaniya hisoblanadi. Biz qayta qurish, renovatsiya, uzoq muddatli egalik va yashil energiya loyihalarida ixtisoslashganmiz.<0/><0/><1>Bizning maqsadimiz barqaror rivojlanish tamoyillari asosida innovatsion yechimlar yaratish va mijozlarimiz uchun uzoq muddatli qiymat yaratishdir.</1>",
+    "more": "Batafsil ma'lumot"
+  },
+  "Services": {
+    "title": "Bizning Xizmatlarimiz",
+    "subtitle": "Ko'chmas mulk sohasida keng ko'lamli professional yechimlar",
+    "viewAll": "Barcha xizmatlarni ko'rish",
+    "items": [
+      {
+        "iconImage": "/svg/mulkBoshqaruviicon.svg",
+        "title": "Mulk Boshqaruvi",
+        "description": "Professional mulk boshqaruvi va operatsion xizmatlar"
+      },
+      {
+        "iconImage": "/svg/binoBoshqaruvi.svg",
+        "title": "Bino Boshqaruvi",
+        "description": "To'liq bino boshqaruvi va texnik xizmat"
+      },
+      {
+        "iconImage": "/svg/tijoratObyectlari.svg",
+        "title": "Tijorat Ob'ektlari",
+        "description": "Do'kon va omborxonalar uchun professional xizmat"
+      },
+      {
+        "iconImage": "/svg/quyoshEnergiyasi.svg",
+        "title": "Quyosh Energiyasi",
+        "description": "Quyosh elektr stansiyalari texnik xizmati"
+      },
+      {
+        "iconImage": "/svg/landshaft.svg",
+        "title": "Landshaft Dizayni",
+        "description": "Professional landshaft parvarishi va dizayni"
+      },
+      {
+        "iconImage": "/svg/investtitsiya.svg",
+        "title": "Investitsiya Konsaltingi",
+        "description": "Ko'chmas mulk investitsiyalari bo'yicha maslahat"
+      }
+    ]
+  },
+  "News": {
+    "title": "Bo'sh ish o'rinlari",
+    "subtitle": "Bizning jamoamizga qo’shiling",
+    "readMore": "Batafsil ko'rish",
+    "viewAll": "Barcha yangiliklarni ko'rish",
+    "addressLabel": "Manzil:",
+    "yearLabel": "Yil:",
+    "items": [
+      {
+        "id": 1,
+        "category": "Bo'sh",
+        "title": "Ichki Auditorni Yollash",
+        "excerpt": "Tashkent, Modera Towers 4F",
+        "image": "/svg/boshish1.svg",
+        "year": 2025
+      },
+      {
+        "id": 2,
+        "category": "Bo'sh",
+        "title": "Mulk Menejerini Ishga Olish",
+        "excerpt": "Tashkent, Modera Towers 4F",
+        "image": "/svg/boshish2.svg",
+        "year": 2025
+      },
+      {
+        "id": 3,
+        "category": "Bo'sh",
+        "title": "Chitose Quyosh Stansiyasi",
+        "excerpt": "Tashkent, Modera Towers 4F",
+        "image": "/svg/boshish3.svg",
+        "year": 2025
+      }
+    ]
+  },
+  "Contact": {
+    "title": "So'rov",
+    "subtitle": "Savollar uchun telefon orqali yoki aloqa formamiz orqali biz bilan bog'laning.",
+    "phoneInquiries": "Telefon so'rovlari",
+    "realEstateInfo": "Ko'chmas mulkni sotish bo'yicha ma'lumot kerak",
+    "businessHours": "Ish vaqti: 9:00-18:00",
+    "holidayNote": "*Dam olish kunlari, bayramlar va Yangi yil bayramlaridan tashqari",
+    "contactForm": "Shakl orqali biz bilan bog'laning",
+    "contactFormNote": "Onlayn forma orqali biz bilan bog'laning va tezkor javob oling",
+    "inquiry": "Bog'lanmoq",
+    "phone": "03-5510-8301"
+  },
+  "Footer": {
+    "company": {
+      "postalLabel": "Pochta indeksi:",
+      "addressLabel": "Manzil:",
+      "phoneLabel": "Telefon:",
+      "emailLabel": "Email:"
+    },
+    "services": "Xizmatlar",
+    "sitemap": "Sayt xaritasi",
+    "socials": "Ijtimoiy tarmoqlar",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "nav": {
+      "company": "Kompaniya",
+      "business": "Biznes",
+      "recruitment": "Ish"
+    },
+    "servicesList": [
+      "Qayta Qurish",
+      "Renovatsiya",
+      "Uzoq Muddatli Egalik",
+      "Yashil Energiya",
+      "Xalqaro Biznes",
+      "Aktivlar Konsaltingi",
+      "Investitsiya Boshqaruvi"
+    ]
+  }
+}

@@ -1,52 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function ContactSection() {
-  const [language] = useState("UZ");
-
-  const content = {
-    UZ: {
-      title: "So'rov",
-      subtitle:
-        "Savollar uchun telefon orqali yoki aloqa formamiz orqali biz bilan bog'laning.",
-      phoneInquiries: "Telefon so'rovlari",
-      representative: "Vakil",
-      realEstateInfo: "Ko'chmas mulkni sotish bo'yicha ma'lumot kerak",
-      businessHours: "Ish vaqti: 9:00-18:00",
-      holidayNote:
-        "*Dam olish kunlari, bayramlar va Yangi yil bayramlaridan tashqari",
-      contactForm: "Shakl orqali biz bilan bog'laning",
-      inquiry: "Bog'lanmoq",
-    },
-    RU: {
-      title: "Запрос",
-      subtitle:
-        "Для вопросов обращайтесь по телефону или через нашу контактную форму.",
-      phoneInquiries: "Телефонные запросы",
-      representative: "Представитель",
-      realEstateInfo: "Информация о продаже недвижимости",
-      businessHours: "Рабочие часы: 9:00-17:30",
-      holidayNote: "*Кроме выходных, праздников и новогодних каникул",
-      contactForm: "Свяжитесь с нами через форму",
-      inquiry: "запрос",
-    },
-    EN: {
-      title: "Inquiry",
-      subtitle:
-        "For questions, contact us by phone or through our contact form.",
-      phoneInquiries: "Phone Inquiries",
-      representative: "Representative",
-      realEstateInfo: "Real estate sales information",
-      businessHours: "Business hours: 9:00-17:30",
-      holidayNote: "*Except weekends, holidays and New Year holidays",
-      contactForm: "Contact us through form",
-      inquiry: "inquiry",
-    },
-  };
+  const { t } = useTranslation();
 
   return (
     <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
@@ -55,10 +15,10 @@ export default function ContactSection() {
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#0A2C52] mb-4">
-              {content[language as keyof typeof content].title}
+              {t("Contact.title")}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {content[language as keyof typeof content].subtitle}
+              {t("Contact.subtitle")}
             </p>
           </div>
 
@@ -67,7 +27,7 @@ export default function ContactSection() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6 flex items-center gap-3">
-                  {content[language as keyof typeof content].phoneInquiries}
+                  {t("Contact.phoneInquiries")}
                 </h3>
 
                 <div className="space-y-6">
@@ -82,13 +42,10 @@ export default function ContactSection() {
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-gray-900 mb-1">
-                        {
-                          content[language as keyof typeof content]
-                            .realEstateInfo
-                        }
+                        {t("Contact.realEstateInfo")}
                       </h4>
                       <p className="text-2xl font-bold text-[#31519F]">
-                        03-5510-8301
+                        {t("Contact.phone")}
                       </p>
                     </div>
                   </div>
@@ -96,10 +53,10 @@ export default function ContactSection() {
 
                 <div className="mt-6 p-4 bg-gray-100 rounded-lg">
                   <p className="font-semibold text-gray-900 mb-1">
-                    {content[language as keyof typeof content].businessHours}
+                    {t("Contact.businessHours")}
                   </p>
                   <p className="text-sm text-gray-600">
-                    {content[language as keyof typeof content].holidayNote}
+                    {t("Contact.holidayNote")}
                   </p>
                 </div>
               </div>
@@ -109,27 +66,25 @@ export default function ContactSection() {
             <div className="text-center">
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <div className="w-16 h-16 bg-[#31519F] text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
-                  <Image src="/svg/boglanish.svg" alt="alt" width={38} height={38} />
+                  <Image
+                    src="/svg/boglanish.svg"
+                    alt="Contact Icon"
+                    width={38}
+                    height={38}
+                  />
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  {content[language as keyof typeof content].contactForm}
+                  {t("Contact.contactForm")}
                 </h3>
                 <p className="text-gray-600 mb-8">
-                  {language === "UZ" &&
-                    "Onlayn forma orqali biz bilan bog'laning va tezkor javob oling"}
-                  {language === "RU" &&
-                    "Свяжитесь с нами через онлайн-форму и получите быстрый ответ"}
-                  {language === "EN" &&
-                    "Contact us through online form and get quick response"}
+                  {t("Contact.contactFormNote")}
                 </p>
                 <Button
                   asChild
                   size="lg"
                   className="bg-[#31519F] hover:bg-blue-700 px-8 py-3 text-lg"
                 >
-                  <Link href="/contact">
-                    {content[language as keyof typeof content].inquiry}
-                  </Link>
+                  <Link href="/contact">{t("Contact.inquiry")}</Link>
                 </Button>
               </div>
             </div>
