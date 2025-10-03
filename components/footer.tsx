@@ -5,7 +5,6 @@ import Link from "next/link";
 import ContactSection from "./contact-section";
 import Image from "next/image";
 
-// Ixtiyoriy: label'larni i18n qilib, qiymatlarni konstantada saqlaymiz
 const COMPANY = {
   postal: "100102",
   address: "Modera Towers, 4F, Shota Rustaveli street 19, Tashkent",
@@ -56,16 +55,14 @@ export default function Footer() {
 
   return (
     <>
-      {/* Contact Section (i18n) */}
       <ContactSection />
 
-      {/* Footer */}
       <footer className="bg-[#05284B] text-white py-12">
-        <div className="container mx-auto px-6 flex lg:flex-row justify-between items-start gap-12 w-[1536px]">
-          {/* Chap: kompaniya ma'lumotlari + xizmatlar */}
+        {/* container: fluid + max width, fixed 1536px olib tashlandi */}
+        <div className="container mx-auto max-w-screen-xl px-6 flex flex-col lg:flex-row justify-between items-start gap-12">
+          {/* Chap blok */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full lg:w-[60%]">
             <div className="flex flex-col gap-[72px]">
-              {/* Kompaniya ma'lumotlari */}
               <div className="space-y-4">
                 <Image
                   src="/svg/logo_white.svg"
@@ -76,7 +73,6 @@ export default function Footer() {
                 <CompanyInfo />
               </div>
 
-              {/* Xizmatlar */}
               <div>
                 <h3 className="font-semibold mb-4">{servicesTitle}</h3>
                 <ul className="space-y-2 text-gray-400 text-sm">
@@ -87,7 +83,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Sayt xaritasi + Ijtimoiy */}
             <div>
               <h3 className="font-semibold mb-4 mt-[50px]">{sitemapTitle}</h3>
               <ul className="space-y-2 text-gray-400 text-sm mb-6">
@@ -103,7 +98,7 @@ export default function Footer() {
               </ul>
 
               <h3 className="font-semibold mb-4 mt-[100px]">{socialsTitle}</h3>
-              <div className="flex flex-col gap-[30px]">
+              <div className="flex items-center gap-6">
                 <Image
                   src="/svg/logos_telegram.svg"
                   alt="Telegram"
@@ -126,19 +121,42 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Xarita o‘ng tomonda */}
-          <div className="w-full lg:w-[40%] flex justify-center items-center mx-auto text-center mt-[40px]">
-            <Image
-              src="/svg/xarita.svg"
-              alt="Map"
-              width={800}
-              height={600}
-              className="rounded-lg"
-            />
+          {/* Xarita: breakpointlarga mos max-width — tablet > desktop */}
+          <div className="w-full lg:w-[40%] flex justify-center items-center mx-auto text-center mt-[40px] cursor-pointer">
+            {/* Link bilan o‘rab qo‘yildi */}
+            <a
+              href="https://yandex.uz/maps/org/62402965592/?ll=69.271775%2C41.292319&z=15"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+      relative w-full
+      max-w-[360px]      /* mobile default */
+      sm:max-w-[460px]   /* small phones / small tablets */
+      md:max-w-[880px]   /* TABLET: kattaroq */
+      lg:max-w-[720px]   /* DESKTOP: tabletga nisbatan biroz kichikroq */
+      xl:max-w-[820px]   /* katta ekranlarda biroz kengroq */
+      aspect-[4/3]
+      block
+    "
+            >
+              <Image
+                src="/svg/xarita.svg"
+                alt="Map"
+                fill
+                className="rounded-lg object-contain cursor-pointer hover:opacity-90 transition"
+                sizes="
+        (max-width: 640px)  90vw,
+        (max-width: 768px)  80vw,
+        (max-width: 1024px) 85vw,
+        (max-width: 1280px) 40vw,
+        35vw
+      "
+                priority={false}
+              />
+            </a>
           </div>
         </div>
 
-        {/* Pastki qism */}
         <div className="border-t border-gray-700 mt-12 pt-6 text-center text-gray-400 text-sm">
           &copy; {year}{" "}
           <span className="font-semibold text-white">
