@@ -501,7 +501,7 @@ export default function ContactPage() {
                       {language === "RU" && "По недвижимости"}
                       {language === "EN" && "Real Estate"}
                     </p>
-                    <p className="text-gray-600">03-5510-8301</p>
+                    <p className="text-gray-600">+998904801848</p>
                   </div>
                 </div>
 

@@ -3,22 +3,31 @@
     "company": "Kompaniya",
     "business": "Biznes",
     "jobs": "Ish",
+    "results": "Natijalar",
     "contact": "Aloqa",
     "phone": "+998 71 777 50 66"
   },
   "Hero": {
     "slides": [
       {
-        "title": "Odamlardan shaharlarga, jamiyatga va kelajakga",
-        "subtitle": "Ko'chmas mulk boshqaruvi va texnik xizmat sohasida professional yechimlar"
+        "title": "Odamlardan shaharlarga, jamiyatga va kelajakka",
+        "subtitle": "Ko'chmas mulkni boshqarish va texnik xizmat ko'rsatish sohasida professional yechimlar"
       },
       {
-        "title": "Barqaror shaharlar uchun aqlli infratuzilma",
-        "subtitle": "Mulk qiymatini oshiradigan va xarajatlarni kamaytiradigan yechimlar"
+        "title": "Ko’chmas Mulk Sohasida Innovatsion Yechimlar",
+        "subtitle": "2009-yildan beri biz zamonaviy arxitektura va barqaror rivojlanish tamoyillari asosida loyihalarni amalga oshirib kelmoqdamiz."
       },
       {
-        "title": "Investitsiya, boshqaruv va texnik xizmat — barchasi bir joyda",
-        "subtitle": "Ishonchli boshqaruv va samarali operatsiyalar"
+        "title": "Qayta Qurish Va Renovatsiya Xizmati",
+        "subtitle": "Eski binolarni zamonaviy standartlarga moslashtirish, ularning qiymatini oshirish va shahar ko‘rinishini yaxshilash"
+      },
+      {
+        "title": "Professional Jamoa Bilan Ishlash",
+        "subtitle": "Bizning tajribali mutaxassislar jamoamiz har bir loyihada yuqori sifat va professional yondashuvni taqdim etadi."
+      },
+      {
+        "title": "Karyera Imkoniyati",
+        "subtitle": "Bizning jamoamizga qo‘shiling va ko‘chmas mulk sohasida professional faoliyatingizni rivojlantiring."
       }
     ],
     "aboutTitle": "Kompaniya haqida qisqacha",
@@ -106,7 +115,7 @@
     "contactForm": "Shakl orqali biz bilan bog'laning",
     "contactFormNote": "Onlayn forma orqali biz bilan bog'laning va tezkor javob oling",
     "inquiry": "Bog'lanmoq",
-    "phone": "03-5510-8301"
+    "phone": "+998904801848"
   },
   "Footer": {
     "company": {
@@ -133,5 +142,41 @@
       "Aktivlar Konsaltingi",
       "Investitsiya Boshqaruvi"
     ]
+  },
+  "company": {
+    "title": "Kompaniya haqida qisqacha",
+    "companyOverview": "Kompaniya haqida",
+    "presidentMessage": "Kompaniya Vakillari",
+    "presidentName": "O'ng tarafdagi: Azizbek va chap tarafdagi: Takashima",
+    "presidentTitle": "—",
+    "sections": "Kompaniya bo'limlari",
+    "viewDetails": "Batafsil ko'rish",
+    "overviewP1": "Tokyo Asset Solution 2009 yilda tashkil etilgan ko'chmas mulk va investitsiya sohasida faoliyat yurituvchi kompaniya hisoblanadi. Biz qayta qurish, renovatsiya, uzoq muddatli egalik va yashil energiya loyihalarida ixtisoslashganmiz.",
+    "overviewP2": "Bizning maqsadimiz barqaror rivojlanish tamoyillari asosida innovatsion yechimlar yaratish va mijozlarimiz uchun uzoq muddatli qiymat yaratishdir.",
+    "msgP1": "Hurmatli hamkorlar va mijozlar! Tokyo Asset Solution kompaniyasining prezidenti sifatida sizlarni tabriklayman. Bizning kompaniyamiz 2009 yildan beri ko'chmas mulk sohasida innovatsion yechimlar yaratib kelmoqda.",
+    "msgP2": "Biz nafaqat binolar quramiz, balki kelajak avlodlar uchun barqaror muhit yaratamiz. Har bir loyihada an'ana va innovatsiyani muvozanatlashtirishga harakat qilamiz.",
+    "msgP3": "Bizning jamoamiz - bu bizning eng katta boyligimiz. Har bir xodimning professional o'sishi kompaniyamizning muvaffaqiyatining asosi hisoblanadi."
+  },
+  "sections": {
+    "management-vision": {
+      "title": "Boshqaruv Ko'rinishi",
+      "description": "Kompaniya missiyasi, boshqaruv falsafasi"
+    },
+    "company-history": {
+      "title": "Kompaniya Tarixi",
+      "description": "2009 yildan bugungi kungacha bo'lgan rivojlanish yo'li"
+    },
+    "organizational-structure": {
+      "title": "Tashkiliy Tuzilma",
+      "description": "Kompaniya bo'limlari va boshqaruv ierarxiyasi"
+    },
+    "partners-banks": {
+      "title": "Asosiy Bank va Hamkor Tashkilotlar",
+      "description": "Moliyaviy hamkorlar va strategik ittifoqchilar"
+    },
+    "general-info": {
+      "title": "Kompaniya Haqidagi Umumiy Ma'lumot",
+      "description": "Kompaniya profili va joylashuv xaritasi"
+    }
   }
 }

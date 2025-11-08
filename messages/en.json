@@ -3,22 +3,31 @@
     "company": "Company",
     "business": "Business",
     "jobs": "Jobs",
+    "results": "Results",
     "contact": "Contact",
     "phone": "+998 71 777 50 66"
   },
   "Hero": {
     "slides": [
       {
-        "title": "From People to Cities, Society and the Future",
-        "subtitle": "Professional solutions in property management and technical services"
+        "title": "From People to Cities, to Society and the Future",
+        "subtitle": "Professional solutions in real estate management and maintenance services"
       },
       {
-        "title": "Smart infrastructure for sustainable cities",
-        "subtitle": "Solutions that raise asset value and lower costs"
+        "title": "Innovative Solutions in Real Estate",
+        "subtitle": "Since 2009, we have been implementing projects based on modern architecture and sustainable development principles."
       },
       {
-        "title": "Investment, management & maintenance — all-in-one",
-        "subtitle": "Trusted management with efficient operations"
+        "title": "Reconstruction and Renovation Services",
+        "subtitle": "Transforming old buildings to meet modern standards, enhancing their value, and improving the cityscape."
+      },
+      {
+        "title": "Working with a Professional Team",
+        "subtitle": "Our experienced specialists deliver high quality and professional approaches in every project."
+      },
+      {
+        "title": "Career Opportunities",
+        "subtitle": "Join our team and grow your professional career in the real estate industry."
       }
     ],
     "aboutTitle": "About the company",
@@ -106,7 +115,7 @@
     "contactForm": "Contact us through form",
     "contactFormNote": "Contact us through the online form and get a quick response",
     "inquiry": "Inquiry",
-    "phone": "03-5510-8301"
+    "phone": "+998904801848"
   },
   "Footer": {
     "company": {
@@ -133,5 +142,41 @@
       "Asset Consulting",
       "Investment Management"
     ]
+  },
+  "company": {
+    "title": "About Company",
+    "companyOverview": "Company Overview",
+    "presidentMessage": "President's Message",
+    "presidentName": "Nobuaki Terashiki",
+    "presidentTitle": "President & CEO",
+    "sections": "Company Sections",
+    "viewDetails": "View Details",
+    "overviewP1": "Tokyo Asset Solution is a company established in 2009, operating in the real estate and investment sector. We specialize in redevelopment, renovation, long-term ownership and green energy projects.",
+    "overviewP2": "Our goal is to create innovative solutions based on sustainable development principles and create long-term value for our clients.",
+    "msgP1": "Dear partners and clients! As the president of Tokyo Asset Solution, I welcome you. Our company has been creating innovative solutions in the real estate sector since 2009.",
+    "msgP2": "We don't just build buildings, but create a sustainable environment for future generations. In every project, we strive to balance tradition and innovation.",
+    "msgP3": "Our team is our greatest asset. The professional growth of each employee is the foundation of our company's success."
+  },
+  "sections": {
+    "management-vision": {
+      "title": "Management Vision",
+      "description": "Company mission, management philosophy and ethical principles"
+    },
+    "company-history": {
+      "title": "Company History",
+      "description": "Development path from 2009 to the present day"
+    },
+    "organizational-structure": {
+      "title": "Organizational Structure",
+      "description": "Company departments and management hierarchy"
+    },
+    "partners-banks": {
+      "title": "Main Banks and Partner Organizations",
+      "description": "Financial partners and strategic allies"
+    },
+    "general-info": {
+      "title": "General Company Information",
+      "description": "Company profile and location map"
+    }
   }
 }

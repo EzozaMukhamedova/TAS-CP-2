@@ -34,7 +34,23 @@ export default function Hero() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[1000px] bg-[url('/images/hero.png')] bg-contain bg-center bg-no-repeat overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden">
+        <img
+          src="/nest_one.png"
+          alt="Background"
+          className="
+      absolute left-0 
+      w-full h-full 
+      top-[280px]
+      sm:top-[380px]
+      lg:top-[-10px]
+      object-cover object-center scale-110
+      sm:object-cover sm:scale-110
+      lg:object-fill lg:scale-100
+      transition-transform duration-700
+    "
+        />
+
         {/* swiper container:
             - mobile/tablet: markazda
             - desktop: chap tomonda */}
@@ -50,7 +66,7 @@ export default function Hero() {
           onMouseLeave={() => setPaused(false)}
         >
           {/* viewport */}
-          <div className="overflow-hidden">
+          <div className="overflow-hidden mt-[-128px] sm:mt-[-80px]">
             {/* track */}
             <div
               className="flex transition-transform duration-700 ease-out"
@@ -58,7 +74,7 @@ export default function Hero() {
             >
               {slides.map((s, i) => (
                 <div key={i} className="min-w-full">
-                  <h1 className="text-3xl md:text-[40px] font-bold mb-6 leading-tight text-[#173758]">
+                  <h1 className="text-3xl md:text-[40px] sm:text-[32px]   lg:text-[40px] font-bold mb-6 leading-tight text-[#173758]">
                     {s.title}
                   </h1>
                   <p
@@ -78,11 +94,11 @@ export default function Hero() {
           {/* dots:
               - mobile/tablet: markazda
               - desktop: avvalgi joy (463px) */}
-          <div
+          {/* <div
             className="
               mt-1 flex gap-2 justify-center mx-auto
               md:justify-start
-              w-full md:w-[463px]
+              w-full md:w-[463px] border-2 lg:mt-[5px] mt-[-30px] ml-[250px]
             "
           >
             {slides.map((_, i) => (
@@ -95,7 +111,7 @@ export default function Hero() {
                 }`}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 

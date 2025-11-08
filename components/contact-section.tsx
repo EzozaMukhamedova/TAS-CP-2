@@ -49,6 +49,26 @@ export default function ContactSection() {
                       </p>
                     </div>
                   </div>
+
+                  {/* QR code */}
+                  <div className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                      <Image
+                        src="/svg/phone.svg"
+                        alt="Phone Icon"
+                        width={51}
+                        height={51}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-gray-900 mb-1">
+                        {t("Contact.realEstateInfo")}
+                      </h4>
+                      <p className="text-2xl font-bold text-[#31519F]">
+                        {t("Contact.phone")}
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="mt-6 p-4 bg-gray-100 rounded-lg">
