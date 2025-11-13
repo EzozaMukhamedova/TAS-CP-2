@@ -167,148 +167,29 @@ export default function RecruitmentPage() {
   return (
     <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
       {/* Hero */}
-      <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-        <h1 className="font-bold text-[#1C3990] mb-3 sm:mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-[60px] mt-8 sm:mt-16">
-          {content[language as keyof typeof content].title}
-        </h1>
-        <p className="text-base sm:text-lg text-gray-600">
-          {content[language as keyof typeof content].subtitle}
-        </p>
-      </div>
 
-      {/* Welcome Message */}
-      {/* <section className="mb-10 sm:mb-12 lg:mb-[64px]">
-        <div className="bg-[#DCEBFE] rounded-2xl p-5 sm:p-8 lg:p-10 text-[#374151] relative overflow-hidden">
-    
-          <div className="absolute top-0 right-0 w-24 sm:w-28 lg:w-32 h-24 sm:h-28 lg:h-32 bg-white/10 rounded-full -translate-y-12 sm:-translate-y-14 lg:-translate-y-16 translate-x-10 sm:translate-x-12 lg:translate-x-16"></div>
-          <div className="absolute bottom-0 left-0 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 bg-white/10 rounded-full translate-y-8 sm:translate-y-10 lg:translate-y-12 -translate-x-8 sm:-translate-x-10 lg:-translate-x-12"></div>
+      <section className="w-full py-16 lg:py-20">
+        <div className="max-w-4xl mx-auto px-4">
+          {/* Title */}
+          <h2 className="text-center sm:text-3xl lg:text-4xl text-3xl font-bold text-[#31519F] mb-4">
+            Karyera Imkoniyatlari
+          </h2>
+          <p className="mt-3 text-center text-sm sm:text-base text-gray-500">
+            Professional rivojlanish va muvaffaqiyat yo‘li
+          </p>
 
-          <div className="relative z-10 mx-auto text-center max-w-prose">
-            <h2 className="font-bold mb-3 sm:mb-4 text-2xl sm:text-3xl">
-              {content[language as keyof typeof content].welcomeMessage}
-            </h2>
-            <p className="text-sm sm:text-base leading-relaxed">
-              Biz ish va ishtirokchilarga nisbatan ishtiyoq va samimiylik bilan
-              biz bilan ishlay oladigan hamkasblarni qidiramiz.{" "}
-              <br className="hidden sm:block" />
-              Biz bosh direktorimiz Terashikidan kompaniyamiz biznesi va
-              kelajakga bo'lgan qarashlarimiz bilan tanishtiruvchi
-              videomurojaatini e'lon qildik.
-            </p>
-            <div className="max-w-[420px] mx-auto mt-5 sm:mt-6">
-              <Button
-                type="button"
-                className="w-full h-11 sm:h-12 text-sm sm:text-base font-semibold bg-[#1C3990] hover:bg-[#2d4a9b]"
-              >
-                Xabar videosi uchun bu yerni bosing
-              </Button>
+          {/* Card */}
+          <div className="mt-10 bg-white rounded-2xl shadow-md border border-gray-100">
+            <div className="px-6 sm:px-10 py-8 text-center space-y-2">
+              <p className="text-sm sm:text-base text-gray-600">
+                Yangi ish o‘rinlari va kasbiy imkoniyatlar tez orada qo‘shiladi.
+              </p>
+              <p className="text-sm sm:text-base font-semibold text-[#1C3990]">
+                Bizning jamoamizga qo‘shilish uchun kuzatib turing!
+              </p>
             </div>
           </div>
         </div>
-      </section> */}
-
-      {/* Recruitment Types */}
-      <section className="mb-10 sm:mb-12 lg:mb-[64px]">
-        <div className="mx-auto w-full max-w-2xl sm:max-w-3xl">
-          <Card className="shadow-lg border-0">
-            <CardHeader>
-              <CardTitle className="text-lg sm:text-xl text-gray-900">
-                {content[language as keyof typeof content].newGraduates}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-4 text-sm sm:text-base">
-                {content[language as keyof typeof content].newGraduateDetails}
-              </p>
-              <a
-                href="https://tashkent.hh.uz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <Button className="bg-[#1C3990] hover:bg-[#2d4a9b] w-full h-11 sm:h-12">
-                  hh.uz 2026
-                </Button>
-              </a>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Open Positions */}
-      <section className="mb-12 lg:mb-16">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-          {content[language as keyof typeof content].positions}
-        </h2>
-
-        {/* 1 column on mobile, 2 on md+ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {positions.map((position) => (
-            <Card
-              key={position.id}
-              className="hover:shadow-lg transition-shadow"
-            >
-              <CardHeader>
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <CardTitle className="text-[#1C3990] mb-2 text-lg sm:text-xl">
-                      {getTitle(position)}
-                    </CardTitle>
-                    <CardDescription className="text-sm sm:text-base">
-                      {getDescription(position)}
-                    </CardDescription>
-                  </div>
-                  <Badge className="bg-[#1C3990] text-white shrink-0">
-                    {language === "UZ" && "Ochiq"}
-                    {language === "RU" && "Открыто"}
-                    {language === "EN" && "Open"}
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <Button
-                  asChild
-                  className="bg-[#1C3990] hover:bg-[#2d4a9b] w-full h-11 sm:h-12"
-                >
-                  <Link href={`/recruitment/apply/${position.id}`}>
-                    {language === "UZ" && "Batafsil "}
-                    {language === "RU" &&
-                      "Страница информации о трудоустройстве"}
-                    {language === "EN" && "Recruitment information page"}
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Inquiries */}
-      <section>
-        <Card className="shadow-lg border-0">
-          <CardHeader>
-            <CardTitle className="text-xl sm:text-2xl text-gray-900">
-              {content[language as keyof typeof content].inquiries}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-700 mb-4 text-sm sm:text-base">
-              {content[language as keyof typeof content].inquiriesDescription}
-            </p>
-            <div className="flex items-center gap-3 sm:gap-4">
-              <Image
-                src="/svg/smartphone.svg"
-                alt="Phone"
-                width={26}
-                height={26}
-                className="sm:w-[30px] sm:h-[30px]"
-              />
-              <p className="font-semibold text-gray-900 text-sm sm:text-base">
-                {content[language as keyof typeof content].phone}
-              </p>
-            </div>
-          </CardContent>
-        </Card>
       </section>
     </div>
   );
