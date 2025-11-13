@@ -34,7 +34,7 @@ export default function ContactPage() {
 
   const content = {
     UZ: {
-      title: "So'rov",
+      title: "Ariza",
       subtitle:
         "So'rovlar uchun, iltimos, telefon orqali yoki so'rov formamiz orqali biz bilan bog'laning.",
 
@@ -226,7 +226,9 @@ export default function ContactPage() {
           ? language === "UZ"
             ? `Iltimos, ${wait || "bir necha"} soniyadan so'ng qayta yuboring.`
             : language === "RU"
-            ? `Пожалуйста, подождите ${wait || "несколько"} секунд перед повторной отправкой.`
+            ? `Пожалуйста, подождите ${
+                wait || "несколько"
+              } секунд перед повторной отправкой.`
             : `Please wait ${wait || "a few"} seconds before resubmitting.`
           : err === "config"
           ? language === "UZ"
@@ -310,38 +312,23 @@ export default function ContactPage() {
                   <Label htmlFor="inquiryType">
                     {content[language as keyof typeof content].inquiryContent} *
                   </Label>
-                  <select
+
+                  <input
+                    type="text"
                     id="inquiryType"
                     name="inquiryType"
                     value={formData.inquiryType}
                     onChange={handleChange}
-                    className="w-full p-3 border border-gray-300 rounded-md"
+                    placeholder={
+                      language === "UZ"
+                        ? "Masalan: Biznes hamkorligi"
+                        : language === "RU"
+                        ? "Например: Общий запрос"
+                        : "For example: General inquiry"
+                    }
+                    className="w-full p-3 border border-gray-300  rounded-md text-[14px]"
                     required
-                  >
-                    <option value="">
-                      {content[language as keyof typeof content].selectOption}
-                    </option>
-                    <option value="general">
-                      {language === "UZ" && "Umumiy so'rov"}
-                      {language === "RU" && "Общий запрос"}
-                      {language === "EN" && "General Inquiry"}
-                    </option>
-                    <option value="business">
-                      {language === "UZ" && "Biznes hamkorligi"}
-                      {language === "RU" && "Деловое партнерство"}
-                      {language === "EN" && "Business Partnership"}
-                    </option>
-                    <option value="investment">
-                      {language === "UZ" && "Investitsiya"}
-                      {language === "RU" && "Инвестиции"}
-                      {language === "EN" && "Investment"}
-                    </option>
-                    <option value="rental">
-                      {language === "UZ" && "Ijara"}
-                      {language === "RU" && "Аренда"}
-                      {language === "EN" && "Rental"}
-                    </option>
-                  </select>
+                  />
                 </div>
 
                 <div className="space-y-2">
@@ -438,9 +425,7 @@ export default function ContactPage() {
                   </label>
                 </div>
 
-                {notice && (
-                  <p className="text-sm text-gray-700">{notice}</p>
-                )}
+                {notice && <p className="text-sm text-gray-700">{notice}</p>}
 
                 <Button
                   type="submit"
@@ -448,99 +433,12 @@ export default function ContactPage() {
                   className="w-full bg-[#1C3990] hover:bg-[#2d4a9b] h-12 text-base font-semibold disabled:opacity-60"
                 >
                   {cooldown > 0
-                    ? `${content[language as keyof typeof content].submit} (${cooldown}s)`
+                    ? `${
+                        content[language as keyof typeof content].submit
+                      } (${cooldown}s)`
                     : content[language as keyof typeof content].submit}
                 </Button>
               </form>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Contact Information - Tokyo Company Info */}
-        <div className="lg:col-span-1">
-          <Card className="shadow-lg border-0">
-            <CardHeader>
-              <CardTitle className="text-xl text-[#1C3990]">
-                {content[language as keyof typeof content].phoneInquiries}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-6">
-                {content[language as keyof typeof content].phoneInquiriesDesc}
-              </p>
-
-              <div className="space-y-6">
-                <div className="flex items-center gap-3">
-                  <Image
-                    src="/svg/smartphone.svg"
-                    alt="alt"
-                    width={31}
-                    height={31}
-                  />
-
-                  <div>
-                    <p className="font-semibold text-gray-900">
-                      {language === "UZ" && "Asosiy raqam"}
-                      {language === "RU" && "Основной номер"}
-                      {language === "EN" && "Main Number"}
-                    </p>
-                    <p className="text-gray-600">03-5510-8300</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <Image
-                    src="/svg/kalit.svg"
-                    alt="alt"
-                    width={31}
-                    height={31}
-                  />
-                  <div>
-                    <p className="font-semibold text-gray-900">
-                      {language === "UZ" && "Ko'chmas mulk bo'yicha"}
-                      {language === "RU" && "По недвижимости"}
-                      {language === "EN" && "Real Estate"}
-                    </p>
-                    <p className="text-gray-600">+998904801848</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Image
-                    src="/svg/manzil.svg"
-                    alt="alt"
-                    width={31}
-                    height={31}
-                  />
-                  <div>
-                    <p className="font-semibold text-gray-900">
-                      {content[language as keyof typeof content].address}
-                    </p>
-                    <p className="text-gray-600 text-sm">
-                      {content[language as keyof typeof content].addressText}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-700 font-semibold mb-2">
-                    {content[language as keyof typeof content].businessHours}:
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {content[language as keyof typeof content].mondayFriday}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {content[language as keyof typeof content].saturday}
-                  </p>
-                  <p className="text-xs text-gray-500 mt-2">
-                    {language === "UZ" &&
-                      "*Yakshanba va bayram kunlari dam olish"}
-                    {language === "RU" &&
-                      "*Воскресенье и праздничные дни - выходные"}
-                    {language === "EN" && "*Sunday and holidays - closed"}
-                  </p>
-                </div>
-              </div>
             </CardContent>
           </Card>
         </div>
