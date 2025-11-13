@@ -73,7 +73,7 @@ export default function Hero() {
               style={{ transform: `translateX(-${index * 100}%)` }}
             >
               {slides.map((s, i) => (
-                <div key={i} className="min-w-full border-red-500 border-2 ">
+                <div key={i} className="min-w-full  ">
                   <h1 className="text-3xl md:text-[40px] sm:text-[32px]   lg:text-[40px] font-bold mb-6 leading-tight text-[#173758]">
                     {s.title}
                   </h1>
