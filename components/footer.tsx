@@ -73,7 +73,7 @@ export default function Footer() {
                 <CompanyInfo />
               </div>
 
-              <div>
+              <div className="hidden sm:block">
                 <h3 className="font-semibold mb-4">{servicesTitle}</h3>
                 <ul className="space-y-2 text-gray-400 text-sm">
                   {services.map((s, i) => (
@@ -84,57 +84,60 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4 mt-[50px]">{sitemapTitle}</h3>
-              <ul className="space-y-2 text-gray-400 text-sm mb-6">
-                <li>
-                  <Link href="/company">{navCompany}</Link>
-                </li>
-                <li>
-                  <Link href="/business">{navBusiness}</Link>
-                </li>
-                <li>
-                  <Link href="/recruitment">{navRecruitment}</Link>
-                </li>
-              </ul>
+              <div className="hidden lg:block">
+                <h3 className="font-semibold mb-4 mt-[50px]">{sitemapTitle}</h3>
+                <ul className="space-y-2 text-gray-400 text-sm mb-6">
+                  <li>
+                    <Link href="/company">{navCompany}</Link>
+                  </li>
+                  <li>
+                    <Link href="/business">{navBusiness}</Link>
+                  </li>
+                  <li>
+                    <Link href="/recruitment">{navRecruitment}</Link>
+                  </li>
+                </ul>
+              </div>
 
-              <h3 className="font-semibold mb-4 mt-[100px]">{socialsTitle}</h3>
-              <div className="flex items-center gap-6">
-                <Image
-                  src="/svg/logos_telegram.svg"
-                  alt="Telegram"
-                  width={27}
-                  height={27}
-                />
-                <Image
-                  src="/svg/instagram.svg"
-                  alt="Instagram"
-                  width={27}
-                  height={27}
-                />
-                <Image
-                  src="/svg/logos_facebook.svg"
-                  alt="Facebook"
-                  width={27}
-                  height={27}
-                />
+              <div className="hidden lg:block">
+                <h3 className="font-semibold mb-4 mt-[100px]">
+                  {socialsTitle}
+                </h3>
+
+                <div className="flex items-center gap-6">
+                  <Image
+                    src="/svg/logos_telegram.svg"
+                    alt="Telegram"
+                    width={27}
+                    height={27}
+                  />
+
+                  <a
+                    href="https://t.me/TASCapitalPartners"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 cursor-pointer"
+                  >
+                    @TASCapitalPartners
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Xarita: breakpointlarga mos max-width — tablet > desktop */}
           <div className="w-full lg:w-[40%] flex justify-center items-center mx-auto text-center mt-[40px] cursor-pointer">
-            {/* Link bilan o‘rab qo‘yildi */}
             <a
               href="https://yandex.uz/maps/org/62402965592/?ll=69.271775%2C41.292319&z=15"
               target="_blank"
               rel="noopener noreferrer"
               className="
       relative w-full
-      max-w-[360px]      /* mobile default */
-      sm:max-w-[460px]   /* small phones / small tablets */
-      md:max-w-[880px]   /* TABLET: kattaroq */
-      lg:max-w-[720px]   /* DESKTOP: tabletga nisbatan biroz kichikroq */
-      xl:max-w-[820px]   /* katta ekranlarda biroz kengroq */
+      max-w-[580px]      /* MOBILE: oldingidan kattaroq */
+      sm:max-w-[660px]   /* small tablets */
+      md:max-w-[880px]   /* tablets */
+      lg:max-w-[720px]   /* desktop */
+      xl:max-w-[820px]   /* large desktop */
       aspect-[4/3]
       block
     "
@@ -145,7 +148,7 @@ export default function Footer() {
                 fill
                 className="rounded-lg object-contain cursor-pointer hover:opacity-90 transition"
                 sizes="
-        (max-width: 640px)  90vw,
+        (max-width: 640px)  95vw,
         (max-width: 768px)  80vw,
         (max-width: 1024px) 85vw,
         (max-width: 1280px) 40vw,
@@ -159,7 +162,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 mt-12 pt-6 text-center text-gray-400 text-sm">
           &copy; {year}{" "}
-          <span className="font-semibold text-white">
+          <span className="font-semibold text-[#9CA3AF]">
             TAS Capital Partners.
           </span>{" "}
           {rights}

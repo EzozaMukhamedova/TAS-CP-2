@@ -13,7 +13,7 @@ export default function HomePage() {
       {/* <TrackRecordPreview /> */}
       {/* <RentalPreview /> */}
       {/* <RecruitmentPreview /> */}
-      <NewsPreview />
+      {/* <NewsPreview /> */}
     </main>
   )
 }

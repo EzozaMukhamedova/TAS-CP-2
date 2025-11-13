@@ -31,6 +31,7 @@ export default function ContactSection() {
                 </h3>
 
                 <div className="space-y-6">
+                  {/* phone */}
                   <div className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm border border-gray-100">
                     <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                       <Image
@@ -52,12 +53,12 @@ export default function ContactSection() {
 
                   {/* QR code */}
                   <div className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                    <div className="w-[90px] h-[90px] bg-green-100 rounded-full flex items-center justify-center">
                       <Image
-                        src="/svg/phone.svg"
+                        src="/svg/qr_code.svg"
                         alt="Phone Icon"
-                        width={51}
-                        height={51}
+                        width={100}
+                        height={102}
                       />
                     </div>
                     <div className="flex-1">
@@ -65,7 +66,7 @@ export default function ContactSection() {
                         {t("Contact.realEstateInfo")}
                       </h4>
                       <p className="text-2xl font-bold text-[#31519F]">
-                        {t("Contact.phone")}
+                        @TASCApitalPartners
                       </p>
                     </div>
                   </div>
