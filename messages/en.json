@@ -5,7 +5,7 @@
     "jobs": "Jobs",
     "results": "Results",
     "contact": "Contact",
-    "phone": "+998 71 777 50 66"
+    "phone": "+99890 480 18 48"
   },
   "Hero": {
     "slides": [
@@ -145,7 +145,7 @@
   },
   "company": {
     "title": "About Company",
-    "companyOverview": "Company Overview",
+
     "presidentMessage": "President's Message",
     "presidentName": "Nobuaki Terashiki",
     "presidentTitle": "President & CEO",
@@ -177,6 +177,201 @@
     "general-info": {
       "title": "General Company Information",
       "description": "Company profile and location map"
+    }
+  },
+
+  "Company": {
+    "title": "About the Company",
+
+    "overview": {
+      "title": "Company Overview",
+      "body": "TAS Capital Partners is a subsidiary of Tokyo Asset Solution, bringing years of experience, precision, and high service standards into property management and facility management sectors."
+    },
+
+    "president": {
+      "title": "Company Representatives",
+      "name": "Right: Aziz Normatov, Left: Koji Takashima",
+      "position": "—",
+      "body": "Our services are designed to maximize the value, functionality, and long-term sustainability of your real estate assets. We take an individual approach to each project, ensuring excellence in every detail. Relying on Japanese management culture—precision, responsibility, and high standards—we not only manage your property efficiently but also increase its competitiveness in the market. Our goal is to create peace of mind for property owners and ensure tenants enjoy safe and comfortable living or working conditions. This is how we successfully implement Japan’s best management practices in the Uzbekistan market.",
+      "showMore": "Show more",
+      "showLess": "Show less"
+    },
+
+    "reasonsTitle": "Why you can trust us",
+    "reasons": [
+      {
+        "title": "Save your time and reduce stress",
+        "text": "With our services, property owners can focus on priorities while we professionally handle everything—from tenant relations to compliance with legal requirements."
+      },
+      {
+        "title": "Cost-efficient solutions",
+        "text": "With Japan’s innovative and efficient approach, we help reduce operational costs through preventive maintenance and energy-efficient solutions."
+      },
+      {
+        "title": "Trust and commitment",
+        "text": "Our Japanese heritage is built on trust, loyalty, and customer-first principles. We ensure full satisfaction for both property owners and tenants."
+      },
+      {
+        "title": "Japanese precision and reliability",
+        "text": "We deliver world-class Japanese management accuracy and reliability in all aspects of property and facility management."
+      },
+      {
+        "title": "Increase rental income",
+        "text": "Our expert strategies help attract quality tenants, reduce vacancies, and ensure stable rental income."
+      },
+      {
+        "title": "Protect your investment",
+        "text": "We use a proactive maintenance approach, reducing the risk of costly repairs and extending the lifespan of your property."
+      }
+    ],
+
+    "facility": {
+      "title": "Facility Management Services",
+      "subtitle": "(Facility Management Services)",
+      "body": "Our solutions focus on operational excellence, cost reduction, and maintaining the highest standards of safety and sustainability. Using Japanese experience, we ensure your facility remains in perfect condition.",
+      "points": [
+        "Technical maintenance and repairs",
+        "Energy management and sustainability solutions",
+        "Compliance with health and safety standards",
+        "Infrastructure maintenance"
+      ]
+    },
+
+    "property": {
+      "title": "Property Management Services",
+      "subtitle": "(Property Management Services)",
+      "body": "We manage every aspect of your property with precision and dedication characteristic of Japanese business culture. From leasing processes to financial reporting and legal compliance, we ensure reliable service.",
+      "points": [
+        "Tenant relations and lease management",
+        "Financial reporting and budgeting",
+        "Rent collection and legal compliance",
+        "Coordination of maintenance services"
+      ]
+    }
+  },
+  "Results": {
+    "title": "Project Results",
+    "subtitle": "All of our successfully completed projects",
+    "soonText": "New projects and results will be added soon.",
+    "soonHighlight": "Stay tuned on our website!"
+  },
+  "Recruitment": {
+    "title": "Career Opportunities",
+    "subtitle": "The path to professional growth and success",
+    "soonText": "New job openings and career opportunities will be added soon.",
+    "soonHighlight": "Stay tuned to join our team!"
+  },
+
+  "Contact": {
+    "title": "Inquiry",
+    "subtitle": "For inquiries, please contact us by phone or through our inquiry form.",
+    "phone": "03-5510-8300 (main number)",
+
+    "formTitle": "Please enter the required information and send",
+    "required": "Make sure you have filled in the mandatory fields.",
+    "inquiryContent": "Inquiry content",
+    "inquiryPlaceholder": "For example: Business partnership",
+    "companyName": "Organization name",
+    "companyExample": "Example: Tokyo Asset Solution",
+    "name": "Full Name",
+    "nameExample": "Example: Tokyo Taro",
+    "phoneNumber": "Phone number",
+    "phoneExample": "Example: 03-1234-5678",
+    "emailAddress": "Email address",
+    "emailExample": "Example: email@example.jp",
+    "inquiryMessage": "Inquiry content",
+    "privacyAgreement": "Please agree to our privacy policy before sending your information.",
+    "submit": "Send Inquiry",
+
+    "notice": {
+      "sent": "Sent. Thank you!",
+      "rateLimit": "Please wait before resubmitting.",
+      "configError": "Error: email service not configured.",
+      "error": "Failed to send.",
+      "validationError": "Fill in the required fields.",
+      "fewSeconds": "a few",
+      "rateWait": "Please wait {{seconds}} seconds before resubmitting."
+    }
+  },
+
+  "Business": {
+    "hero": {
+      "titleLine1": "Business",
+      "titleLine2": "Services",
+      "subtitle": "Comprehensive professional services in the real estate sector",
+      "body": "We provide a full spectrum of services in real estate. From development projects to international investments, we offer solutions tailored to the needs of each client.",
+      "cta": "Contact Us",
+      "imageAlt": "Business services"
+    },
+    "servicesSectionTitle": "Our Services",
+    "common": {
+      "overview": "Overview",
+      "features": "Key Features"
+    },
+    "services": {
+      "property": {
+        "title": "Property Management",
+        "subtitle": "Professional property management and operational services",
+        "overview": "We enhance the value of your real estate through high-quality management.",
+        "feature1": "We maintain constant communication with tenants and respond quickly to their needs.",
+        "feature2": "We manage financial reporting, rent collection and contracts in a transparent manner.",
+        "feature3": "We turn your property into a long-term income-generating asset."
+      },
+      "building": {
+        "title": "Building Management",
+        "subtitle": "Comprehensive building management and technical services",
+        "overview": "We ensure the stable operation and safety of your buildings.",
+        "feature1": "We monitor the continuous operation of all technical systems (electricity, water, heating, cooling).",
+        "feature2": "We fully comply with safety and sanitation standards.",
+        "feature3": "We provide preventive maintenance to reduce building operating costs."
+      },
+      "commercial": {
+        "title": "Commercial Facilities",
+        "subtitle": "Professional services for shops and warehouses",
+        "overview": "We ensure the efficient operation of commercial spaces.",
+        "feature1": "We manage shopping centers, offices and warehouses at a high level.",
+        "feature2": "We develop leasing policies aligned with market demand.",
+        "feature3": "We design strategies to reduce tenant turnover and stabilize income."
+      },
+      "solar": {
+        "title": "Solar Energy",
+        "subtitle": "Technical service for solar power plants",
+        "overview": "We provide environmentally friendly energy solutions.",
+        "feature1": "We continuously monitor the performance of solar panels.",
+        "feature2": "We analyze and optimize energy production and grid interaction.",
+        "feature3": "We regularly update maintenance, testing and monitoring systems."
+      },
+      "landscape": {
+        "title": "Landscape Design",
+        "subtitle": "Professional landscaping and maintenance",
+        "overview": "We ensure the beautiful preservation of green areas and gardens.",
+        "feature1": "We develop landscape designs based on aesthetic and environmental requirements.",
+        "feature2": "We regularly update irrigation, maintenance and ornamental plants.",
+        "feature3": "We ensure harmony between the natural environment and architecture."
+      },
+      "investment": {
+        "title": "Investment Consulting",
+        "subtitle": "Advisory services for real estate investments",
+        "overview": "We thoroughly analyze your investment strategy.",
+        "feature1": "We identify attractive investment opportunities based on market analysis.",
+        "feature2": "We provide recommendations to reduce risks and increase returns.",
+        "feature3": "We build investment portfolios tailored to client needs."
+      }
+    },
+    "whyTitle": "Why Choose Us?",
+    "why": {
+      "expertise": {
+        "title": "Professional Expertise",
+        "body": "A team of specialists with deep knowledge and many years of experience in the real estate field."
+      },
+      "international": {
+        "title": "International Experience",
+        "body": "A team that has successfully implemented projects in various countries and understands global markets."
+      },
+      "individual": {
+        "title": "Individual Approach",
+        "body": "We develop custom solutions that take into account the unique needs of each client."
+      }
     }
   }
 }

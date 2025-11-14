@@ -1,9 +1,9 @@
 "use client";
 
 import type React from "react";
-
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useTranslation } from "react-i18next";
 import {
   Card,
   CardContent,
@@ -15,11 +15,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import Image from "next/image";
 
 export default function ContactPage() {
   const searchParams = useSearchParams();
-  const [language] = useState("UZ");
+  const { t } = useTranslation(); // default namespace ("Contact" ham shu yerda)
+
   const [formData, setFormData] = useState({
     inquiryType: "",
     companyName: "",
@@ -31,102 +31,6 @@ export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
   const [cooldown, setCooldown] = useState(0);
   const [notice, setNotice] = useState<string | null>(null);
-
-  const content = {
-    UZ: {
-      title: "Ariza",
-      subtitle:
-        "So'rovlar uchun, iltimos, telefon orqali yoki so'rov formamiz orqali biz bilan bog'laning.",
-
-      formTitle: "Kerakli ma'lumotlarni kiriting va yuboring",
-      required: "Majburiy maydonlarni to'ldirganingizga ishonch hosil qiling.",
-      inquiryContent: "So'rov mazmuni",
-      selectOption: "tanlang",
-      companyName: "Tashkilot nomi",
-      companyExample: "Misol: O'zbekiston Asset Solutions",
-      name: "Ism Familiya",
-      nameExample: "Misol: Alisher Navoiy",
-      phoneNumber: "Telefon raqami",
-      phoneExample: "Misol: +998 90 123-45-67",
-      emailAddress: "Elektron pochta manzili",
-      emailExample: "Misol: email@example.uz",
-      inquiryMessage: "So'rov mazmuni",
-      privacyAgreement:
-        "Iltimos, ma'lumotingizni yuborishdan oldin maxfiylik siyosatimizga rozilik bildiring.",
-      submit: "So'rov yuborish",
-      phoneInquiries: "Telefon so'rovlari",
-      phoneInquiriesDesc:
-        "Savollar uchun telefon orqali yoki aloqa formamiz orqali biz bilan bog'laning.",
-      businessHours: "Ish vaqti",
-      mondayFriday: "Dushanba - Juma: 9:00 - 18:00",
-      saturday: "Shanba: 9:00 - 14:00",
-      address: "Manzil",
-      addressText:
-        "Tokyo, Minato-ku, Toranomon 1-16-4, Urban Toranomon Building 2F",
-    },
-    RU: {
-      title: "Запрос",
-      subtitle:
-        "Для запросов, пожалуйста, свяжитесь с нами по телефону или через нашу форму запроса.",
-      phone: "03-5510-8300 (основной номер)",
-      formTitle: "Введите необходимую информацию и отправьте",
-      required: "Убедитесь, что заполнили обязательные поля.",
-      inquiryContent: "Содержание запроса",
-      selectOption: "выберите",
-      companyName: "Название организации",
-      companyExample: "Пример: Tokyo Asset Solution",
-      name: "Имя Фамилия",
-      nameExample: "Пример: Токио Таро",
-      phoneNumber: "Номер телефона",
-      phoneExample: "Пример: 03-1234-5678",
-      emailAddress: "Адрес электронной почты",
-      emailExample: "Пример: email@example.jp",
-      inquiryMessage: "Содержание запроса",
-      privacyAgreement:
-        "Пожалуйста, дайте согласие на нашу политику конфиденциальности перед отправкой информации.",
-      submit: "Отправить запрос",
-      phoneInquiries: "Телефонные запросы",
-      phoneInquiriesDesc:
-        "Для вопросов обращайтесь по телефону или через нашу контактную форму.",
-      businessHours: "Рабочие часы",
-      mondayFriday: "Понедельник - Пятница: 9:00 - 17:30",
-      saturday: "Суббота: закрыто",
-      address: "Адрес",
-      addressText:
-        "Tokyo, Minato-ku, Toranomon 1-16-4, Urban Toranomon Building 2F",
-    },
-    EN: {
-      title: "Inquiry",
-      subtitle:
-        "For inquiries, please contact us by phone or through our inquiry form.",
-      phone: "03-5510-8300 (main number)",
-      formTitle: "Please enter the required information and send",
-      required: "Make sure you have filled in the mandatory fields.",
-      inquiryContent: "Inquiry content",
-      selectOption: "select",
-      companyName: "Organization name",
-      companyExample: "Example: Tokyo Asset Solution",
-      name: "Full Name",
-      nameExample: "Example: Tokyo Taro",
-      phoneNumber: "Phone number",
-      phoneExample: "Example: 03-1234-5678",
-      emailAddress: "Email address",
-      emailExample: "Example: email@example.jp",
-      inquiryMessage: "Inquiry content",
-      privacyAgreement:
-        "Please agree to our privacy policy before sending your information.",
-      submit: "Send Inquiry",
-      phoneInquiries: "Phone Inquiries",
-      phoneInquiriesDesc:
-        "For questions, contact us by phone or through our contact form.",
-      businessHours: "Business Hours",
-      mondayFriday: "Monday - Friday: 9:00 AM - 5:30 PM",
-      saturday: "Saturday: Closed",
-      address: "Address",
-      addressText:
-        "Tokyo, Minato-ku, Toranomon 1-16-4, Urban Toranomon Building 2F",
-    },
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -145,13 +49,7 @@ export default function ContactPage() {
 
       const body = await res.json().catch(() => ({}));
       if (res.status === 201) {
-        setNotice(
-          language === "UZ"
-            ? "Yuborildi. Rahmat!"
-            : language === "RU"
-            ? "Отправлено. Спасибо!"
-            : "Sent. Thank you!"
-        );
+        setNotice(t("Contact.notice.sent"));
         setFormData({
           inquiryType: "",
           companyName: "",
@@ -161,60 +59,29 @@ export default function ContactPage() {
           message: "",
         });
       } else if (res.status === 429) {
-        setNotice(
-          body?.error ||
-            (language === "UZ"
-              ? "Iltimos, qayta yuborishdan oldin kuting."
-              : language === "RU"
-              ? "Пожалуйста, подождите перед повторной отправкой."
-              : "Please wait before resubmitting.")
-        );
+        setNotice(body?.error || t("Contact.notice.rateLimit"));
       } else if (res.status === 501) {
-        setNotice(
-          language === "UZ"
-            ? "Xatolik: pochta xizmati sozlanmagan."
-            : language === "RU"
-            ? "Ошибка: почтовый сервис не настроен."
-            : "Error: email service not configured."
-        );
+        setNotice(t("Contact.notice.configError"));
       } else {
-        setNotice(
-          language === "UZ"
-            ? "Yuborishda xatolik yuz berdi."
-            : language === "RU"
-            ? "Произошла ошибка при отправке."
-            : "Failed to send."
-        );
+        setNotice(t("Contact.notice.error"));
       }
     } catch (err) {
-      setNotice(
-        language === "UZ"
-          ? "Yuborishda xatolik yuz berdi."
-          : language === "RU"
-          ? "Произошла ошибка при отправке."
-          : "Failed to send."
-      );
+      setNotice(t("Contact.notice.error"));
     } finally {
       setSubmitting(false);
     }
   };
 
   useEffect(() => {
-    // Handle server-side redirect outcomes for non-JS form submissions
     const sent = searchParams.get("sent");
     const err = searchParams.get("error");
     const wait = Number(searchParams.get("wait") || "0");
     const cd = Number(searchParams.get("cooldown") || "0");
+
     if (cd > 0) setCooldown(cd);
+
     if (sent === "1") {
-      setNotice(
-        language === "UZ"
-          ? "Yuborildi. Rahmat!"
-          : language === "RU"
-          ? "Отправлено. Спасибо!"
-          : "Sent. Thank you!"
-      );
-      // Clean the URL so refresh doesn't keep the flag
+      setNotice(t("Contact.notice.sent"));
       if (typeof window !== "undefined") {
         const u = new URL(window.location.href);
         u.search = "";
@@ -223,30 +90,15 @@ export default function ContactPage() {
     } else if (err) {
       const msg =
         err === "rate"
-          ? language === "UZ"
-            ? `Iltimos, ${wait || "bir necha"} soniyadan so'ng qayta yuboring.`
-            : language === "RU"
-            ? `Пожалуйста, подождите ${
-                wait || "несколько"
-              } секунд перед повторной отправкой.`
-            : `Please wait ${wait || "a few"} seconds before resubmitting.`
+          ? t("Contact.notice.rateWait", {
+              seconds: wait || t("Contact.notice.fewSeconds"),
+            })
           : err === "config"
-          ? language === "UZ"
-            ? "Xatolik: pochta xizmati sozlanmagan."
-            : language === "RU"
-            ? "Ошибка: почтовый сервис не настроен."
-            : "Error: email service not configured."
+          ? t("Contact.notice.configError")
           : err === "validation"
-          ? language === "UZ"
-            ? "Majburiy maydonlarni to'ldiring."
-            : language === "RU"
-            ? "Заполните обязательные поля."
-            : "Fill in the required fields."
-          : language === "UZ"
-          ? "Yuborishda xatolik yuz berdi."
-          : language === "RU"
-          ? "Произошла ошибка при отправке."
-          : "Failed to send.";
+          ? t("Contact.notice.validationError")
+          : t("Contact.notice.error");
+
       setNotice(msg);
       if (typeof window !== "undefined") {
         const u = new URL(window.location.href);
@@ -276,15 +128,16 @@ export default function ContactPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-[60px] mt-[86px] font-bold text-[#1C3990] mb-4">
-          {content[language as keyof typeof content].title}
+        <h1 className="text-[40px] sm:text-[48px] md:text-[60px] mt-[86px] font-bold text-[#1C3990] mb-4 leading-tight">
+          {t("Contact.title")}
         </h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          {content[language as keyof typeof content].subtitle}
+          {t("Contact.subtitle")}
         </p>
         <p className="text-xl font-semibold text-gray-900 mt-4">
-          {content[language as keyof typeof content].phone}
+          {t("Contact.phone")}
         </p>
       </div>
 
@@ -294,11 +147,9 @@ export default function ContactPage() {
           <Card className="shadow-lg border-0">
             <CardHeader>
               <CardTitle className="text-2xl text-[#1C3990]">
-                {content[language as keyof typeof content].formTitle}
+                {t("Contact.formTitle")}
               </CardTitle>
-              <CardDescription>
-                {content[language as keyof typeof content].required}
-              </CardDescription>
+              <CardDescription>{t("Contact.required")}</CardDescription>
             </CardHeader>
             <CardContent>
               <form
@@ -308,9 +159,10 @@ export default function ContactPage() {
                 onSubmit={handleSubmit}
                 className="space-y-6"
               >
+                {/* Inquiry type */}
                 <div className="space-y-2">
                   <Label htmlFor="inquiryType">
-                    {content[language as keyof typeof content].inquiryContent} *
+                    {t("Contact.inquiryContent")} *
                   </Label>
 
                   <input
@@ -319,89 +171,74 @@ export default function ContactPage() {
                     name="inquiryType"
                     value={formData.inquiryType}
                     onChange={handleChange}
-                    placeholder={
-                      language === "UZ"
-                        ? "Masalan: Biznes hamkorligi"
-                        : language === "RU"
-                        ? "Например: Общий запрос"
-                        : "For example: General inquiry"
-                    }
-                    className="w-full p-3 border border-gray-300  rounded-md text-[14px]"
+                    placeholder={t("Contact.inquiryPlaceholder")}
+                    className="w-full p-3 border border-gray-300 rounded-md text-[14px]"
                     required
                   />
                 </div>
 
+                {/* Company name */}
                 <div className="space-y-2">
                   <Label htmlFor="companyName">
-                    {content[language as keyof typeof content].companyName}
+                    {t("Contact.companyName")}
                   </Label>
                   <Input
                     id="companyName"
                     name="companyName"
                     value={formData.companyName}
                     onChange={handleChange}
-                    placeholder={
-                      content[language as keyof typeof content].companyExample
-                    }
+                    placeholder={t("Contact.companyExample")}
                     className="h-12"
                   />
                 </div>
 
+                {/* Full name */}
                 <div className="space-y-2">
-                  <Label htmlFor="name">
-                    {content[language as keyof typeof content].name} *
-                  </Label>
+                  <Label htmlFor="name">{t("Contact.name")} *</Label>
                   <Input
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder={
-                      content[language as keyof typeof content].nameExample
-                    }
+                    placeholder={t("Contact.nameExample")}
                     required
                     className="h-12"
                   />
                 </div>
 
+                {/* Phone */}
                 <div className="space-y-2">
-                  <Label htmlFor="phone">
-                    {content[language as keyof typeof content].phoneNumber} *
-                  </Label>
+                  <Label htmlFor="phone">{t("Contact.phoneNumber")} *</Label>
                   <Input
                     id="phone"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder={
-                      content[language as keyof typeof content].phoneExample
-                    }
+                    placeholder={t("Contact.phoneExample")}
                     required
                     className="h-12"
                   />
                 </div>
 
+                {/* Email */}
                 <div className="space-y-2">
-                  <Label htmlFor="email">
-                    {content[language as keyof typeof content].emailAddress} *
-                  </Label>
+                  <Label htmlFor="email">{t("Contact.emailAddress")} *</Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder={
-                      content[language as keyof typeof content].emailExample
-                    }
+                    placeholder={t("Contact.emailExample")}
                     required
                     className="h-12"
                   />
                 </div>
 
+                {/* Message */}
                 <div className="space-y-2">
                   <Label htmlFor="message">
-                    {content[language as keyof typeof content].inquiryMessage} *
+                    {t("Contact.inquiryMessage")} *
                   </Label>
                   <Textarea
                     id="message"
@@ -413,6 +250,7 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {/* Privacy checkbox */}
                 <div className="flex items-start space-x-2">
                   <input
                     type="checkbox"
@@ -421,27 +259,33 @@ export default function ContactPage() {
                     required
                   />
                   <label htmlFor="privacy" className="text-sm text-gray-700">
-                    {content[language as keyof typeof content].privacyAgreement}
+                    {t("Contact.privacyAgreement")}
                   </label>
                 </div>
 
-                {notice && <p className="text-sm text-gray-700">{notice}</p>}
+                {/* Notice */}
+                {notice && (
+                  <p className="text-sm text-gray-700 whitespace-pre-line">
+                    {notice}
+                  </p>
+                )}
 
+                {/* Submit button */}
                 <Button
                   type="submit"
                   disabled={submitting || cooldown > 0}
                   className="w-full bg-[#1C3990] hover:bg-[#2d4a9b] h-12 text-base font-semibold disabled:opacity-60"
                 >
                   {cooldown > 0
-                    ? `${
-                        content[language as keyof typeof content].submit
-                      } (${cooldown}s)`
-                    : content[language as keyof typeof content].submit}
+                    ? `${t("Contact.submit")} (${cooldown}s)`
+                    : t("Contact.submit")}
                 </Button>
               </form>
             </CardContent>
           </Card>
         </div>
+
+        {/* Agar hohlasang, o'ng tomonga telefon/ish vaqti/addr blok qo‘shishing mumkin */}
       </div>
     </div>
   );

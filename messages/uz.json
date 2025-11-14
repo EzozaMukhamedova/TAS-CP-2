@@ -5,7 +5,7 @@
     "jobs": "Ish",
     "results": "Natijalar",
     "contact": "Aloqa",
-    "phone": "+998 71 777 50 66"
+    "phone": "+99890 480 18 48"
   },
   "Hero": {
     "slides": [
@@ -145,7 +145,7 @@
   },
   "company": {
     "title": "Kompaniya haqida qisqacha",
-    "companyOverview": "Kompaniya haqida",
+
     "presidentMessage": "Kompaniya Vakillari",
     "presidentName": "O'ng tarafdagi: Azizbek va chap tarafdagi: Takashima",
     "presidentTitle": "—",
@@ -177,6 +177,200 @@
     "general-info": {
       "title": "Kompaniya Haqidagi Umumiy Ma'lumot",
       "description": "Kompaniya profili va joylashuv xaritasi"
+    }
+  },
+
+  "Company": {
+    "title": "Kompaniya haqida qisqacha",
+
+    "overview": {
+      "title": "Kompaniya haqida",
+      "body": "TAS Capital Partners — bu Tokyo Asset Solution kompaniyasining sho'ba korxonasi bo'lib, biz ko'p yillik tajriba, aniqlik va eng yuqori xizmat standartlarini mulkni boshqarish va obyektlarni boshqarish (facility management) sohalariga olib kiramiz."
+    },
+
+    "president": {
+      "title": "Kompaniya vakillari",
+      "name": "O'ng tarafdagi: Aziz Normatov va chap tarafdagi: Koji Takashima",
+      "position": "—",
+      "body": "Bizning xizmatlarimiz sizning ko‘chmas mulk aktivlaringizning qiymatini, funksionalligini va uzoq muddatli barqarorligini maksimal darajada oshirish uchun puxta ishlab chiqilgan. Biz har bir loyiha va obyektga individual yondashamiz, shu orqali har bir tafsilotda mukammallikka erishamiz. TAS Capital Partners jamoasi yapon boshqaruv madaniyatiga xos aniqlik, mas’uliyat va yuqori standartlarga tayangan holda, sizning mulkingizni nafaqat samarali boshqaradi, balki uning bozordagi raqobatbardoshligini ham oshiradi. Bizning maqsadimiz — mulk egalari uchun tinchlik va ishonch muhitini yaratish, ijarachilar esa xavfsiz, qulay va tartibli yashash yoki ishlash imkoniyatidan bahramand bo‘lishlarini ta’minlashdir. Shu tarzda biz Yaponiyada e’tirof etilgan eng yaxshi boshqaruv amaliyotlarini O‘zbekiston bozorida muvaffaqiyatli tatbiq etamiz.",
+      "showMore": "Batafsil ko‘rish",
+      "showLess": "Kamroq ko‘rsatish"
+    },
+
+    "reasonsTitle": "Nima uchun bizga ishonishingiz kerak",
+    "reasons": [
+      {
+        "title": "Vaqtingizni tejang va stressni kamaytiring",
+        "text": "Bizning xizmatlarimiz orqali mulk egalari o‘z ustuvor yo‘nalishlariga e’tibor qaratishlari mumkin, chunki ijarachilar bilan ishlashdan tortib qonunchilik talablariga rioya etishgacha bo‘lgan barcha ishlar biz tomonidan samarali va professional tarzda bajariladi."
+      },
+      {
+        "title": "Tejamkor yechimlar",
+        "text": "Yaponiyaning innovatsion yondashuvi va samaradorligi asosida biz sizga profilaktik texnik xizmat, energiya tejamkor yechimlar va optimizatsiyalangan xizmat ko‘rsatish orqali operatsion xarajatlarni kamaytirishga yordam beramiz."
+      },
+      {
+        "title": "Ishonch va sadoqat",
+        "text": "Bizning yapon merosimiz ishonch, sadoqat va mijoz birinchi o‘rinda tamoyiliga asoslangan. Biz mulk egalari va ijarachilarning to‘liq qoniqishini kafolatlaymiz va har bir o‘zaro aloqada asosiy qadriyatlarimizni aks ettiramiz."
+      },
+      {
+        "title": "Yaponcha aniqlik va ishonchlilik",
+        "text": "Biz sizning mulkingizni boshqarishda yapon menejmentiga xos, dunyo darajasidagi aniqlik va ishonchlilikni ta’minlaymiz. Mulk va obyektlarni boshqarishning barcha jihatlari ehtiyotkorlik bilan va tajribaga tayangan holda amalga oshiriladi."
+      },
+      {
+        "title": "Ijara daromadini oshiring",
+        "text": "Bizning ekspert strategiyalarimiz yordamida siz sifatli ijarachilarni jalb qilasiz, barqaror ijara daromadiga ega bo‘lasiz va bo‘sh turgan mulklar sonini kamaytirasiz, natijada ijara to‘lovlari uzluksiz amalga oshiriladi."
+      },
+      {
+        "title": "Sarmoyangizni himoya qiling",
+        "text": "Biz profilaktik texnik xizmat va ta’mirlash bo‘yicha faol yondashuvni qo‘llaymiz, bu esa qimmat ta’mir ishlari xavfini kamaytiradi va mulkingizning xizmat muddatini uzaytiradi."
+      }
+    ],
+
+    "facility": {
+      "title": "Obyektlarni boshqarish xizmatlari",
+      "subtitle": "(Facility Management Services)",
+      "body": "Bizning obyektlarni boshqarish yechimlarimiz operatsion mukammallik, xarajatlarni kamaytirish, hamda eng yuqori xavfsizlik va barqarorlik standartlariga e’tibor qaratadi. Yaponiyaning innovatsiya va samaradorlik bo‘yicha tajribasidan foydalanib, biz sizning mulkingiz mukammal holatda saqlanishini ta’minlaymiz.",
+      "points": [
+        "Texnik xizmat ko‘rsatish va ta’mirlash xizmatlari",
+        "Energiya boshqaruvi va barqarorlik yechimlari",
+        "Sog‘liq va xavfsizlik standartlariga rioya etish",
+        "Bino infratuzilmasini saqlab turish"
+      ]
+    },
+
+    "property": {
+      "title": "Ko‘chmas mulkni boshqarish xizmatlari",
+      "subtitle": "(Property Management Services)",
+      "body": "Biz sizning mulkingizning har bir jihatini professional tarzda boshqaramiz, bu jarayonda yapon bizneslariga xos bo‘lgan aniqlik, e’tibor va fidoyilikni qo‘llaymiz. Ijara jarayonidan tortib moliyaviy hisobot va qonuniy muvofiqlikkacha bo‘lgan barcha bosqichlarda ishonchli va halol xizmat ko‘rsatamiz.",
+      "points": [
+        "Ijarachilar bilan munosabat va ijara boshqaruvi",
+        "Moliyaviy hisobotlar va byudjetlashtirish",
+        "Ijara to‘lovlarini yig‘ish va qonuniy talablarni bajarish",
+        "Mulkni texnik xizmat bilan ta’minlashni muvofiqlashtirish"
+      ]
+    }
+  },
+  "Results": {
+    "title": "Loyiha natijalari",
+    "subtitle": "Muvaffaqiyatli amalga oshirilgan barcha loyihalarimiz",
+    "soonText": "Tez orada yangi loyihalar va natijalar qo'shiladi.",
+    "soonHighlight": "Saytimizni kuzatib turing!"
+  },
+  "Recruitment": {
+    "title": "Karyera Imkoniyatlari",
+    "subtitle": "Professional rivojlanish va muvaffaqiyat yo‘li",
+    "soonText": "Yangi ish o‘rinlari va kasbiy imkoniyatlar tez orada qo‘shiladi.",
+    "soonHighlight": "Bizning jamoamizga qo‘shilish uchun kuzatib turing!"
+  },
+  "Contact": {
+    "title": "Ariza",
+    "subtitle": "So'rovlar uchun, iltimos, telefon orqali yoki so'rov formamiz orqali biz bilan bog'laning.",
+    "phone": "03-5510-8300 (asosiy raqam)",
+
+    "formTitle": "Kerakli ma'lumotlarni kiriting va yuboring",
+    "required": "Majburiy maydonlarni to'ldirganingizga ishonch hosil qiling.",
+    "inquiryContent": "So'rov mazmuni",
+    "inquiryPlaceholder": "Masalan: Biznes hamkorligi",
+    "companyName": "Tashkilot nomi",
+    "companyExample": "Misol: O'zbekiston Asset Solutions",
+    "name": "Ism Familiya",
+    "nameExample": "Misol: Alisher Navoiy",
+    "phoneNumber": "Telefon raqami",
+    "phoneExample": "Misol: +998 90 123-45-67",
+    "emailAddress": "Elektron pochta manzili",
+    "emailExample": "Misol: email@example.uz",
+    "inquiryMessage": "So'rov mazmuni",
+    "privacyAgreement": "Iltimos, ma'lumotingizni yuborishdan oldin maxfiylik siyosatimizga rozilik bildiring.",
+    "submit": "So'rov yuborish",
+
+    "notice": {
+      "sent": "Yuborildi. Rahmat!",
+      "rateLimit": "Iltimos, qayta yuborishdan oldin kuting.",
+      "configError": "Xatolik: pochta xizmati sozlanmagan.",
+      "error": "Yuborishda xatolik yuz berdi.",
+      "validationError": "Majburiy maydonlarni to'ldiring.",
+      "fewSeconds": "bir necha",
+      "rateWait": "Iltimos, {{seconds}} soniyadan so'ng qayta yuboring."
+    }
+  },
+
+  "Business": {
+    "hero": {
+      "titleLine1": "Biznes",
+      "titleLine2": "Xizmatlarimiz",
+      "subtitle": "Ko‘chmas mulk sohasida keng qamrovli professional xizmatlar",
+      "body": "Biz ko‘chmas mulk sohasida to‘liq spektrli xizmatlar ko‘rsatamiz. Rivojlanish loyihalaridan tortib xalqaro investitsiyalargacha, har bir mijozning ehtiyojlariga mos yechimlar taklif etamiz.",
+      "cta": "Biz bilan bog‘laning",
+      "imageAlt": "Biznes xizmatlar"
+    },
+    "servicesSectionTitle": "Bizning Xizmatlarimiz",
+    "common": {
+      "overview": "Umumiy Ma’lumot",
+      "features": "Xususiyatlar"
+    },
+    "services": {
+      "property": {
+        "title": "Mulk Boshqaruvi",
+        "subtitle": "Professional mulk boshqaruvi va operatsion xizmatlar",
+        "overview": "Biz ko‘chmas mulkni sifatli boshqarish orqali uning qiymatini oshiramiz.",
+        "feature1": "Ijarachilar bilan doimiy aloqani ta’minlaymiz va ularning ehtiyojlariga tezkor javob beramiz.",
+        "feature2": "Moliyaviy hisobot, ijara to‘lovlari va shartnomalarni shaffof tarzda boshqaramiz.",
+        "feature3": "Mulkni uzoq muddatli daromad keltiradigan aktivga aylantiramiz."
+      },
+      "building": {
+        "title": "Bino Boshqaruvi",
+        "subtitle": "To‘liq bino boshqaruvi va texnik xizmat",
+        "overview": "Binalarning barqaror ishlashini va xavfsizligini ta’minlaymiz.",
+        "feature1": "Barcha texnik tizimlar (elektr, suv, isitish, sovutish) uzluksiz ishlashini nazorat qilamiz.",
+        "feature2": "Xavfsizlik va sanitariya standartlariga to‘liq rioya etamiz.",
+        "feature3": "Bino ekspluatatsiya xarajatlarini kamaytirish uchun profilaktik xizmat ko‘rsatamiz."
+      },
+      "commercial": {
+        "title": "Tijorat Ob’ektlari",
+        "subtitle": "Do‘kon va omborxonalar uchun professional xizmat",
+        "overview": "Tijorat maydonlarining samarali ishlashini ta’minlaymiz.",
+        "feature1": "Savdo markazlari, ofislar va omborlarni yuqori darajada boshqaramiz.",
+        "feature2": "Bozor talabiga moslangan ijara siyosatini ishlab chiqamiz.",
+        "feature3": "Ijarachilar aylanishini kamaytirish va daromadni barqarorlashtirish bo‘yicha strategiyalar ishlab chiqamiz."
+      },
+      "solar": {
+        "title": "Quyosh Energiyasi",
+        "subtitle": "Quyosh elektr stansiyalari texnik xizmati",
+        "overview": "Ekologik toza energiya yechimlarini taqdim etamiz.",
+        "feature1": "Quyosh panellarining samarali ishlashini doimiy kuzatib boramiz.",
+        "feature2": "Energiya ishlab chiqarish va tarmoq bilan ishlashni tahlil qilib optimallashtiramiz.",
+        "feature3": "Texnik xizmat, testlash va monitoring tizimlarini muntazam yangilab turamiz."
+      },
+      "landscape": {
+        "title": "Landshaft Dizayni",
+        "subtitle": "Professional landshaft parvarishi va dizayni",
+        "overview": "Yashil hudud va bog‘larning chiroyli saqlanishini ta’minlaymiz.",
+        "feature1": "Landshaft loyihalarini estetik va ekologik talablar asosida ishlab chiqamiz.",
+        "feature2": "Sug‘orish, parvarish va bezak ekinlarini doimiy yangilab turamiz.",
+        "feature3": "Tabiiy muhit va arxitektura uyg‘unligini ta’minlaymiz."
+      },
+      "investment": {
+        "title": "Investitsiya Konsaltingi",
+        "subtitle": "Ko‘chmas mulk investitsiyalari bo‘yicha maslahatlar",
+        "overview": "Investitsiya strategiyasini to‘liq tahlil qilamiz.",
+        "feature1": "Mulk bozori tahlili asosida foydali investitsiya imkoniyatlarini aniqlaymiz.",
+        "feature2": "Sarmoya risklarini kamaytirish va daromadni oshirish bo‘yicha tavsiyalar beramiz.",
+        "feature3": "Mijoz ehtiyojiga mos investitsiya portfellarini shakllantiramiz."
+      }
+    },
+    "whyTitle": "Nima uchun bizni tanlash kerak?",
+    "why": {
+      "expertise": {
+        "title": "Professional Ekspertiza",
+        "body": "Ko‘chmas mulk sohasida chuqur bilim va ko‘p yillik tajribaga ega mutaxassislar jamoasi."
+      },
+      "international": {
+        "title": "Xalqaro Tajriba",
+        "body": "Turli mamlakatlarda muvaffaqiyatli loyihalar amalga oshirgan va global bozorlarni yaxshi biladigan jamoa."
+      },
+      "individual": {
+        "title": "Individual Yondashuv",
+        "body": "Har bir mijozning o‘ziga xos ehtiyojlarini inobatga olgan holda maxsus yechimlar ishlab chiqamiz."
+      }
     }
   }
 }

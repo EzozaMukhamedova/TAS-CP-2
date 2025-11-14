@@ -61,7 +61,7 @@ export default function Navbar() {
     { href: "/contact", label: t("Nav.contact") },
   ];
 
-  const phoneNumber = t("Nav.phone", { defaultValue: "+998 71 777 50 66" });
+  const phoneNumber = t("Nav.phone", { defaultValue: "+99890 480 18 48" });
 
   return (
     <nav
@@ -164,7 +164,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between px-4 sm:px-5 pt-4">
               <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
                 <img
-                  src="/svg/TASlogo.svg"
+                  src="/svg/logo_white.svg"
                   alt="logo"
                   className="h-8 w-auto opacity-90"
                 />

@@ -26,7 +26,6 @@ export default function Hero() {
     return () => clearInterval(id);
   }, [paused, slides.length]);
 
-  // Til o'zgarsa yoki slaydlar uzunligi o'zgarsa, boshidan boshlaymiz
   useEffect(() => {
     setIndex(0);
   }, [i18n.language, slides.length]);
@@ -90,28 +89,6 @@ export default function Hero() {
               ))}
             </div>
           </div>
-
-          {/* dots:
-              - mobile/tablet: markazda
-              - desktop: avvalgi joy (463px) */}
-          {/* <div
-            className="
-              mt-1 flex gap-2 justify-center mx-auto
-              md:justify-start
-              w-full md:w-[463px] border-2 lg:mt-[5px] mt-[-30px] ml-[250px]
-            "
-          >
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                aria-label={`Slide ${i + 1}`}
-                onClick={() => setIndex(i)}
-                className={`h-2 rounded-full transition-all ${
-                  index === i ? "w-6 bg-[#173758]" : "w-2 bg-[#173758]/30"
-                }`}
-              />
-            ))}
-          </div> */}
         </div>
       </section>
 
