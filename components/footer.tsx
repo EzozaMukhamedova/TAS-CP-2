@@ -44,9 +44,7 @@ export default function Footer() {
   const socialsTitle = t("Footer.socials");
   const rights = t("Footer.rights");
 
-  const services = t("Footer.servicesList", {
-    returnObjects: true,
-  }) as string[];
+  const services = t("Footer.servicesList", { returnObjects: true });
   const navCompany = t("Footer.nav.company");
   const navBusiness = t("Footer.nav.business");
   const navRecruitment = t("Footer.nav.recruitment");

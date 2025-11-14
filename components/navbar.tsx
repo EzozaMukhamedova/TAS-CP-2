@@ -101,33 +101,6 @@ export default function Navbar() {
 
           {/* Desktop socials + language */}
           <div className="hidden lg:flex items-center gap-6">
-            {/* <div className="flex items-center gap-[18px]">
-              <Link href="/" aria-label="Telegram">
-                <img
-                  src="/svg/telegram.svg"
-                  alt="Telegram"
-                  width={27}
-                  height={27}
-                />
-              </Link>
-              <Link href="/" aria-label="Instagram">
-                <img
-                  src="/svg/instagramm.svg"
-                  alt="Instagram"
-                  width={27}
-                  height={27}
-                />
-              </Link>
-              <Link href="/" aria-label="Facebook">
-                <img
-                  src="/svg/facebook.svg"
-                  alt="Facebook"
-                  width={27}
-                  height={27}
-                />
-              </Link>
-            </div> */}
-
             <div className="flex items-center bg-gray-100 rounded-full p-1">
               {LOCALES.map((lng) => (
                 <button
@@ -164,9 +137,9 @@ export default function Navbar() {
             <div className="flex items-center justify-between px-4 sm:px-5 pt-4">
               <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
                 <img
-                  src="/svg/logo_white.svg"
+                  src="/svg/oq_logo.svg"
                   alt="logo"
-                  className="h-8 w-auto opacity-90"
+                  className="h-12 w-auto opacity-90"
                 />
               </Link>
               <button
@@ -174,14 +147,14 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="h-8 w-8 rounded-full border border-white/70 flex items-center justify-center"
               >
-                <X className="h-4 w-4" />
+                <X className="h-12 w-12" />
               </button>
             </div>
 
             {/* Centered content */}
             <div className="flex-1 flex flex-col items-center justify-center gap-6 px-6 text-center">
               {/* Pages */}
-              <nav className="flex flex-col items-center gap-4 text-[18px]">
+              <nav className="flex flex-col items-center gap-4 text-[26px]">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
@@ -204,11 +177,11 @@ export default function Navbar() {
                 className="mt-1 inline-flex items-center gap-2 opacity-95 hover:opacity-100"
               >
                 <Phone className="h-5 w-5" />
-                <span className="tracking-wide">{phoneNumber}</span>
+                <span className="tracking-wide text-[24px]">{phoneNumber}</span>
               </a>
 
               {/* Language row */}
-              <div className="flex items-center gap-5 text-sm mt-1">
+              <div className="flex items-center gap-5 text-[26px] mt-1">
                 {(["ru", "uz", "en"] as Locale[]).map((code) => (
                   <button
                     key={code}
@@ -222,53 +195,10 @@ export default function Navbar() {
                         : "opacity-90 hover:opacity-100"
                     }`}
                   >
-                    {code === "uz" ? "O‘Z" : code.toUpperCase()}
+                    {code === "uz" ? "UZ" : code.toUpperCase()}
                   </button>
                 ))}
               </div>
-
-              {/* Socials */}
-              {/* <div className="flex items-center gap-6 mt-2">
-                <Link
-                  href="/"
-                  aria-label="Telegram"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <img
-                    src="/svg/telegram.svg"
-                    alt=""
-                    width={24}
-                    height={24}
-                    className="brightness-0 invert"
-                  />
-                </Link>
-                <Link
-                  href="/"
-                  aria-label="Instagram"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <img
-                    src="/svg/instagramm.svg"
-                    alt=""
-                    width={24}
-                    height={24}
-                    className="brightness-0 invert"
-                  />
-                </Link>
-                <Link
-                  href="/"
-                  aria-label="Facebook"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <img
-                    src="/svg/facebook.svg"
-                    alt=""
-                    width={24}
-                    height={24}
-                    className="brightness-0 invert"
-                  />
-                </Link>
-              </div> */}
             </div>
           </div>
         </div>

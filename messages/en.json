@@ -262,35 +262,42 @@
     "soonHighlight": "Stay tuned to join our team!"
   },
 
-  "Contact": {
+  "Contacts": {
     "title": "Inquiry",
-    "subtitle": "For inquiries, please contact us by phone or through our inquiry form.",
-    "phone": "03-5510-8300 (main number)",
+    "subtitle": "For questions, please contact us by phone or through our contact form.",
+    "phoneInquiries": "Phone inquiries",
+    "realEstateInfo": "Need information about selling real estate",
+    "businessHours": "Business hours: 9:00–18:00",
+    "holidayNote": "*Except weekends, holidays, and New Year holidays",
+    "contactForm": "Contact us via the form",
+    "contactFormNote": "Contact us through the online form and receive a quick response",
+    "inquiry": "Contact",
+    "phone": "+998904801848",
 
-    "formTitle": "Please enter the required information and send",
-    "required": "Make sure you have filled in the mandatory fields.",
+    "formTitle": "Enter the required information and submit",
+    "required": "Please make sure you have filled in the required fields.",
     "inquiryContent": "Inquiry content",
     "inquiryPlaceholder": "For example: Business partnership",
     "companyName": "Organization name",
-    "companyExample": "Example: Tokyo Asset Solution",
+    "companyExample": "Example: Uzbekistan Asset Solutions",
     "name": "Full Name",
-    "nameExample": "Example: Tokyo Taro",
+    "nameExample": "Example: Alisher Navoi",
     "phoneNumber": "Phone number",
-    "phoneExample": "Example: 03-1234-5678",
+    "phoneExample": "Example: +998 90 123-45-67",
     "emailAddress": "Email address",
-    "emailExample": "Example: email@example.jp",
-    "inquiryMessage": "Inquiry content",
-    "privacyAgreement": "Please agree to our privacy policy before sending your information.",
+    "emailExample": "Example: email@example.uz",
+    "inquiryMessage": "Inquiry message",
+    "privacyAgreement": "Please agree to our privacy policy before submitting your information.",
     "submit": "Send Inquiry",
 
     "notice": {
       "sent": "Sent. Thank you!",
       "rateLimit": "Please wait before resubmitting.",
-      "configError": "Error: email service not configured.",
-      "error": "Failed to send.",
-      "validationError": "Fill in the required fields.",
+      "configError": "Error: email service is not configured.",
+      "error": "An error occurred while sending.",
+      "rateWait": "Please wait {{seconds}} seconds before resubmitting.",
       "fewSeconds": "a few",
-      "rateWait": "Please wait {{seconds}} seconds before resubmitting."
+      "validationError": "Please fill in the required fields."
     }
   },
 

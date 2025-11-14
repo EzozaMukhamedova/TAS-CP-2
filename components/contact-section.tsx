@@ -15,10 +15,10 @@ export default function ContactSection() {
           {/* Header */}
           <div className="text-center mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#0A2C52] mb-3 sm:mb-4">
-              {t("Contact.title")}
+              {t("Contacts.title")}
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-              {t("Contact.subtitle")}
+              {t("Contacts.subtitle")}
             </p>
           </div>
 
@@ -27,7 +27,7 @@ export default function ContactSection() {
             <div className="space-y-8 text-center lg:text-left">
               <div>
                 <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6 flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-2">
-                  {t("Contact.phoneInquiries")}
+                  {t("Contacts.phoneInquiries")}
                 </h3>
 
                 <div className="space-y-4 sm:space-y-6">
@@ -43,10 +43,10 @@ export default function ContactSection() {
                     </div>
                     <div className="flex-1 text-center sm:text-left">
                       <h4 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
-                        {t("Contact.realEstateInfo")}
+                        {t("Contacts.realEstateInfo")}
                       </h4>
                       <p className="text-xl sm:text-2xl font-bold text-[#31519F]">
-                        {t("Contact.phone")}
+                        {t("Contacts.phone")}
                       </p>
                     </div>
                   </div>
@@ -63,7 +63,7 @@ export default function ContactSection() {
                     </div>
                     <div className="flex-1 text-center sm:text-left">
                       <h4 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
-                        {t("Contact.realEstateInfo")}
+                        {t("Contacts.realEstateInfo")}
                       </h4>
                       <p className="text-lg sm:text-2xl font-bold text-[#31519F] break-all">
                         @TASCApitalPartners
@@ -74,38 +74,38 @@ export default function ContactSection() {
 
                 <div className="mt-5 sm:mt-6 p-4 sm:p-5 bg-gray-100 rounded-lg text-center lg:text-left">
                   <p className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
-                    {t("Contact.businessHours")}
+                    {t("Contacts.businessHours")}
                   </p>
                   <p className="text-xs sm:text-sm text-gray-600">
-                    {t("Contact.holidayNote")}
+                    {t("Contacts.holidayNote")}
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form CTA */}
+            {/* Contacts Form CTA */}
             <div className="text-center">
               <div className="bg-white px-6 py-7 sm:px-8 sm:py-9 rounded-2xl shadow-lg border border-gray-100 max-w-md mx-auto lg:mx-0">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#31519F] text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-5 sm:mb-6">
                   <Image
                     src="/svg/boglanish.svg"
-                    alt="Contact Icon"
+                    alt="Contacts Icon"
                     width={32}
                     height={32}
                   />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 sm:mb-4">
-                  {t("Contact.contactForm")}
+                  {t("Contacts.contactForm")}
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8">
-                  {t("Contact.contactFormNote")}
+                  {t("Contacts.contactFormNote")}
                 </p>
                 <Button
                   asChild
                   size="lg"
                   className="bg-[#31519F] hover:bg-blue-700 px-6 sm:px-8 py-3 text-base sm:text-lg w-full sm:w-auto"
                 >
-                  <Link href="/contact">{t("Contact.inquiry")}</Link>
+                  <Link href="/Contacts">{t("Contacts.inquiry")}</Link>
                 </Button>
               </div>
             </div>

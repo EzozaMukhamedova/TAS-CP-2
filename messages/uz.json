@@ -105,7 +105,7 @@
       }
     ]
   },
-  "Contact": {
+  "Contacts": {
     "title": "So'rov",
     "subtitle": "Savollar uchun telefon orqali yoki aloqa formamiz orqali biz bilan bog'laning.",
     "phoneInquiries": "Telefon so'rovlari",
@@ -115,34 +115,35 @@
     "contactForm": "Ariza orqali biz bilan bog'laning",
     "contactFormNote": "Onlayn forma orqali biz bilan bog'laning va tezkor javob oling",
     "inquiry": "Bog'lanish",
-    "phone": "+998904801848"
+    "phone": "+998904801848",
+
+    "formTitle": "Kerakli ma'lumotlarni kiriting va yuboring",
+    "required": "Majburiy maydonlarni to'ldirganingizga ishonch hosil qiling.",
+    "inquiryContent": "So'rov mazmuni",
+    "inquiryPlaceholder": "Masalan: Biznes hamkorligi",
+    "companyName": "Tashkilot nomi",
+    "companyExample": "Misol: O'zbekiston Asset Solutions",
+    "name": "Ism Familiya",
+    "nameExample": "Misol: Alisher Navoiy",
+    "phoneNumber": "Telefon raqami",
+    "phoneExample": "Misol: +998 90 123-45-67",
+    "emailAddress": "Elektron pochta manzili",
+    "emailExample": "Misol: email@example.uz",
+    "inquiryMessage": "So'rov mazmuni",
+    "privacyAgreement": "Iltimos, ma'lumotingizni yuborishdan oldin maxfiylik siyosatimizga rozilik bildiring.",
+    "submit": "So'rov yuborish",
+
+    "notice": {
+      "sent": "Yuborildi. Rahmat!",
+      "rateLimit": "Iltimos, qayta yuborishdan oldin kuting.",
+      "configError": "Xatolik: pochta xizmati sozlanmagan.",
+      "error": "Yuborishda xatolik yuz berdi.",
+      "rateWait": "Iltimos, {{seconds}} soniyadan so'ng qayta yuboring.",
+      "fewSeconds": "bir necha",
+      "validationError": "Majburiy maydonlarni to'ldiring."
+    }
   },
-  "Footer": {
-    "company": {
-      "postalLabel": "Pochta indeksi:",
-      "addressLabel": "Manzil:",
-      "phoneLabel": "Telefon:",
-      "emailLabel": "Email:"
-    },
-    "services": "Xizmatlar",
-    "sitemap": "Sayt xaritasi",
-    "socials": "Ijtimoiy tarmoqlar",
-    "rights": "Barcha huquqlar himoyalangan.",
-    "nav": {
-      "company": "Kompaniya",
-      "business": "Biznes",
-      "recruitment": "Ish"
-    },
-    "servicesList": [
-      "Qayta Qurish",
-      "Renovatsiya",
-      "Uzoq Muddatli Egalik",
-      "Yashil Energiya",
-      "Xalqaro Biznes",
-      "Aktivlar Konsaltingi",
-      "Investitsiya Boshqaruvi"
-    ]
-  },
+
   "company": {
     "title": "Kompaniya haqida qisqacha",
 
@@ -372,5 +373,32 @@
         "body": "Har bir mijozning o‘ziga xos ehtiyojlarini inobatga olgan holda maxsus yechimlar ishlab chiqamiz."
       }
     }
+  },
+
+  "Footer": {
+    "company": {
+      "postalLabel": "Pochta indeksi:",
+      "addressLabel": "Manzil:",
+      "phoneLabel": "Telefon:",
+      "emailLabel": "Email:"
+    },
+    "services": "Xizmatlar",
+    "sitemap": "Sayt xaritasi",
+    "socials": "Ijtimoiy tarmoqlar",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "nav": {
+      "company": "Kompaniya",
+      "business": "Biznes",
+      "recruitment": "Ish o‘rinlari"
+    },
+    "servicesList": [
+      "Qayta Qurish",
+      "Renovatsiya",
+      "Uzoq Muddatli Egalik",
+      "Yashil Energiya",
+      "Xalqaro Biznes",
+      "Aktivlar Konsaltingi",
+      "Investitsiya Boshqaruvi"
+    ]
   }
 }

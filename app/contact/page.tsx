@@ -16,9 +16,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
-export default function ContactPage() {
+export default function ContactsPage() {
   const searchParams = useSearchParams();
-  const { t } = useTranslation(); // default namespace ("Contact" ham shu yerda)
+  const { t } = useTranslation(); // default namespace ("Contacts" ham shu yerda)
 
   const [formData, setFormData] = useState({
     inquiryType: "",
@@ -38,7 +38,7 @@ export default function ContactPage() {
     setSubmitting(true);
     setNotice(null);
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/Contacts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -49,7 +49,7 @@ export default function ContactPage() {
 
       const body = await res.json().catch(() => ({}));
       if (res.status === 201) {
-        setNotice(t("Contact.notice.sent"));
+        setNotice(t("Contacts.notice.sent"));
         setFormData({
           inquiryType: "",
           companyName: "",
@@ -59,14 +59,14 @@ export default function ContactPage() {
           message: "",
         });
       } else if (res.status === 429) {
-        setNotice(body?.error || t("Contact.notice.rateLimit"));
+        setNotice(body?.error || t("Contacts.notice.rateLimit"));
       } else if (res.status === 501) {
-        setNotice(t("Contact.notice.configError"));
+        setNotice(t("Contacts.notice.configError"));
       } else {
-        setNotice(t("Contact.notice.error"));
+        setNotice(t("Contacts.notice.error"));
       }
     } catch (err) {
-      setNotice(t("Contact.notice.error"));
+      setNotice(t("Contacts.notice.error"));
     } finally {
       setSubmitting(false);
     }
@@ -81,7 +81,7 @@ export default function ContactPage() {
     if (cd > 0) setCooldown(cd);
 
     if (sent === "1") {
-      setNotice(t("Contact.notice.sent"));
+      setNotice(t("Contacts.notice.sent"));
       if (typeof window !== "undefined") {
         const u = new URL(window.location.href);
         u.search = "";
@@ -90,14 +90,14 @@ export default function ContactPage() {
     } else if (err) {
       const msg =
         err === "rate"
-          ? t("Contact.notice.rateWait", {
-              seconds: wait || t("Contact.notice.fewSeconds"),
+          ? t("Contacts.notice.rateWait", {
+              seconds: wait || t("Contacts.notice.fewSeconds"),
             })
           : err === "config"
-          ? t("Contact.notice.configError")
+          ? t("Contacts.notice.configError")
           : err === "validation"
-          ? t("Contact.notice.validationError")
-          : t("Contact.notice.error");
+          ? t("Contacts.notice.validationError")
+          : t("Contacts.notice.error");
 
       setNotice(msg);
       if (typeof window !== "undefined") {
@@ -131,29 +131,27 @@ export default function ContactPage() {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-[40px] sm:text-[48px] md:text-[60px] mt-[86px] font-bold text-[#1C3990] mb-4 leading-tight">
-          {t("Contact.title")}
+          {t("Contacts.title")}
         </h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          {t("Contact.subtitle")}
+          {t("Contacts.subtitle")}
         </p>
-        <p className="text-xl font-semibold text-gray-900 mt-4">
-          {t("Contact.phone")}
-        </p>
+  
       </div>
 
       <div className="grid lg:grid-cols-3 gap-12">
-        {/* Contact Form */}
+        {/* Contacts Form */}
         <div className="lg:col-span-2">
           <Card className="shadow-lg border-0">
             <CardHeader>
               <CardTitle className="text-2xl text-[#1C3990]">
-                {t("Contact.formTitle")}
+                {t("Contacts.formTitle")}
               </CardTitle>
-              <CardDescription>{t("Contact.required")}</CardDescription>
+              <CardDescription>{t("Contacts.required")}</CardDescription>
             </CardHeader>
             <CardContent>
               <form
-                action="/api/contact"
+                action="/api/Contacts"
                 method="post"
                 acceptCharset="UTF-8"
                 onSubmit={handleSubmit}
@@ -162,7 +160,7 @@ export default function ContactPage() {
                 {/* Inquiry type */}
                 <div className="space-y-2">
                   <Label htmlFor="inquiryType">
-                    {t("Contact.inquiryContent")} *
+                    {t("Contacts.inquiryContent")} *
                   </Label>
 
                   <input
@@ -171,7 +169,7 @@ export default function ContactPage() {
                     name="inquiryType"
                     value={formData.inquiryType}
                     onChange={handleChange}
-                    placeholder={t("Contact.inquiryPlaceholder")}
+                    placeholder={t("Contacts.inquiryPlaceholder")}
                     className="w-full p-3 border border-gray-300 rounded-md text-[14px]"
                     required
                   />
@@ -180,27 +178,27 @@ export default function ContactPage() {
                 {/* Company name */}
                 <div className="space-y-2">
                   <Label htmlFor="companyName">
-                    {t("Contact.companyName")}
+                    {t("Contacts.companyName")}
                   </Label>
                   <Input
                     id="companyName"
                     name="companyName"
                     value={formData.companyName}
                     onChange={handleChange}
-                    placeholder={t("Contact.companyExample")}
+                    placeholder={t("Contacts.companyExample")}
                     className="h-12"
                   />
                 </div>
 
                 {/* Full name */}
                 <div className="space-y-2">
-                  <Label htmlFor="name">{t("Contact.name")} *</Label>
+                  <Label htmlFor="name">{t("Contacts.name")} *</Label>
                   <Input
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder={t("Contact.nameExample")}
+                    placeholder={t("Contacts.nameExample")}
                     required
                     className="h-12"
                   />
@@ -208,13 +206,13 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <div className="space-y-2">
-                  <Label htmlFor="phone">{t("Contact.phoneNumber")} *</Label>
+                  <Label htmlFor="phone">{t("Contacts.phoneNumber")} *</Label>
                   <Input
                     id="phone"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder={t("Contact.phoneExample")}
+                    placeholder={t("Contacts.phoneExample")}
                     required
                     className="h-12"
                   />
@@ -222,14 +220,14 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <Label htmlFor="email">{t("Contact.emailAddress")} *</Label>
+                  <Label htmlFor="email">{t("Contacts.emailAddress")} *</Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder={t("Contact.emailExample")}
+                    placeholder={t("Contacts.emailExample")}
                     required
                     className="h-12"
                   />
@@ -238,7 +236,7 @@ export default function ContactPage() {
                 {/* Message */}
                 <div className="space-y-2">
                   <Label htmlFor="message">
-                    {t("Contact.inquiryMessage")} *
+                    {t("Contacts.inquiryMessage")} *
                   </Label>
                   <Textarea
                     id="message"
@@ -259,7 +257,7 @@ export default function ContactPage() {
                     required
                   />
                   <label htmlFor="privacy" className="text-sm text-gray-700">
-                    {t("Contact.privacyAgreement")}
+                    {t("Contacts.privacyAgreement")}
                   </label>
                 </div>
 
@@ -277,15 +275,15 @@ export default function ContactPage() {
                   className="w-full bg-[#1C3990] hover:bg-[#2d4a9b] h-12 text-base font-semibold disabled:opacity-60"
                 >
                   {cooldown > 0
-                    ? `${t("Contact.submit")} (${cooldown}s)`
-                    : t("Contact.submit")}
+                    ? `${t("Contacts.submit")} (${cooldown}s)`
+                    : t("Contacts.submit")}
                 </Button>
               </form>
             </CardContent>
           </Card>
         </div>
 
-        {/* Agar hohlasang, o'ng tomonga telefon/ish vaqti/addr blok qo‘shishing mumkin */}
+     
       </div>
     </div>
   );
