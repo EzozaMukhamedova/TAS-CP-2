@@ -265,7 +265,7 @@
   "Contact": {
     "title": "Ariza",
     "subtitle": "So'rovlar uchun, iltimos, telefon orqali yoki so'rov formamiz orqali biz bilan bog'laning.",
-    "phone": "03-5510-8300 (asosiy raqam)",
+    "phone": "+998904801848",
 
     "formTitle": "Kerakli ma'lumotlarni kiriting va yuboring",
     "required": "Majburiy maydonlarni to'ldirganingizga ishonch hosil qiling.",
@@ -400,5 +400,15 @@
       "Aktivlar Konsaltingi",
       "Investitsiya Boshqaruvi"
     ]
+  },
+   "Companys": {
+    "leaderMessage": {
+      "sectionTitle": "Tokyo Asset Solution Bosh Ofisi Rahbariyati",
+      "name": "Nobuaki Terashiki",
+      "role": "Tokyo Asset Solution Bosh Ofisi Rahbari",
+      "message": "Hurmatli hamkorlar va mijozlar! Tokyo Asset Solution kompaniyasining prezidenti sifatida sizlarni tabriklayman. Bizning kompaniyamiz 2009 yildan beri ko‘chmas mulk sohasida innovatsion yechimlar yaratib kelmoqda. Biz nafaqat binolar quramiz, balki kelajak avlodlar uchun barqaror muhit yaratamiz. Har bir loyihada an’ana va innovatsiyani muvozanatlashtirishga harakat qilamiz.\n\nBizning jamoamiz — bu bizning eng katta boyligimiz. Har bir xodimning professional o‘sishi kompaniyamizning muvaffaqiyatining asosi hisoblanadi.",
+      "more": "Batafsil",
+      "less": "Yopish"
+    }
   }
 }

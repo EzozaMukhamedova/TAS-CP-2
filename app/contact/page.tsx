@@ -136,154 +136,155 @@ export default function ContactsPage() {
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           {t("Contacts.subtitle")}
         </p>
-  
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-12">
-        {/* Contacts Form */}
-        <div className="lg:col-span-2">
-          <Card className="shadow-lg border-0">
-            <CardHeader>
-              <CardTitle className="text-2xl text-[#1C3990]">
-                {t("Contacts.formTitle")}
-              </CardTitle>
-              <CardDescription>{t("Contacts.required")}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form
-                action="/api/Contacts"
-                method="post"
-                acceptCharset="UTF-8"
-                onSubmit={handleSubmit}
-                className="space-y-6"
-              >
-                {/* Inquiry type */}
-                <div className="space-y-2">
-                  <Label htmlFor="inquiryType">
-                    {t("Contacts.inquiryContent")} *
-                  </Label>
-
-                  <input
-                    type="text"
-                    id="inquiryType"
-                    name="inquiryType"
-                    value={formData.inquiryType}
-                    onChange={handleChange}
-                    placeholder={t("Contacts.inquiryPlaceholder")}
-                    className="w-full p-3 border border-gray-300 rounded-md text-[14px]"
-                    required
-                  />
-                </div>
-
-                {/* Company name */}
-                <div className="space-y-2">
-                  <Label htmlFor="companyName">
-                    {t("Contacts.companyName")}
-                  </Label>
-                  <Input
-                    id="companyName"
-                    name="companyName"
-                    value={formData.companyName}
-                    onChange={handleChange}
-                    placeholder={t("Contacts.companyExample")}
-                    className="h-12"
-                  />
-                </div>
-
-                {/* Full name */}
-                <div className="space-y-2">
-                  <Label htmlFor="name">{t("Contacts.name")} *</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder={t("Contacts.nameExample")}
-                    required
-                    className="h-12"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div className="space-y-2">
-                  <Label htmlFor="phone">{t("Contacts.phoneNumber")} *</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder={t("Contacts.phoneExample")}
-                    required
-                    className="h-12"
-                  />
-                </div>
-
-                {/* Email */}
-                <div className="space-y-2">
-                  <Label htmlFor="email">{t("Contacts.emailAddress")} *</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder={t("Contacts.emailExample")}
-                    required
-                    className="h-12"
-                  />
-                </div>
-
-                {/* Message */}
-                <div className="space-y-2">
-                  <Label htmlFor="message">
-                    {t("Contacts.inquiryMessage")} *
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="min-h-[120px] resize-none"
-                    required
-                  />
-                </div>
-
-                {/* Privacy checkbox */}
-                <div className="flex items-start space-x-2">
-                  <input
-                    type="checkbox"
-                    id="privacy"
-                    className="mt-1"
-                    required
-                  />
-                  <label htmlFor="privacy" className="text-sm text-gray-700">
-                    {t("Contacts.privacyAgreement")}
-                  </label>
-                </div>
-
-                {/* Notice */}
-                {notice && (
-                  <p className="text-sm text-gray-700 whitespace-pre-line">
-                    {notice}
-                  </p>
-                )}
-
-                {/* Submit button */}
-                <Button
-                  type="submit"
-                  disabled={submitting || cooldown > 0}
-                  className="w-full bg-[#1C3990] hover:bg-[#2d4a9b] h-12 text-base font-semibold disabled:opacity-60"
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-[1100px]">
+          {/* Contacts Form */}
+          <div className="lg:col-span-2">
+            <Card className="shadow-lg border-0">
+              <CardHeader>
+                <CardTitle className="text-2xl text-[#1C3990]">
+                  {t("Contacts.formTitle")}
+                </CardTitle>
+                <CardDescription>{t("Contacts.required")}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form
+                  action="/api/Contacts"
+                  method="post"
+                  acceptCharset="UTF-8"
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
                 >
-                  {cooldown > 0
-                    ? `${t("Contacts.submit")} (${cooldown}s)`
-                    : t("Contacts.submit")}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
+                  {/* Inquiry type */}
+                  <div className="space-y-2">
+                    <Label htmlFor="inquiryType">
+                      {t("Contacts.inquiryContent")} *
+                    </Label>
 
-     
+                    <input
+                      type="text"
+                      id="inquiryType"
+                      name="inquiryType"
+                      value={formData.inquiryType}
+                      onChange={handleChange}
+                      placeholder={t("Contacts.inquiryPlaceholder")}
+                      className="w-full p-3 border border-gray-300 rounded-md text-[14px]"
+                      required
+                    />
+                  </div>
+
+                  {/* Company name */}
+                  <div className="space-y-2">
+                    <Label htmlFor="companyName">
+                      {t("Contacts.companyName")}
+                    </Label>
+                    <Input
+                      id="companyName"
+                      name="companyName"
+                      value={formData.companyName}
+                      onChange={handleChange}
+                      placeholder={t("Contacts.companyExample")}
+                      className="h-12"
+                    />
+                  </div>
+
+                  {/* Full name */}
+                  <div className="space-y-2">
+                    <Label htmlFor="name">{t("Contacts.name")} *</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder={t("Contacts.nameExample")}
+                      required
+                      className="h-12"
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">{t("Contacts.phoneNumber")} *</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder={t("Contacts.phoneExample")}
+                      required
+                      className="h-12"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div className="space-y-2">
+                    <Label htmlFor="email">
+                      {t("Contacts.emailAddress")} *
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder={t("Contacts.emailExample")}
+                      required
+                      className="h-12"
+                    />
+                  </div>
+
+                  {/* Message */}
+                  <div className="space-y-2">
+                    <Label htmlFor="message">
+                      {t("Contacts.inquiryMessage")} *
+                    </Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="min-h-[120px] resize-none"
+                      required
+                    />
+                  </div>
+
+                  {/* Privacy checkbox */}
+                  <div className="flex items-start space-x-2">
+                    <input
+                      type="checkbox"
+                      id="privacy"
+                      className="mt-1"
+                      required
+                    />
+                    <label htmlFor="privacy" className="text-sm text-gray-700">
+                      {t("Contacts.privacyAgreement")}
+                    </label>
+                  </div>
+
+                  {/* Notice */}
+                  {notice && (
+                    <p className="text-sm text-gray-700 whitespace-pre-line">
+                      {notice}
+                    </p>
+                  )}
+
+                  {/* Submit button */}
+                  <Button
+                    type="submit"
+                    disabled={submitting || cooldown > 0}
+                    className="w-full bg-[#1C3990] hover:bg-[#2d4a9b] h-12 text-base font-semibold disabled:opacity-60"
+                  >
+                    {cooldown > 0
+                      ? `${t("Contacts.submit")} (${cooldown}s)`
+                      : t("Contacts.submit")}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     </div>
   );

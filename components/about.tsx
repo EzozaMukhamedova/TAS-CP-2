@@ -85,7 +85,7 @@ export default function About() {
                         {language === "RU" && "Телефон:"}
                         {language === "EN" && "Phone:"}
                       </span>
-                      <span className="text-gray-600">03-5510-8300</span>
+                      <span className="text-gray-600">+998904801848</span>
                     </div>
                     <div className="flex">
                       <span className="font-semibold text-gray-700 w-32">

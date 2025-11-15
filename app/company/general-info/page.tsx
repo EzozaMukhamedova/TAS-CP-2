@@ -50,7 +50,7 @@ export default function GeneralInfoPage() {
       companyName: "Tokyo Asset Solution Co., Ltd.",
       location:
         "2-qavat, Urban Toranomon binosi, 1-16-4 Toranomon, Minato-ku, Tokio 105-0001",
-      phone: "03-5510-8300 (Vakil)",
+      phone: "+998904801848",
       fax: "03-5510-8305",
       establishedDate: "2009 yil 30 yanvar",
       businessStartDate: "2009 yil 1 may",
@@ -91,7 +91,7 @@ export default function GeneralInfoPage() {
       companyName: "Tokyo Asset Solution Co., Ltd.",
       location:
         "2-й этаж, здание Urban Toranomon, 1-16-4 Toranomon, Minato-ku, Tokyo 105-0001",
-      phone: "03-5510-8300 (Представитель)",
+      phone: "+998904801848",
       fax: "03-5510-8305",
       establishedDate: "30 января 2009 года",
       businessStartDate: "1 мая 2009 года",
@@ -132,7 +132,7 @@ export default function GeneralInfoPage() {
       companyName: "Tokyo Asset Solution Co., Ltd.",
       location:
         "2nd floor, Urban Toranomon Building, 1-16-4 Toranomon, Minato-ku, Tokyo 105-0001",
-      phone: "03-5510-8300 (Representative)",
+      phone: "+998904801848",
       fax: "03-5510-8305",
       establishedDate: "January 30, 2009",
       businessStartDate: "May 1, 2009",

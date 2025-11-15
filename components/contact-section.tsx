@@ -105,7 +105,7 @@ export default function ContactSection() {
                   size="lg"
                   className="bg-[#31519F] hover:bg-blue-700 px-6 sm:px-8 py-3 text-base sm:text-lg w-full sm:w-auto"
                 >
-                  <Link href="/Contacts">{t("Contacts.inquiry")}</Link>
+                  <Link href="/contact">{t("Contacts.inquiry")}</Link>
                 </Button>
               </div>
             </div>

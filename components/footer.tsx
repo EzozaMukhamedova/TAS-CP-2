@@ -8,8 +8,8 @@ import Image from "next/image";
 const COMPANY = {
   postal: "100102",
   address: "Modera Towers, 4F, Shota Rustaveli street 19, Tashkent",
-  phone: "03-5510-8300",
-  email: "info@to-as.com",
+  phone: "+998904801848",
+  email: "m-matsubara@to-as.com",
 };
 
 function CompanyInfo() {

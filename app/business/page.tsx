@@ -28,7 +28,7 @@ export default function BusinessPage() {
             </p>
 
             <a
-              href="#contact"
+              href="/contact"
               className="inline-block bg-[#1C3990] hover:bg-[#2d4a9b] text-white font-medium px-6 py-3 rounded-lg transition"
             >
               {t("Business.hero.cta")}

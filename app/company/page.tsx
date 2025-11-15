@@ -14,6 +14,10 @@ export default function CompanyPage() {
 
   const [isPresidentTextExpanded, setIsPresidentTextExpanded] = useState(false);
 
+  const moreLabel = isPresidentTextExpanded
+    ? t("Companys.leaderMessage.less")
+    : t("Companys.leaderMessage.more");
+
   // "Nima uchun bizga ishonishingiz kerak" kartochkalari
   const reasons = t("Company.reasons", { returnObjects: true }) as Reason[];
 
@@ -25,10 +29,6 @@ export default function CompanyPage() {
   const propertyBullets = t("Company.property.points", {
     returnObjects: true,
   }) as Bullet[];
-
-  const moreLabel = isPresidentTextExpanded
-    ? t("Company.president.showLess")
-    : t("Company.president.showMore");
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
@@ -62,6 +62,83 @@ export default function CompanyPage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
                     priority
                   />
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Headquarters Management / Ofis Rahbariyati */}
+      <section className="mb-12 md:mb-16">
+        <Card className="shadow-lg border-0">
+          <CardHeader className="flex items-center justify-center gap-4">
+            <CardTitle
+              className="
+          text-[#173758]
+          font-bold
+          text-2xl
+          sm:text-3xl
+          lg:text-4xl
+          text-center
+          leading-tight
+        "
+            >
+              {t("Companys.leaderMessage.sectionTitle")}
+            </CardTitle>
+          </CardHeader>
+
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
+              {/* Left – image & name */}
+              <div className="md:col-span-1 flex flex-col items-center">
+                <div className="relative w-56 sm:w-64 md:w-full max-w-[345px] aspect-square">
+                  <Image
+                    src="/svg/nobuaki.svg"
+                    alt={t("Companys.leaderMessage.name")}
+                    fill
+                    className="rounded-lg object-cover"
+                    sizes="(max-width: 768px) 60vw, 345px"
+                  />
+                </div>
+                <p
+                  className="
+              text-center mt-4 font-semibold px-4
+              w-full
+              sm:w-[260px]
+              lg:w-[350px]
+            "
+                >
+                  {t("Companys.leaderMessage.name")}
+                </p>
+
+                <p className="text-center text-gray-600">
+                  {t("Companys.leaderMessage.role")}
+                </p>
+              </div>
+
+              {/* Right – text */}
+              <div className="md:col-span-2">
+                <div className="text-base sm:text-[17px] text-gray-700 leading-relaxed max-w-none">
+                  <p
+                    className={`transition-all duration-300 
+                ${
+                  isPresidentTextExpanded
+                    ? "max-h-[2000px]"
+                    : "max-h-[110px] overflow-hidden lg:max-h-none"
+                }`}
+                  >
+                    {t("Companys.leaderMessage.message")}
+                  </p>
+
+                  {/* Learn more / show less – faqat mobile & tablet */}
+                  <button
+                    type="button"
+                    onClick={() => setIsPresidentTextExpanded((prev) => !prev)}
+                    className="mt-3 text-sm font-medium text-blue-600 hover:underline lg:hidden"
+                  >
+                    {moreLabel}
+                  </button>
                 </div>
               </div>
             </div>

@@ -380,5 +380,16 @@
         "body": "We develop custom solutions that take into account the unique needs of each client."
       }
     }
+  },
+
+  "Companys": {
+    "leaderMessage": {
+      "sectionTitle": "Tokyo Asset Solution Headquarters Management",
+      "name": "Nobuaki Terashiki",
+      "role": "Head of Tokyo Asset Solution Headquarters",
+      "message": "Dear partners and clients, as the President of Tokyo Asset Solution, I would like to extend my sincere greetings. Since 2009, our company has been providing innovative solutions in the real estate industry. We do not merely construct buildings — we strive to create a sustainable environment for future generations. In every project, we aim to balance tradition and innovation.\n\nOur team is our greatest asset. The professional growth of each employee is the foundation of our company's success.",
+      "more": "Read More",
+      "less": "Show Less"
+    }
   }
 }
