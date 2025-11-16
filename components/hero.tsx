@@ -43,16 +43,13 @@ export default function Hero() {
       top-[280px]
       sm:top-[380px]
       lg:top-[-10px]
-      object-cover object-center scale-110
+      object-contain object-center scale-110
       sm:object-cover sm:scale-110
       lg:object-fill lg:scale-100
       transition-transform duration-700
     "
         />
 
-        {/* swiper container:
-            - mobile/tablet: markazda
-            - desktop: chap tomonda */}
         <div
           className="
             absolute top-16
@@ -99,12 +96,23 @@ export default function Hero() {
             {t("Hero.aboutTitle")}
           </h2>
 
-          {/* mobile/tablet: column (rasm -> matn)
-        desktop (lg+): ikki ustun */}
           <div className="flex flex-col items-center gap-8 lg:gap-[154px] lg:flex-row lg:items-start lg:justify-center">
             {/* Image */}
+            {/* Image */}
             <div className="rounded-[3%] overflow-hidden max-w-[320px] sm:max-w-[420px] lg:max-w-none">
-              <img src="/svg/herorasm.svg" alt="Hero Image" />
+              {/* Mobile */}
+              <img
+                src="/svg/hero_mobile.svg"
+                alt="Hero Image Mobile"
+                className="block sm:hidden w-full h-full object-cover"
+              />
+
+              {/* Tablet + Desktop */}
+              <img
+                src="/svg/herorasm.svg"
+                alt="Hero Image Desktop"
+                className="hidden sm:block w-full h-full object-cover"
+              />
             </div>
 
             {/* Text */}
