@@ -38,7 +38,7 @@ export default function ContactsClientPage() {
     setSubmitting(true);
     setNotice(null);
     try {
-      const res = await fetch("/api/Contacts", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -151,7 +151,7 @@ export default function ContactsClientPage() {
               </CardHeader>
               <CardContent>
                 <form
-                  action="/api/Contacts"
+                  action="/api/cntact"
                   method="post"
                   acceptCharset="UTF-8"
                   onSubmit={handleSubmit}
