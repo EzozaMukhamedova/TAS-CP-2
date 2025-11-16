@@ -33,31 +33,40 @@ export default function Hero() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden pt-[200px] sm:pt-[220px] lg:pt-0 ">
         <img
           src="/nest_one.png"
           alt="Background"
           className="
-      absolute left-0 
-      w-full h-full 
-      top-[280px]
-      sm:top-[380px]
-      lg:top-[-10px]
-      object-contain object-center scale-110
-      sm:object-cover sm:scale-110
-      lg:object-fill lg:scale-100
-      transition-transform duration-700
+      w-full 
+      transition-all duration-700
+
+      /* MOBILE & TABLET */
+      h-[calc(100vh-200px)]
+      sm:h-[calc(100vh-220px)]
+      object-cover 
+      object-top
+      mt-[100px]
+      relative 
+      z-0
+
+      /* DESKTOP */
+       lg:mt-0
+      lg:h-full
+      lg:inset-0
+      lg:object-contain
+      lg:object-center
     "
         />
 
         <div
           className="
-            absolute top-16
-            left-1/2 -translate-x-1/2
-            w-full max-w-[520px] px-4 mt-[100px]
-            text-center
-            md:left-0 md:translate-x-0 md:max-w-2xl md:px-4
-          "
+      absolute top-16
+      left-1/2 -translate-x-1/2
+      w-full max-w-[520px] px-4 mt-[100px]
+      text-center
+      md:left-0 md:translate-x-0 md:max-w-2xl md:px-4
+    "
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
@@ -69,16 +78,16 @@ export default function Hero() {
               style={{ transform: `translateX(-${index * 100}%)` }}
             >
               {slides.map((s, i) => (
-                <div key={i} className="min-w-full  ">
-                  <h1 className="text-3xl md:text-[40px] sm:text-[32px]   lg:text-[40px] font-bold mb-6 leading-tight text-[#173758]">
+                <div key={i} className="min-w-full">
+                  <h1 className="text-3xl md:text-[40px] sm:text-[32px] lg:text-[40px] font-bold mb-6 leading-tight text-[#173758]">
                     {s.title}
                   </h1>
                   <p
                     className="
-                      text-base sm:text-lg md:text-[20px] mb-10 text-gray-600 leading-relaxed
-                      mx-auto md:ml-[80px]  md:mx-0  border-e-red-600
-                      max-w-[463px]
-                    "
+                text-base sm:text-lg md:text-[20px] mb-10 text-gray-600 leading-relaxed
+                mx-auto md:ml-[80px] md:mx-0
+                max-w-[463px]
+              "
                   >
                     {s.subtitle}
                   </p>
@@ -98,21 +107,8 @@ export default function Hero() {
 
           <div className="flex flex-col items-center gap-8 lg:gap-[154px] lg:flex-row lg:items-start lg:justify-center">
             {/* Image */}
-            {/* Image */}
             <div className="rounded-[3%] overflow-hidden max-w-[320px] sm:max-w-[420px] lg:max-w-none">
-              {/* Mobile */}
-              <img
-                src="/svg/hero_mobile.svg"
-                alt="Hero Image Mobile"
-                className="block sm:hidden w-full h-full object-cover"
-              />
-
-              {/* Tablet + Desktop */}
-              <img
-                src="/svg/herorasm.svg"
-                alt="Hero Image Desktop"
-                className="hidden sm:block w-full h-full object-cover"
-              />
+              <img src="/svg/herorasm.svg" alt="Hero Image" />
             </div>
 
             {/* Text */}
