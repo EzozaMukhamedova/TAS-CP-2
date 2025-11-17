@@ -40,7 +40,7 @@
     "viewAll": "Barcha xizmatlarni ko'rish",
     "items": [
       {
-        "iconImage": "/svg/mulkBoshqaruviicon.svg",
+        "iconImage": "/svg/mulkboshqaruviicon.svg",
         "title": "Mulk Boshqaruvi",
         "description": "Professional mulk boshqaruvi va operatsion xizmatlar"
       },
@@ -60,12 +60,12 @@
         "description": "Quyosh elektr stansiyalari texnik xizmati"
       },
       {
-        "iconImage": "/svg/landshaft.svg",
+        "iconImage": "/svg/Landshaft.svg",
         "title": "Landshaft Dizayni",
         "description": "Professional landshaft parvarishi va dizayni"
       },
       {
-        "iconImage": "/svg/investtitsiya.svg",
+        "iconImage": "/svg/Investtitsiya.svg",
         "title": "Investitsiya Konsaltingi",
         "description": "Ko'chmas mulk investitsiyalari bo'yicha maslahat"
       }

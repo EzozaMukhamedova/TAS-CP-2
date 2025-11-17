@@ -40,7 +40,7 @@
     "viewAll": "View All Services",
     "items": [
       {
-        "iconImage": "/svg/mulkBoshqaruviicon.svg",
+        "iconImage": "/svg/mulkboshqaruviicon.svg",
         "title": "Property Management",
         "description": "Professional property management and operational services"
       },
@@ -60,12 +60,12 @@
         "description": "Solar power station technical services"
       },
       {
-        "iconImage": "/svg/landshaft.svg",
+        "iconImage": "/svg/Landshaft.svg",
         "title": "Landscape Design",
         "description": "Professional landscape care and design"
       },
       {
-        "iconImage": "/svg/investtitsiya.svg",
+        "iconImage": "/svg/Investtitsiya.svg",
         "title": "Investment Consulting",
         "description": "Real estate investment consulting"
       }

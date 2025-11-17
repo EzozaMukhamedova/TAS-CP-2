@@ -40,7 +40,7 @@
     "viewAll": "Посмотреть все услуги",
     "items": [
       {
-        "iconImage": "/svg/mulkBoshqaruviicon.svg",
+        "iconImage": "/svg/mulkboshqaruviicon.svg",
         "title": "Управление Недвижимостью",
         "description": "Профессиональное управление недвижимостью и операционные услуги"
       },
@@ -60,12 +60,12 @@
         "description": "Техническое обслуживание солнечных электростанций"
       },
       {
-        "iconImage": "/svg/landshaft.svg",
+        "iconImage": "/svg/Landshaft.svg",
         "title": "Ландшафтный Дизайн",
         "description": "Профессиональный уход за ландшафтом и дизайн"
       },
       {
-        "iconImage": "/svg/investtitsiya.svg",
+        "iconImage": "/svg/Investtitsiya.svg",
         "title": "Инвестиционный Консалтинг",
         "description": "Консультации по инвестициям в недвижимость"
       }
