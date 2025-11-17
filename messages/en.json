@@ -105,7 +105,7 @@
       }
     ]
   },
-  "Contact": {
+  "Contacts": {
     "title": "Inquiry",
     "subtitle": "For questions, contact us by phone or through our contact form.",
     "phoneInquiries": "Phone Inquiries",
@@ -262,7 +262,7 @@
     "soonHighlight": "Stay tuned to join our team!"
   },
 
-  "Contacts": {
+  "Contact": {
     "title": "Inquiry",
     "subtitle": "For questions, please contact us by phone or through our contact form.",
     "phoneInquiries": "Phone inquiries",

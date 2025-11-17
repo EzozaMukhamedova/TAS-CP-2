@@ -94,7 +94,7 @@ export default function Navbar() {
                   pathname === item.href ? "text-[#1C3990]" : "text-gray-700"
                 }`}
               >
-                {item.label}
+                <span>{item.label}</span>
               </Link>
             ))}
           </div>
@@ -147,14 +147,14 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="h-8 w-8 rounded-full border border-white/70 flex items-center justify-center"
               >
-                <X className="h-12 w-12" />
+                <X className="h-18 w-18" />
               </button>
             </div>
 
             {/* Centered content */}
-            <div className="flex-1 flex flex-col items-center justify-center gap-6 px-6 text-center">
+            <div className="flex-1 flex flex-col items-center justify-center gap-6 px-6 mt-[-50px] text-center">
               {/* Pages */}
-              <nav className="flex flex-col items-center gap-4 text-[26px]">
+              <nav className="flex flex-col items-center gap-4 text-[22px]">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
@@ -174,14 +174,14 @@ export default function Navbar() {
               {/* Phone */}
               <a
                 href={`tel:${String(phoneNumber).replace(/\s+/g, "")}`}
-                className="mt-1 inline-flex items-center gap-2 opacity-95 hover:opacity-100"
+                className="mt-10 inline-flex items-center gap-2 opacity-95 hover:opacity-100"
               >
                 <Phone className="h-5 w-5" />
-                <span className="tracking-wide text-[24px]">{phoneNumber}</span>
+                <span className="tracking-wide text-[16px]">{phoneNumber}</span>
               </a>
 
               {/* Language row */}
-              <div className="flex items-center gap-5 text-[26px] mt-1">
+              <div className="flex items-center gap-5 text-[16px] mt-10">
                 {(["ru", "uz", "en"] as Locale[]).map((code) => (
                   <button
                     key={code}
