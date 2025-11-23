@@ -392,16 +392,15 @@
       "recruitment": "Ish o‘rinlari"
     },
     "servicesList": [
-      "Qayta Qurish",
-      "Renovatsiya",
-      "Uzoq Muddatli Egalik",
-      "Yashil Energiya",
-      "Xalqaro Biznes",
-      "Aktivlar Konsaltingi",
-      "Investitsiya Boshqaruvi"
+      "Mulk Boshqaruvi",
+      "Bino Boshqaruvi",
+      "Tijorat Ob'ektlari",
+      "Quyosh Energiyasi",
+      "Landshaft Dizayni",
+      "Investitsiya Konsaltingi"
     ]
   },
-   "Companys": {
+  "Companys": {
     "leaderMessage": {
       "sectionTitle": "Tokyo Asset Solution Bosh Ofisi Rahbariyati",
       "name": "Nobuaki Terashiki",
